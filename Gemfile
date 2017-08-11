@@ -53,3 +53,7 @@ end
 group :production do
   gem 'unicorn'
 end
+
+gem 'erb2haml'
+gem 'devise'
+gem 'haml-rails'
