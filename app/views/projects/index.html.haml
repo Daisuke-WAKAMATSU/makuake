@@ -1,10 +1,37 @@
-%header aaaaaaaaaa
+.header
+  .header__inbox
+    = image_tag("makuake-logo.png", class: "header__inbox__logo", alt: "")
+    %ul.header__inbox__icon
+      %li= image_tag("heart.jpg", class: ".header__inbox__icon-heart")
+      %li= image_tag("mail.jpg", class: ".header__inbox__icon-mail")
+      %li= image_tag("bell.jpg", class: ".header__inbox__icon-bell")
+      %li= image_tag("icon_yellow.png", class: "main__content__project-new__planner-image", size: "32x32", alt: "")
 .main
-  .main__contents
-%footer
+  .main__full__width
+  .main__content
+    .main__content__catch-copy
+      %h1.main__content__catch-copy-top 新たなチャレンジを応援しよう。
+      %h2.main__content__catch-copy-bottom 世の中を良くする新しいチャレンジが毎日続々と登場。
+    .main__content__project
+      .main__content__project-new
+        = link_to "https://www.makuake.com", class: "main__content__project-new__link" do
+          = image_tag("images.jpg", class: "main__content__project-new__link-image", size: "310x170", alt: "")
+          %h2.main__content__project-new__link-text 今年で10周年を迎えるももクロちゃん達を全力で応援しよう！
+        .main__content__project-new__planner
+          = image_tag("icon_yellow.png", class: "main__content__project-new__planner-image", size: "36x36", alt: "")
+          = link_to "T1project 若松大輔","https://www.makuake.com", class: "main__content__project-new__planner-name"
+      .main__content__project-new
+      .main__content__project-new
+      .main__content__project-new
+      .main__content__project-new
+      .main__content__project-new
+      .main__content__project-new
+      .main__content__project-new
+      .main__content__project-new
+.footer
   .top
   .bottom
-    .bottom__text Copyright © CyberAgent Crowd Funding, Inc. All Rights Reserved.
-    %a.c{href: "https://www.makuake.com/"} プライバシーポリシー
-    %a{href: "https://www.makuake.com/"} 利用規約
-    %a{href: "https://www.makuake.com/"} 運営会社
+    .bottom__text Copyright © CyberAgent Crowd Funding, Inc. All Rights Reserved.main__content__catch-copy.
+    = link_to "プライバシーポリシー", "https://www.makuake.com"
+    = link_to "利用規約", "https://www.makuake.com"
+    = link_to "運営会社", "https://www.makuake.com"
