@@ -7,11 +7,13 @@
 |email|string|null: false, unique: true|
 
 ### Association
+- has_many :projects_users
 - has_many :projects, through: :projects_users
 - has_many :investments, through: :supporters
+- has_many :supporters
 - has_many :favorites
 - has_many :comments
-- has_many :categorys, through: :
+- has_many :tags, through: :tags_users
 
 ## projects_usersテーブル
 
@@ -60,20 +62,25 @@
 |user_id|integer|foreign_key: true|
 |project_id|integer|foreign_key: true|
 
-## categorysテーブル
+## tagsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
 
-## categorys_usersテーブル
+## tags_usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false|
+|user_id|integer|foreign_key: true|
+|tag_id|integer|foreign_key: true|
 
-## categorys_projectsテーブル
+## projects_tagsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false|
+|tag_id|integer|foreign_key: true|
+|project_id|integer|foreign_key: true|
+
+## planner
+
 
 
 
