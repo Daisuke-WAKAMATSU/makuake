@@ -5,25 +5,6 @@ html, body {
   min-width: 1000px;
 }
 
-
-.header {
-  height: 66px;
-  &__inbox {
-    margin: 0 auto;
-    width: 1000px;
-    height: 66px;
-    &__logo {
-      margin-top: 17px;
-      float: left;
-    }
-    &__icon {
-      border-radius: 4px;
-      margin: 5px 12px 0 0;
-      float: right;
-    }
-  }
-}
-
 .main {
   background-color: #f5f5f5;
   &__full__width {
@@ -89,6 +70,13 @@ html, body {
             color: #38aef0;
             margin-top: 5px;
             float: left;
+          }
+          &-genre {
+            height: 20px;
+            width: 284px;
+            &-pencil {
+              float:left;
+            }
           }
         }
       }

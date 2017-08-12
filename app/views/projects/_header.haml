@@ -1,0 +1,14 @@
+.header
+  .header__inbox
+    = image_tag("makuake-logo.png", class: "header__inbox__logo")
+    .header__inbox__icon
+      = link_to "https://www.makuake.com" do
+        = image_tag("icon_yellow.png", class: "header__inbox__icon-own")
+      = link_to "https://www.makuake.com" do
+        = image_tag("bell.jpg", class: "header__inbox__icon-bell")
+      = link_to "https://www.makuake.com" do
+        = image_tag("mail.jpg", class: "header__inbox__icon-mail")
+      = link_to "https://www.makuake.com" do
+        = image_tag("heart.jpg", class: "header__inbox__icon-heart")
+    = link_to "プロジェクトを掲載する", "https://www.makuake.com", class: "header__inbox-published"
+    = form_tag("https://www.makuake.com", class: "")
