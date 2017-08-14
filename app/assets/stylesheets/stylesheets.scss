@@ -5,31 +5,6 @@ html, body {
   min-width: 1000px;
 }
 
-.data {
-  height: 39px;
-  color: #a8a8a8;
-  position: relative;
-  width: 284px;
-  margin: 0 12px;
-  &__image {
-    float: left;
-    margin-top: 7px;
-  }
-  &__title {
-    margin: 10px 0 0 28px;
-    float: left;
-    position: absolute;
-  }
-}
-
-dd {
-  position: absolute;
-  top: 5px;
-  right: 15px;
-  font-size: 19px;
-  margin-right: 2px;
-}
-
 .main {
   background-color: #f5f5f5;
 }
@@ -125,6 +100,91 @@ dd {
   }
 }
 
+.recommend__money {
+  height: 114px;
+  width: 310px;
+  position: relative; 
+}
+
+dt {
+  color: #a8a8a8;
+  position: relative;
+}
+
+.money {
+  margin: 0 12px;
+  height: 39px;
+  width: 284px;
+  &__image {
+    float: left;
+    margin-top: 7px;
+  }
+  &__title {
+    margin: 10px 0 0 28px;
+    float: left;
+    position: absolute;
+  }
+}
+
+dd {
+  font-size: 19px;
+  margin-right: 2px;
+  float: left;
+}
+
+.money__sum {
+  position: absolute;
+  top: 5px;
+  right: 15px;
+}
+
+.money__gage {
+  margin: 0 12px;
+  height: 28px;
+  border-radius: 3px;
+  width: 284px;
+  background-color: #e7e7e7;
+  &__in {
+    background-color: #bbf117;
+    height: 28px;
+    border-radius: 3px;
+    &__percent {
+      font-size: 14px;
+      padding: 5px 0 0 10px;
+    }
+  }
+}
+
+.money__supporter {
+  margin: 0 12px;
+  &-image {
+    margin-top: 8px;
+    float: left;
+  }
+  &-name {
+    float: left;
+    margin-top: 11px;
+  }
+  &-count {
+    margin: 5px 0 0 5px;
+  }
+}
+
+.money__limit {
+  float: left;
+  &-image {
+    margin: 8px 0 0 15px;
+    float: left;
+  }
+  &-title {
+    float: left;
+    margin-top: 10px;
+  }
+  &-days {
+    margin: 5px 0 0 17px;
+  }
+}
+
 .contents__ditail {
   width: 1000px;
   &__botton {
@@ -143,18 +203,6 @@ dd {
     text-decoration: none;
     color: #ffffff;
   }
-}
-
-.recommend__money {
-  height: 114px;
-  width: 310px;
-  position: relative; 
-}
-
-.gage__in {
-  background-color: red;
-  height: 28px;
-  width: 284px;
 }
 
 .new{
