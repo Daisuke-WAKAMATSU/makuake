@@ -1,35 +1,44 @@
 = render partial: "header"
 .main
-  .main__full__width
-  .main__content
-    .main__content__catch-copy
-      %h1.main__content__catch-copy-top 新たなチャレンジを応援しよう。
-      %h2.main__content__catch-copy-bottom 世の中を良くする新しいチャレンジが毎日続々と登場。
-    .main__content__project
-      .main__content__project-new
-        = link_to "https://www.makuake.com", class: "main__content__project-new__link" do
-          = image_tag("images.jpg", class: "main__content__project-new__link-image", size: "310x170", alt: "")
-          %h2.main__content__project-new__link-text 今年で10周年を迎える、ももクロちゃん達を全力で応援しよう！
-        .main__content__project-new__planner
-          = link_to "https://www.makuake.com", class: "main__content__project-new__link" do
-            = image_tag("icon_yellow.png", class: "main__content__project-new__planner-image", size: "36x36")
-            .main__content__project-new__planner-name T1project 若松大輔
-          = link_to "https://www.yahoo.co.jp", class: "main__content__project-new__planner-genre" do
-            = image_tag("pencil.gif", class: "main__content__project-new__planner-genre-pencil", size: "27x27")
-            .main__content__project-new__planner-name アイドル 世界のももクロ
-
-      .main__content__project-new
-      .main__content__project-new
-      .main__content__project-new
-      .main__content__project-new
-      .main__content__project-new
-      .main__content__project-new
-      .main__content__project-new
-      .main__content__project-new
-.footer
-  .top
-  .bottom
-    .bottom__text Copyright © CyberAgent Crowd Funding, Inc. All Rights Reserved.main__content__catch-copy.
-    = link_to "プライバシーポリシー", "https://www.makuake.com"
-    = link_to "利用規約", "https://www.makuake.com"
-    = link_to "運営会社", "https://www.makuake.com"
+  .full__width
+  .contents
+    .catch-copy
+      %h1.catch-copy-top 新たなチャレンジを応援しよう。
+      %h2.catch-copy-bottom 世の中を良くする新しいチャレンジが毎日続々と登場。
+    .recommend
+      .recommend__area
+        = link_to "", class: "recommend__top" do
+          = image_tag("images.jpg", class: "recommend__top-image", size: "310x170")
+          %h2.recommend__top-text 今年で10周年を迎える、ももクロちゃん達を全力で応援しよう！
+        .recommend__planner
+          = link_to "", class: "recommend__planner-link" do
+            = image_tag("icon_yellow.png", class: "recommend__planner-link-image", size: "36x36")
+            .recommend__planner-link-name T1project 若松大輔
+          = link_to "", class: "recommend__planner-genre" do
+            = image_tag("pencil.gif", class: "recommend__planner-genre-image", size: "24x24")
+            .recommend__planner-genre-name アイドル 世界のももクロ
+        .recommend__money
+          %dt.data
+            = image_tag("yen.gif", class: "data__image", size: "25x25")
+            .data__title 集まっている金額
+            %dd 1,222,999円
+          .gage__in{style: "width:100%" }
+      .recommend__area
+      .recommend__area
+      .recommend__area
+      .recommend__area
+      .recommend__area
+      .recommend__area
+      .recommend__area
+      .recommend__area
+      .contents__ditail
+        = link_to "more >", "https://www.makuake.com", class: "contents__ditail__botton"
+    .new
+      .new__title 
+        = image_tag("pencil.gif", class: "new__title-image", size: "24x24")
+        .new__tailte-name 新しく始まったプロジェクト
+      .new__area
+        = link_to "", class: "recommend__top" do
+          = image_tag("images.jpg", class: "recommend__top-image", size: "310x170")
+          %h2.recommend__top-text 今年で10周年を迎える、ももクロちゃん達を全力で応援しよう！
+= render partial: "footer"
