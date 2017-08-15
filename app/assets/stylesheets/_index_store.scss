@@ -1,17 +1,15 @@
 .store {
-  height: 550px;
+  height: 840px;
   width: 1035px;
   &__copy {
     height: 69px;
     width: 1000px;
+    text-align: center;
+  }
+  &__text {
+    font-size: 18px;
+    text-align: center;
     margin-bottom: 35px;
-    &-image {
-      margin: 0 auto;
-    }
-    &-text {
-      font-size: 18px;
-      text-align: center;
-    }
   }
   &__area {
     width: 310px;
