@@ -5,7 +5,7 @@
     /   %input{name:"text" class: "keywords" value: "" type: "text"}
     /   %input{type: "image" src: "logo.png" alt: "検索" name: "searchBtn2" class="searchBtn2" }
     .inbox__icon
-      = link_to "https://www.makuake.com" do
+      = link_to "/users/sign_in" do
         = image_tag("icon_yellow.png", class: "icon-right inbox__icon-own")
       = link_to "https://www.makuake.com" do
         = image_tag("bell.jpg", class: "icon-right inbox__icon-bell")
@@ -13,7 +13,7 @@
         = image_tag("mail.jpg", class: "icon-right inbox__icon-mail")
       = link_to "https://www.makuake.com" do
         = image_tag("heart.jpg", class: "icon-right inbox__icon-heart")
-    = link_to "プロジェクトを掲載する", "https://www.makuake.com", class: "inbox-published"
+    = link_to "プロジェクトを掲載する", "", class: "inbox-published"
     / = form_tag("https://www.makuake.com", method: :get)
     /   %input.page_nameid{name: "page[name]" size="30" type="text"}
 

@@ -1,0 +1,42 @@
+.background-view
+  .rogin
+    %h2.rogin__title 会員登録はこちら
+    = link_to "ログインはこちら  >", "https://www.makuake.com", class: "rogin__link"
+    %p.rogin__copy ＼約1分で登録でき、Makuakeを楽しめます!／
+    .rogin__sns
+      %h3.rogin__means SNSで登録
+      .rogin__sns__botton
+        .rogin__sns__botton-facebook Facebook
+      .rogin__sns__botton
+        .rogin__sns__botton-twitter Twitter
+      .rogin__sns__botton
+        .rogin__sns__botton-line LINE
+      .rogin__sns__botton
+        .rogin__sns__botton-ameba Ameba
+    .rogin__makuake
+      %h3.rogin__means メールアドレスで新規登録
+      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+        .field
+          = f.label :メールアドレス, class: 'form__text'
+          = f.email_field :email, autofocus: true, class: 'form__box'
+        .field
+          = f.label :確認, class: 'form__text'
+          = f.email_field :email, autofocus: true, class: 'form__box'
+        .field
+          = f.label :ユーザー名, class: 'form__text'
+          = f.email_field :username, autofocus: true, class: 'form__box'
+        .field
+          = f.label :パスワード, class: 'form__text'
+          = f.password_field :password, autocomplete: "off", class: 'form__box'
+        .field
+          = f.label :確認, class: 'form__text'
+          = f.password_field :password, autocomplete: "off", class: 'form__box'
+        - if devise_mapping.rememberable?
+          .field
+            = f.check_box :remember_me
+            = f.label :Makuakeからの最新情報を受取る
+          .field
+            = f.check_box :remember_me
+            = f.label :利用規約に同意する
+        .actions
+          = f.submit "OK"
