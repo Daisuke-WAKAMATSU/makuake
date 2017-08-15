@@ -1,0 +1,17 @@
+.makuake {
+  height: 550px;
+  width: 1035px;
+  &__contents {
+    font-size: 20px;
+    font-weight: bold;
+    &-image {
+      float: left;
+      margin-right: 10px;
+      margin-top: 3px;
+    }
+    &-name {
+      float: left;
+      font-size: 21px;
+    }
+  }
+}
