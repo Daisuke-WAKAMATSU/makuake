@@ -1,9 +1,12 @@
 .makuake {
-  height: 550px;
+  height: 1000px;
   width: 1035px;
-  &__contents {
+
+  &__title {
     font-size: 20px;
     font-weight: bold;
+    height: 30px;
+    margin-bottom: 30px;
     &-image {
       float: left;
       margin-right: 10px;
@@ -14,4 +17,48 @@
       font-size: 21px;
     }
   }
+  &__area {
+    height: 189px;
+    width: 310px;
+    margin: 0 31px 29px 0;
+    float: left;
+    &__link {
+      &-image {
+        border-radius: 3px;
+      }
+      &-text {
+        font-size: 12px;
+        text-align: center;
+        margin-top: 11px;
+        line-height: 1.6;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+  }
 }
+
+
+
+//     height: 163px;
+//     width: 316px;
+//     background-color: red;
+
+//   &-genre {
+//     display: inline-block;
+//     height: 23px;
+//     position: relative;
+//     &-image {
+//       float:left;
+//       margin-left: 5px;
+//     }
+//     &-name {
+//       float: left;
+//       margin-top: 2px;
+//       color: #a8a8a8;
+//     }
+//   }
+// }
+
+
