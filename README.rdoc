@@ -8,12 +8,54 @@
 
 ### Association
 - has_many :projects_users
+- has_many :supporters
 - has_many :projects, through: :projects_users
 - has_many :investments, through: :supporters
+
+
+## projectsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|title|string|null: false|
+|practitioner|string|
+|body|text|null: false|
+
+### Association
+- has_many :users, through: :projects_users
+- has_many :projects_users
+- belongs_to :planner
+- has_many :investments
+
+
+## plannerテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+|nickname|string|null: false|
+|email|string|null: false, unique: true|
+
+### Association
+- has_many :investments
+- has_many :projects
+
+
+## investmentsテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|title|string|null: false|
+|body|text|null: false, unique: true|
+|price|integer|null: false|
+|number_prepared|string|null: false|
+
+### Association
+- has_many :users, through: :supporters
+- belongs_to :project
+- belongs_to :planner
 - has_many :supporters
-- has_many :favorites
-- has_many :comments
-- has_many :tags, through: :tags_users
+
 
 ## projects_usersテーブル
 
@@ -26,28 +68,20 @@
 - belongs_to :project
 - belongs_to :user
 
-## projectsテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|title|string|null: false|
-|practitioner|string|
-|body|text|null: false|
-
-## investmentsテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|title|string|null: false|
-|body|text|null: false, unique: true|
-|price|integer|null: false|
-|number_prepared|string|null: false|
 
 ## supportersテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|foreign_key: true|
 |investment_id|integer|foreign_key: true|
+
+### Association
+- belongs_to :investment
+- belongs_to :user
+
+
+## 下記は追加機能で実装の可能性のため、記載。
+※コメント、お気に入り登録、タグ付け。
 
 ## commentsテーブル
 |Column|Type|Options|
@@ -78,31 +112,3 @@
 |------|----|-------|
 |tag_id|integer|foreign_key: true|
 |project_id|integer|foreign_key: true|
-
-## planner
-
-
-
-
-## membersテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|user_id|integer|foreign_key: true|
-|group_id|integer|foreign_key: true|
-
-### Association
-- belongs_to :group
-- belongs_to :user
-
-## groupsテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|name|string|null: false, unique: true|
-
-### Association
-- has_many :members
-- has_many :users, through: :members
-- has_many :messages
-
