@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170817105541) do
+ActiveRecord::Schema.define(version: 20170817112252) do
 
   create_table "planners", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
@@ -30,6 +30,17 @@ ActiveRecord::Schema.define(version: 20170817105541) do
 
   add_index "planners", ["email"], name: "index_planners_on_email", unique: true, using: :btree
   add_index "planners", ["reset_password_token"], name: "index_planners_on_reset_password_token", unique: true, using: :btree
+
+  create_table "projects", force: :cascade do |t|
+    t.string   "title",      limit: 255,   null: false
+    t.string   "image",      limit: 255
+    t.text     "body",       limit: 65535
+    t.integer  "planner_id", limit: 4,     null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
+
+  add_index "projects", ["planner_id"], name: "fk_rails_757b2fc52b", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
@@ -50,4 +61,5 @@ ActiveRecord::Schema.define(version: 20170817105541) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "projects", "planners"
 end
