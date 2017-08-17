@@ -16,7 +16,9 @@
   &-published {
     float: right;
     font-size: 14px;
-    margin: 23px 0 0 0;
+    margin-top: 23px;
+    text-decoration: none;
+    color: black;
   }
   &__icon {
     float: right;
@@ -43,4 +45,43 @@
     }
   }
 }
+
+.signin__icon {
+  &-heart {
+    margin: 24px 6px 0 25px;
+  }
+  &-text {
+    font-size: 14px;
+    margin: 23px 25px 0 0;
+    color: black;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

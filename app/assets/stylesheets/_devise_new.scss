@@ -12,12 +12,24 @@
 .form__text {
   margin-bottom: 5px;
   font-size: 14px;
-  margin-right: 20px;
   width: 100px;
-  padding: 20px;
+  float: left;
+  padding: 10px;
+  height: 20px;
+  text-align: center;
+  margin-left: 40px;
+  &-margin {
+    margin-top: -16px;
+  }
+  &__small {
+    color: #949494;
+    font-size: 11px;
+    line-height: 1.4;
+  }
 }
 
 .form__box {
+  float: left;
   padding: 6px;
   font-size: 13px;
   color: #333;
@@ -26,29 +38,8 @@
   background-color: #fff;
   width: 236px;
   height: 30px;
-}
-
-.rogin__sns__botton {
-  margin: 0 auto 12px;
-  color: #ffffff;
-  font: bold;
-    &-facebook {
-      display: block;
-      width: 226px;
-      height: 46px;
-      border-radius: 4px;
-      border: none;
-      cursor: pointer;
-      margin: auto;
-      outline: none;
-      font-size: 16px;
-      color: #fff;
-      position: relative;
-      box-shadow: inset 0 -3px 0 0 rgba(0, 0, 0, 0.08);
-      border-radius: 2px;
-      background-color: #3b5998;
-      text-align: center;
-    }
+  margin-bottom: 20px;
+  margin-left: 20px;
 }
 
 .rogin {
@@ -81,7 +72,7 @@
   }
   &__sns {
     border-right: 1px solid #e7e7e7;
-    height: 558px;
+    height: 100%;
     width:  49%;
     float: left;
     padding: 20px 0;
@@ -93,3 +84,42 @@
     padding: 20px 0;
   }
 }
+
+.check__box {
+  float: left;
+  margin: 20px 0 0 60px;
+}
+
+.pw__forget {
+  float: left;
+  margin: 35px 0 0 50px;
+  text-align: center;
+  text-decoration: none;
+  bottom: 14px;
+  font-size: 12px;
+  color: #858585;
+}
+
+.rogin__signup {
+  background-color: #f5f5f5;
+  height: 405px;
+  width: 884px;
+  padding: 40px;
+  display: block;
+  margin: 70px auto 70px;
+}
+
+.rogin__sns__signup {
+  border-right: 1px solid #e7e7e7;
+  height: 300px;
+  width:  49%;
+  float: left;
+  padding: 20px 0;
+}
+
+
+
+
+
+
+
