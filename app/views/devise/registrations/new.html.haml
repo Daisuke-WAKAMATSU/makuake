@@ -26,7 +26,7 @@
               %br
                 6文字以上
           = f.password_field :password, class: 'form__box'
-        = link_to "パスワードを忘れた方はこちら  >", "https://www.makuake.com", class: "pw__forget"
+        = link_to "パスワードを忘れた方はこちら  >", new_password_path(resource_name), class: "pw__forget"
         .action
           = f.submit "OK", class: 'action-btn-signup'
 

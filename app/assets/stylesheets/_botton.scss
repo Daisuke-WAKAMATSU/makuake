@@ -55,6 +55,9 @@
 .ameba {
   background-color: #2c8b3b;
 }
+.instagram {
+  background: linear-gradient(45deg, #f77d34 0%,#db3076 50%,#a437b8 100%);
+}
 
 .action-btn{
   @include orange-btn();

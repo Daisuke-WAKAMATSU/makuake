@@ -1,7 +1,8 @@
 .background-view
   .rogin
     %h2.rogin__title 会員登録
-    = link_to "ログインはこちら  >", "https://www.makuake.com", class: "rogin__link"
+    - if devise_mapping.registerable? && controller_name != 'registrations'
+      = link_to "ログインはこちら >", new_registration_path(resource_name), class: "rogin__link"
     %p.rogin__copy ＼約1分で登録でき、Makuakeを楽しめます!／
     .rogin__sns
       %h3.rogin__means SNSで登録
@@ -15,15 +16,13 @@
         = link_to "Ameba", "/", class: "rogin__sns__bar-botton ameba"
     .rogin__makuake
       %h3.rogin__means メールアドレスで新規登録
-      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+      = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+        = devise_error_messages!
         .field
-          .form__text メールアドレス
+          = f.label :メールアドレス, class: "form__text"
           = f.email_field :email, class: 'form__box'
         .field
-          .form__text 確認
-          = f.email_field :email, class: 'form__box'
-        .field
-          .form__text.form__text-margin
+          = f.label :ユーザー名, class: "form__text form__text-margin" do
             ユーザー名
             %p.form__text__small
               ※全角・半角
@@ -31,15 +30,19 @@
                 英数字3-20文字
           = f.text_field :username, class: 'form__box'
         .field
-          .form__text.form__text-margin
+          = f.label :パスワード, class: "form__text form__text-margin" do
             パスワード
             %p.form__text__small
               ※半角英数字
               %br
                 6文字以上
+          - if @minimum_password_length
+            %em
+              (#{@minimum_password_length} characters minimum)
+          %br/
           = f.password_field :password, class: 'form__box'
         .field
-          .form__text 確認
+          = f.label :確認, class: "form__text"
           = f.password_field :password_confirmation, class: 'form__box'
         - if devise_mapping.rememberable?
           .field.check__box
@@ -50,6 +53,11 @@
             = f.label :利用規約に同意する
         .action
           = f.submit "OK", class: 'action-btn'
+        = render "devise/shared/links"
+        / .field
+        /   = f.label :確認, class: "form__text"
+        /   = f.email_field :email, class: 'form__box'
+
 
 
 

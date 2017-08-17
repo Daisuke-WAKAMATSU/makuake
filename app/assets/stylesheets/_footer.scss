@@ -43,9 +43,30 @@
     &__menu {
       height: 300px;
       width: 270px;
-      margin: 0 70px 0 70px;
+      margin: 0 50px 0 50px;
       &-image {
         margin-top:20px;
+      }
+    }
+    &__official {
+      height: 454px;
+      width: 340px;
+      &__makuake {
+        background: url(logp-big.png) no-repeat center center ;
+        height: 130px;
+        margin-top: 30px;
+      }
+      &__facebook {
+        width: 322px;
+        padding: 8px;
+        height: 65px;
+        background-color: #f6f7f9;
+      }
+      &__sns {
+        @include sns-btn();
+        border-radius: 4px;
+        line-height: 38px;
+        margin-top: 15px;
       }
     }
   }
