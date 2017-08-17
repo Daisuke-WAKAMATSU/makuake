@@ -16,7 +16,7 @@
         = link_to "https://www.makuake.com" do
           .signin__icon-text.icon-right お気に入り
           = image_tag("heart.jpg", class: "icon-right signin__icon-heart", size: "18x18")
-      = link_to "プロジェクトを掲載する", "", class: "inbox-published"
+      = link_to "プロジェクトを掲載する", new_planner_registration_path, class: "inbox-published"
     - if user_signed_in?
       .inbox__icon
         = link_to destroy_user_session_path, method: :delete do
