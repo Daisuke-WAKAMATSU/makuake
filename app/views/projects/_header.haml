@@ -3,11 +3,12 @@
     = link_to "/" do
       = image_tag("makuake-logo.png", class: "inbox__logo")
     .search__form
-      = form_tag('/', method: :get) do
-        %input{:name => "title", :size => "40"}
+      = form_tag('/',  method: :get) do
+        %input.search__form__box{name: "title"}
           %label
-            %i{class: "fa fa-search"}
-            %input{:type => "submit", :value => "探す"}
+            .search__form__btn
+              = image_tag("search.png", class: "search__form__btn-image", size: "27x27")
+              %input{type: "submit", value: "探す", class: "search__form__btn-text"}
     .inbox__icon
       = link_to "新規登録", "/users/sign_in", class: "signup__btn icon-right"
       = link_to "ログイン", "/users/sign_up", class: "signin__btn icon-right"
