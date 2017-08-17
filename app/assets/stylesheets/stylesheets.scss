@@ -5,6 +5,11 @@ html, body {
   min-width: 1000px;
 }
 
+a {
+  cursor: pointer;
+  text-decoration: none;
+}
+
 .main {
   background-color: #f5f5f5;
 }
@@ -15,7 +20,7 @@ html, body {
 }
 
 .contents {
-  height: 5422px;
+  height: 4650px;
   width: 1000px;
   margin: 0 auto;
 }

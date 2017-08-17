@@ -18,7 +18,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |title|string|null: false|
-|practitioner|string|
+|planner_id|string|
 |body|text|null: false|
 
 ### Association
