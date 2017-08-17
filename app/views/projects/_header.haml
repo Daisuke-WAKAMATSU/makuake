@@ -3,7 +3,7 @@
     = link_to "/" do
       = image_tag("makuake-logo.png", class: "inbox__logo")
     .search__form
-      = form_tag('/',  method: :get) do
+      = form_tag('/', method: :get) do
         %input.search__form__box{name: "title"}
           %label
             .search__form__btn
@@ -19,7 +19,7 @@
       = link_to "プロジェクトを掲載する", "", class: "inbox-published"
     - if user_signed_in?
       .inbox__icon
-        = link_to "/users/sign_in" do
+        = link_to destroy_user_session_path, method: :delete do
           = image_tag("icon_yellow.png", class: "icon-right inbox__icon-own")
         = link_to "https://www.makuake.com" do
           = image_tag("bell.jpg", class: "icon-right inbox__icon-bell")
