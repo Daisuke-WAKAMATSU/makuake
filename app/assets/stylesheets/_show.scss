@@ -1,0 +1,138 @@
+.project__header {
+  height: 86px;
+  width: 100vw;
+  background: #f9f9f9;
+  border-bottom: 1px solid #eaeaea; 
+}
+
+.project {
+  margin: 20px auto 0 auto;
+  height: 2000px;
+  width: 1000px;
+  background-color: red;
+  &__main__image {
+    float: left;
+  }
+  &__main__detail {
+    height: 388px;
+    width: 310px;
+    background-color: #252525;
+    float: left;
+  }
+}
+
+.st__money {
+  width: 270px;
+  height: 104px;
+  margin: 20px 0 0 20px;
+  color: #fff;
+  &-icon {
+    display: inline-block;
+    margin-right: 8px;
+    float: left;
+  }
+  &-title {
+    font-size: 17px;
+    line-height: 23px;
+    color: #fff;
+  }
+  &-num {
+    width: 270px;
+    text-align: right;
+    font-size: 40px;
+  }
+  &-goal {
+    text-align: right;
+    font-size: 15px;
+  }
+  &-gage {
+    margin-top: 14px;
+  }
+  &__supporter{
+    &-icon {
+      display: inline-block;
+      margin: 29px 7px 0 15px;
+      float: left;
+    }
+    &-name {
+      float: left;
+      font-size: 15px;
+      width: 100px;
+      color: #fff;
+      margin: 27px 7px 0 2px;
+    }
+    &-count {
+      text-align: right;
+      font-size: 36px;
+      margin: 10px 17px 0 0;
+      float: right;
+      color: #fff;
+    }
+  }
+  &__limit{
+    &-icon {
+      display: inline-block;
+      margin: 31px 7px 0 17px;
+      float: left;
+    }
+    &-title {
+      float: left;
+      font-size: 15px;
+      color: #fff;
+      margin: 33px 6px 0 6px;
+    }
+    &-days {
+      text-align: right;
+      font-size: 36px;
+      margin: 1px 17px 0 0;
+      float: right;
+      color: #fff;
+    }
+  }
+  &-btn {
+    @include orange-btn();
+    width: 290px;
+    height: 76px;
+    float: left;
+    line-height: 76px;
+    border-bottom: 4px solid #DEA408;
+    font-size: 22px;
+    margin: 10px 0 0 10px;
+  }
+}
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
