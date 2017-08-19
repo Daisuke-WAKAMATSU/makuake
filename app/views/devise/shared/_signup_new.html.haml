@@ -1,0 +1,29 @@
+%h2.login__title ログイン
+= link_to "新規会員登録はこちら  >", user_session_path, class: "login__link"
+.login__sns
+  %h3.login__subtitle SNSで登録
+  .login__sns__bar
+    = link_to "Facebook", "/", class: "login__sns__bar-btn facebook"
+  .login__sns__bar
+    = link_to "Twitter", "/", class: "login__sns__bar-btn twitter"
+  .login__sns__bar
+    = link_to "LINE", "/", class: "login__sns__bar-btn line"
+  .login__sns__bar
+    = link_to "Ameba", "/", class: "login__sns__bar-btn ameba"
+.login__makuake
+  %h3.login__subtitle Makuake IDでログイン
+  = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+    .field
+      .login__form__text メールアドレス
+      = f.email_field :email, class: 'login__form__box'
+    .field
+      .login__form__text.login__form__margin
+        パスワード
+        %p.login__form__small
+          ※半角英数字
+          %br
+            6文字以上
+      = f.password_field :password, class: 'login__form__box'
+    = link_to "パスワードを忘れた方はこちら  >", new_password_path(resource_name), class: "pw__forget"
+    .action
+      = f.submit "OK", class: 'action-btn-signup'

@@ -1,34 +1,6 @@
 .background-view
-  .rogin__signup
-    %h2.rogin__title ログイン
-    = link_to "新規会員登録はこちら  >", user_session_path, class: "rogin__link"
-    .rogin__sns__signup
-      %h3.rogin__means SNSで登録
-      .rogin__sns__bar
-        = link_to "Facebook", "/", class: "rogin__sns__bar-botton facebook"
-      .rogin__sns__bar
-        = link_to "Twitter", "/", class: "rogin__sns__bar-botton twitter"
-      .rogin__sns__bar
-        = link_to "LINE", "/", class: "rogin__sns__bar-botton line"
-      .rogin__sns__botton
-        = link_to "Ameba", "/", class: "rogin__sns__bar-botton ameba"
-    .rogin__makuake
-      %h3.rogin__means Makuake IDでログイン
-      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-        .field
-          .form__text メールアドレス
-          = f.email_field :email, class: 'form__box'
-        .field
-          .form__text.form__text-margin
-            パスワード
-            %p.form__text__small
-              ※半角英数字
-              %br
-                6文字以上
-          = f.password_field :password, class: 'form__box'
-        = link_to "パスワードを忘れた方はこちら  >", new_password_path(resource_name), class: "pw__forget"
-        .action
-          = f.submit "OK", class: 'action-btn-signup'
+  .login
+    = render partial: "devise/shared/signup_new"
 
 
 
