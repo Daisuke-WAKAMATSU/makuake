@@ -1,29 +1,47 @@
 = render partial: "header"
 .main
   .project__header
+    .project__header__link
+      = link_to "TOP  >  ", "/", class: "project__header__link-text"
+      = link_to "プロジェクト一覧  >  ", "/", class: "project__header__link-text"
+      = link_to "アイドル  >  ", "/", class: "project__header__link-text"
+      .project__header__link-text NEWシングル「BLAST！」17枚目のシングルリリース決定!
+    .project__menu
+      = link_to "プロジェクト", "/", class: "nav-btn"
+      = link_to "活動レポート", "/", class: "nav-btn"
+      = link_to "応援コメント", "/", class: "nav-btn"
   .project
-    = image_tag("main_project.png", class: "project__main__image")
+    = image_tag("main_project.jpg", class: "project__main__image")
     .project__main__detail
       %dl
         .st__money
           %project__main__detail
             = image_tag("yen-white.png", class: "st__money-icon")
             .st__money-title 集まっている金額
-          %dd.st__money-num 1,222,999円
+          %dd.st__money-num 11,208,781円
           .st__money-goal 目標金額 1,000,000円
       .money__gage.st__money-gage
-        .money__gage__in{style: "width:65%" }
+        .money__gage__in{ style: "width:65%" }
           .money__gage__in__percent 65%
       %dl
         %dt
           = image_tag("people-white.png", class: "st__money__supporter-icon")
           .st__money__supporter-name サポーター
-        %dd.st__money__supporter-count 345人
+        %dd.st__money__supporter-count 932人
       %dl
         %dt
           = image_tag("clock-white.png", class: "st__money__limit-icon")
           .st__money__limit-title 残り
         %dd.st__money__limit-days 23日
       .st__money-btn 支援するコースを選択する
-    .project__title
+    .project__main__name
+      .project__main__name-text NEWシングル「BLAST！」17枚目のシングルリリース決定!
+      .project__title-tag.tag__btn #ももいろクローバーZ
+      .project__title-tag.tag__btn #百田夏菜子
+      .project__title-tag.tag__btn #玉井詩織
+      .project__title-tag.tag__btn #有安杏果
+      .project__title-tag.tag__btn #佐々木彩夏
+      .project__title-tag.tag__btn #高城れに
+    .project__detail
+    .investments__bar
 = render partial: "footer"

@@ -37,6 +37,15 @@
   border: none;
 }
 
+@mixin tag-btn() {
+  display: inline-block;
+  padding: 10px 11px;
+  color: #909090;
+  border: 1px solid #eaeaea;
+  border-radius: 4px;
+  transition: all 0.2s ease-out;
+}
+
 @mixin clearfix() {
   &:after {
     content: '';
@@ -44,4 +53,13 @@
     clear: both;
   }
 }
+
+@mixin breadcrumbs() {
+  background: none;
+  font-size: 10px;
+  text-decoration: none;
+  color: #b3b2b3;
+  float: left;
+}
+
 

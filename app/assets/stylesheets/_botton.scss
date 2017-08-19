@@ -93,15 +93,22 @@
   margin-left: 16px;
 }
 
+.tag__btn {
+  @include tag-btn();
+  margin-top: 12px;
+  margin-right: 8px;
+  font-size: 13px;
+  float: left;
+}
 
-
-
-
-
-
-
-
-
-
-
+.nav-btn {
+  padding: 2px 12px 8px;
+  color: #333333;
+  text-decoration: none;
+  display: block;
+  line-height: 32px;
+  float: left;
+  border-bottom: 3px solid #f7c600;
+  margin-right: 47px;
+}
 
