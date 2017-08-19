@@ -29,9 +29,9 @@
           = image_tag("heart.jpg", class: "icon-right inbox__icon-heart")
       = link_to "プロジェクトを掲載する", "", class: "inbox-published"
 
-.modal#my-modal-login
+.modal.fade#my-modal-login
   .modal-dialog
-    .rogin__signup
+    .rogin__signup.my-modal-position
       %h2.rogin__title ログイン
       = link_to "新規会員登録はこちら  >", user_session_path, class: "rogin__link"
       .rogin__sns__signup
@@ -64,7 +64,7 @@
 
 .modal#my-modal-signup
   .modal-dialog
-    .rogin
+    .rogin.my-modal-position
       %h2.rogin__title 会員登録
       - if devise_mapping.registerable? && controller_name != 'registrations'
         = link_to "ログインはこちら >", new_registration_path(resource_name), class: "rogin__link"
