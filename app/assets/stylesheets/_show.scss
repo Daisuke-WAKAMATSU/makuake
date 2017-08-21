@@ -190,7 +190,7 @@
   .investments__bar {
     width: 310px;
     margin-top: 30px;
-    background: #f9f9f9;
+    background: #f5f5f5;
     &__title {
       font-size: 20px;
       color: #000;
@@ -232,7 +232,60 @@
         width: 280px;
         margin-top: 15px;
       }
+      &-body {
+        font-size: 13px;
+        line-height: 1.7;
+        margin-bottom: 14px;
+        border-top: 1px solid #f2f2f2;
+        border-bottom: 1px solid #f2f2f2;
+        padding: 16px 0;
+      }
+      .investments {
+        &__supporter-count {
+          font-size: 16px;
+          @include clearfix();
+          &-image {
+            float: left;
+            margin: 5px 10px 0 0;
+          }
+          &-text {
+            float: left;
+            margin-top: 1px;
+            width: 240px;
+          }
+        }
+        &__supporter-duedata {
+          font-size: 15px;
+          @include clearfix();
+          &-image {
+            float: left;
+            margin: 8px 10px 0 5px;
+          }
+          &-text {
+            float: left;
+            font-size: 15px;
+            margin: 6px 0 2px 3px;
+          }
+        }
+      }
     }
+    &__link__box {
+      border-top: 1px solid #f2f2f2;
+      background: #fdfdfd;
+      padding: 16px;
+      border-radius: 0 0 4px 4px;
+      border-bottom: 2px solid #e7e7e7;
+      margin-bottom: 50px;
+    }
+  }
+  .planner__inquiry {
+    background-color: #fff;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    color: #f7c600;
+    font-size: 13px;
+    cursor: pointer;
   }
 }
 

@@ -132,5 +132,11 @@
   margin: 25px auto 70px;
 }
 
+.order__btn {
+  @include orange-btn();
+  font-size: 20px;
+  line-height: 60px;
+}
+
 
 

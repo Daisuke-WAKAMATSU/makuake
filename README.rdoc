@@ -45,10 +45,11 @@
 
 |Column|Type|Options|
 |------|----|-------|
+|project_id|integer|foreign_key: true|
 |title|string|null: false|
 |body|text|null: false, unique: true|
 |price|integer|null: false|
-|number_prepared|string|null: false|
+|quantity|string|null: false|
 
 ### Association
 - has_many :users, through: :supporters
