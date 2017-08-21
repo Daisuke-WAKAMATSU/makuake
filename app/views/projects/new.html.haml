@@ -1,0 +1,12 @@
+= render partial: "header"
+.post__view
+  .post
+    %h1.post__title プロジェクト投稿
+    %p.post__copy 世の中にまだない、新しくて面白い新製品や新サービス、新店舗を誕生させましょう。
+  .post__form
+    = form_tag('/', method: :post) do
+      %h3.post__folr__text 企画のタイトルを入力しましょう。
+      %input.post__form__title{placeholder: "メインタイトルを入力しましょう。", type: "text", name: "title", cols: "10"}
+      %textarea{cols: "30", name: "text", placeholder: "text", rows: "10"}
+      %input{type: "submit", value: "SENT"}
+
