@@ -112,3 +112,25 @@
   margin-right: 47px;
 }
 
+.st__money-btn {
+  @include orange-btn();
+  width: 290px;
+  height: 76px;
+  float: left;
+  line-height: 76px;
+  border-bottom: 4px solid #DEA408;
+  font-size: 22px;
+  margin: 10px 0 0 10px;
+}
+
+.investments__btn {
+  @include orange-btn();
+  width: 300px;
+  height: 58px;
+  line-height: 58px;
+  font-size: 20px;
+  margin: 25px auto 70px;
+}
+
+
+
