@@ -138,4 +138,3 @@
 |------|----|-------|
 |tag_id|integer|foreign_key: true|
 |project_id|integer|foreign_key: true|
-end
