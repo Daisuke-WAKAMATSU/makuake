@@ -36,20 +36,20 @@ ActiveRecord::Schema.define(version: 20170817112252) do
     t.string   "main_title",    limit: 255,   null: false
     t.integer  "goal_price",    limit: 4,     null: false
     t.date     "end_date",                    null: false
-    t.text     "main_image",    limit: 65535, null: false
+    t.string   "main_image",    limit: 255,   null: false
     t.text     "main_body",     limit: 65535, null: false
     t.text     "introduction",  limit: 65535, null: false
     t.text     "intro_body",    limit: 65535, null: false
-    t.text     "intro_image",   limit: 65535, null: false
+    t.string   "intro_image",   limit: 255,   null: false
     t.text     "desc_title",    limit: 65535, null: false
     t.text     "desc_body",     limit: 65535, null: false
-    t.text     "desc_image",    limit: 65535, null: false
+    t.string   "desc_image",    limit: 255,   null: false
     t.text     "content_title", limit: 65535, null: false
     t.text     "content_body",  limit: 65535, null: false
-    t.text     "content_image", limit: 65535, null: false
+    t.string   "content_image", limit: 255,   null: false
     t.text     "feature_title", limit: 65535, null: false
     t.text     "feature_body",  limit: 65535, null: false
-    t.text     "feature_image", limit: 65535, null: false
+    t.string   "feature_image", limit: 255,   null: false
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
   end
