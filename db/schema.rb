@@ -32,12 +32,26 @@ ActiveRecord::Schema.define(version: 20170817112252) do
   add_index "planners", ["reset_password_token"], name: "index_planners_on_reset_password_token", unique: true, using: :btree
 
   create_table "projects", force: :cascade do |t|
-    t.string   "title",      limit: 255,   null: false
-    t.string   "image",      limit: 255
-    t.text     "body",       limit: 65535
-    t.integer  "planner_id", limit: 4,     null: false
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.integer  "planner_id",    limit: 4,     null: false
+    t.string   "main_title",    limit: 255,   null: false
+    t.integer  "goal_price",    limit: 4,     null: false
+    t.date     "end_date",                    null: false
+    t.text     "main_image",    limit: 65535, null: false
+    t.text     "main_body",     limit: 65535, null: false
+    t.text     "introduction",  limit: 65535, null: false
+    t.text     "intro_body",    limit: 65535, null: false
+    t.text     "intro_image",   limit: 65535, null: false
+    t.text     "desc_title",    limit: 65535, null: false
+    t.text     "desc_body",     limit: 65535, null: false
+    t.text     "desc_image",    limit: 65535, null: false
+    t.text     "content_title", limit: 65535, null: false
+    t.text     "content_body",  limit: 65535, null: false
+    t.text     "content_image", limit: 65535, null: false
+    t.text     "feature_title", limit: 65535, null: false
+    t.text     "feature_body",  limit: 65535, null: false
+    t.text     "feature_image", limit: 65535, null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
   end
 
   add_index "projects", ["planner_id"], name: "fk_rails_757b2fc52b", using: :btree
