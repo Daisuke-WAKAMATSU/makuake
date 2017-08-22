@@ -3,6 +3,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
+|image|text|null: false|
 |nickname|string|null: false|
 |email|string|null: false, unique: true|
 
@@ -17,9 +18,28 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|title|string|null: false|
 |planner_id|string|
-|body|text|null: false|
+|main_title|string|null: false|
+|goal_price|integer|null: false|
+|end_date|integer|null: false|
+|main_image|text|null: false|
+|main_body|text|null: false|
+
+|introduction|text|null: false|
+|intro_body|null: false|
+|intro_image|text|null: false|
+
+|desc_title|text|null: false|
+|desc_body|text|null: false|
+|desc_image|text|null: false|
+
+|content_title|text|null: false|
+|content_body|text|null: false|
+|content_image|text|null: false|
+
+|feature_title|text|null: false|
+|feature_top|text|null: false|
+|feature_image|text|null: false|
 
 ### Association
 - has_many :users, through: :projects_users
@@ -34,7 +54,11 @@
 |------|----|-------|
 |name|string|null: false|
 |nickname|string|null: false|
+|image|text|null: false|
+|location|text|
+|birthday|text|
 |email|string|null: false, unique: true|
+
 
 ### Association
 - has_many :investments
@@ -49,7 +73,8 @@
 |title|string|null: false|
 |body|text|null: false, unique: true|
 |price|integer|null: false|
-|quantity|string|null: false|
+|image|text|null: false|
+|stock|string|null: false|
 
 ### Association
 - has_many :users, through: :supporters
@@ -113,3 +138,4 @@
 |------|----|-------|
 |tag_id|integer|foreign_key: true|
 |project_id|integer|foreign_key: true|
+end
