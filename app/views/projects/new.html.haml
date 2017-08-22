@@ -2,11 +2,54 @@
 .post__view
   .post
     %h1.post__title プロジェクト投稿
-    %p.post__copy 世の中にまだない、新しくて面白い新製品や新サービス、新店舗を誕生させましょう。
+    %p.post__copy 世の中にまだない、新しくて面白い新製品や新サービスを誕生させましょう。
   .post__form
     = form_tag('/', method: :post) do
-      %h3.post__folr__text 企画のタイトルを入力しましょう。
-      %input.post__form__title{placeholder: "メインタイトルを入力しましょう。", type: "text", name: "title", cols: "10"}
-      %textarea{cols: "30", name: "text", placeholder: "text", rows: "10"}
-      %input{type: "submit", value: "SENT"}
+      %p.post__form__heading メインタイトル
+      %input.post__form__title{type: "text", name: "title", cols: "10"}
+      %p.post__form__heading メイン画像　選択できるようにする？
+      %input{type: "text", name:" image"}
+ 
+
+      %p.post__form__heading 見出し
+      %input.post__form__title{type: "text", name: "title", cols: "10"}
+      %p.post__form__heading 画像
+      %input{type: "text", name:" image"}
+      %p.post__form__introduction テキスト
+      %p.post__form__heading 画像
+      %input{type: "text", name:" image"}
+      %p.post__form__heading 画像
+      %input{type: "text", name:" image"}
+
+      %p.post__form__heading 見出し
+      %input.post__form__title{type: "text", name: "title", cols: "10"}
+      %p.post__form__heading 画像
+      %input{type: "text", name:" image"}
+      %p.post__form__introduction テキスト
+      %p.post__form__heading 画像
+      %input{type: "text", name:" image"}
+      %p.post__form__heading 画像
+      %input{type: "text", name:" image"}
+
+
+      %p.post__form__heading 見出し
+      %input.post__form__title{type: "text", name: "title", cols: "10"}
+      %p.post__form__heading 画像
+      %input{type: "text", name:" image"}
+      %p.post__form__introduction テキスト
+      %p.post__form__heading 画像
+      %input{type: "text", name:" image"}
+      %p.post__form__heading 画像
+      %input{type: "text", name:" image"}
+
+      %p.post__form__heading 見出し
+      %input.post__form__title{type: "text", name: "title", cols: "10"}
+      %p.post__form__heading 画像
+      %input{type: "text", name:" image"}
+      %p.post__form__introduction テキスト
+      %p.post__form__heading 画像
+      %input{type: "text", name:" image"}
+      %p.post__form__heading 画像
+      %input{type: "text", name:" image"}
+      / %input{type: "submit", value: "SENT"}
 
