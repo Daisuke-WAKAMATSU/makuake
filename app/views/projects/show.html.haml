@@ -5,13 +5,13 @@
       = link_to "TOP  >  ", "/", class: "project__header__link-text"
       = link_to "プロジェクト一覧  >  ", "/", class: "project__header__link-text"
       = link_to "アイドル  >  ", "/", class: "project__header__link-text"
-      .project__header__link-text NEWシングル「BLAST！」17枚目のシングルリリース決定!
+      .project__header__link-text #{@project.main_title}
     .project__menu
       = link_to "プロジェクト", "/", class: "nav-btn"
       = link_to "活動レポート", "/", class: "nav-btn"
       = link_to "応援コメント", "/", class: "nav-btn"
   .project
-    = image_tag("main_project.jpg", class: "project__main__image")
+    = image_tag("#{@project.main_image}", class: "project__main__image")
     .project__main__detail
       %dl
         .st__money
@@ -19,7 +19,7 @@
             = image_tag("yen-white.png", class: "st__money-icon")
             .st__money-title 集まっている金額
           %dd.st__money-num 11,208,781円
-          .st__money-goal 目標金額 1,000,000円
+          .st__money-goal 目標金額 #{@project.goal_price.to_s(:delimited)}円
       .money__gage.st__money-gage
         .money__gage__in{ style: "width:65%" }
           .money__gage__in__percent 65%
@@ -35,63 +35,35 @@
         %dd.st__money__limit-days 23日
       .st__money-btn 支援するコースを選択する
     .project__main__name
-      .project__main__name-text NEWシングル「BLAST！」17枚目のシングルリリース決定!
-      .tag__btn #ももいろクローバーZ
-      .tag__btn #百田夏菜子
-      .tag__btn #玉井詩織
-      .tag__btn #有安杏果
-      .tag__btn #佐々木彩夏
-      .tag__btn #高城れに
+      .project__main__name-text #{@project.main_title}
+      / .tag__btn #ももいろクローバーZ
+      / .tag__btn #百田夏菜子
+      / .tag__btn #玉井詩織
+      / .tag__btn #有安杏果
+      / .tag__btn #佐々木彩夏
+      / .tag__btn #高城れに
     .project__left
       .project__detail
         .project__detail__border
-        .project__detail__block ももいろクローバーZって？
+        .project__detail__block #{@project.introduction}
         .project__detail__border
-        = image_tag("main_project.jpg", class: "project__detail__image")
-        .project__detail__body
-          ももいろクローバーZ（ももいろクローバーゼット）は、スターダストプロモーション所属の音楽グループ。メンバーは百田夏菜子・玉井詩織・佐々木彩夏・有安杏果・高城れにの5人。2014年には、国立競技場でのコンサートを女性グループとしては初めて行い、2日間で11万人を動員。2016年にはコンサートの年間動員数が63.6万人となり、女性アーティスト1位を記録した（2014年に続き2度目）。女優としても活動し、グループ主演の青春映画『幕が上がる』においては日本アカデミー賞・TSUTAYA映画ファン賞・報知映画賞などを受賞。愛称はももクロ、ももクロちゃん。Zの文字を宙に書いて指を突き出すポーズを常用する。
-        = image_tag("main_project.jpg", class: "project__detail__image")
-        = image_tag("main_project.jpg", class: "project__detail__image")
+        .project__detail__body  #{simple_format(@project.intro_body)}
+        = image_tag("#{@project.intro_image}", class: "project__detail__image")
         .project__detail__border
-        .project__detail__block ももいろクローバーZって？
+        .project__detail__block #{@project.desc_title}
         .project__detail__border
-        = image_tag("main_project.jpg", class: "project__detail__image")
-        .project__detail__body
-          ももいろクローバーZ（ももいろクローバーゼット）は、スターダストプロモーション所属の音楽グループ。メンバーは百田夏菜子・玉井詩織・佐々木彩夏・有安杏果・高城れにの5人。2014年には、国立競技場でのコンサートを女性グループとしては初めて行い、2日間で11万人を動員。2016年にはコンサートの年間動員数が63.6万人となり、女性アーティスト1位を記録した（2014年に続き2度目）。女優としても活動し、グループ主演の青春映画『幕が上がる』においては日本アカデミー賞・TSUTAYA映画ファン賞・報知映画賞などを受賞。愛称はももクロ、ももクロちゃん。Zの文字を宙に書いて指を突き出すポーズを常用する。
-        = image_tag("main_project.jpg", class: "project__detail__image")
-        = image_tag("main_project.jpg", class: "project__detail__image")
+        .project__detail__body #{simple_format(@project.desc_body)}
+        = image_tag("#{@project.desc_image}", class: "project__detail__image")
         .project__detail__border
-        .project__detail__block ももいろクローバーZって？
+        .project__detail__block #{@project.content_title}
         .project__detail__border
-        = image_tag("main_project.jpg", class: "project__detail__image")
-        .project__detail__body
-          ももいろクローバーZ（ももいろクローバーゼット）は、スターダストプロモーション所属の音楽グループ。メンバーは百田夏菜子・玉井詩織・佐々木彩夏・有安杏果・高城れにの5人。2014年には、国立競技場でのコンサートを女性グループとしては初めて行い、2日間で11万人を動員。2016年にはコンサートの年間動員数が63.6万人となり、女性アーティスト1位を記録した（2014年に続き2度目）。女優としても活動し、グループ主演の青春映画『幕が上がる』においては日本アカデミー賞・TSUTAYA映画ファン賞・報知映画賞などを受賞。愛称はももクロ、ももクロちゃん。Zの文字を宙に書いて指を突き出すポーズを常用する。
-        = image_tag("main_project.jpg", class: "project__detail__image")
-        = image_tag("main_project.jpg", class: "project__detail__image")
+        .project__detail__body #{simple_format(@project.content_body)}
+        = image_tag("#{@project.content_image}", class: "project__detail__image")
         .project__detail__border
-        .project__detail__block ももいろクローバーZって？
+        .project__detail__block #{@project.feature_title}
         .project__detail__border
-        = image_tag("main_project.jpg", class: "project__detail__image")
-        .project__detail__body
-          ももいろクローバーZ（ももいろクローバーゼット）は、スターダストプロモーション所属の音楽グループ。メンバーは百田夏菜子・玉井詩織・佐々木彩夏・有安杏果・高城れにの5人。2014年には、国立競技場でのコンサートを女性グループとしては初めて行い、2日間で11万人を動員。2016年にはコンサートの年間動員数が63.6万人となり、女性アーティスト1位を記録した（2014年に続き2度目）。女優としても活動し、グループ主演の青春映画『幕が上がる』においては日本アカデミー賞・TSUTAYA映画ファン賞・報知映画賞などを受賞。愛称はももクロ、ももクロちゃん。Zの文字を宙に書いて指を突き出すポーズを常用する。
-        = image_tag("main_project.jpg", class: "project__detail__image")
-        = image_tag("main_project.jpg", class: "project__detail__image")
-        .project__detail__border
-        .project__detail__block ももいろクローバーZって？
-        .project__detail__border
-        = image_tag("main_project.jpg", class: "project__detail__image")
-        .project__detail__body
-          ももいろクローバーZ（ももいろクローバーゼット）は、スターダストプロモーション所属の音楽グループ。メンバーは百田夏菜子・玉井詩織・佐々木彩夏・有安杏果・高城れにの5人。2014年には、国立競技場でのコンサートを女性グループとしては初めて行い、2日間で11万人を動員。2016年にはコンサートの年間動員数が63.6万人となり、女性アーティスト1位を記録した（2014年に続き2度目）。女優としても活動し、グループ主演の青春映画『幕が上がる』においては日本アカデミー賞・TSUTAYA映画ファン賞・報知映画賞などを受賞。愛称はももクロ、ももクロちゃん。Zの文字を宙に書いて指を突き出すポーズを常用する。
-        = image_tag("main_project.jpg", class: "project__detail__image")
-        = image_tag("main_project.jpg", class: "project__detail__image")
-        .project__detail__border
-        .project__detail__block ももいろクローバーZって？
-        .project__detail__border
-        = image_tag("main_project.jpg", class: "project__detail__image")
-        .project__detail__body
-          ももいろクローバーZ（ももいろクローバーゼット）は、スターダストプロモーション所属の音楽グループ。メンバーは百田夏菜子・玉井詩織・佐々木彩夏・有安杏果・高城れにの5人。2014年には、国立競技場でのコンサートを女性グループとしては初めて行い、2日間で11万人を動員。2016年にはコンサートの年間動員数が63.6万人となり、女性アーティスト1位を記録した（2014年に続き2度目）。女優としても活動し、グループ主演の青春映画『幕が上がる』においては日本アカデミー賞・TSUTAYA映画ファン賞・報知映画賞などを受賞。愛称はももクロ、ももクロちゃん。Zの文字を宙に書いて指を突き出すポーズを常用する。
-        = image_tag("main_project.jpg", class: "project__detail__image")
-        = image_tag("main_project.jpg", class: "project__detail__image")
+        .project__detail__body #{simple_format(@project.feature_body)}
+        = image_tag("#{@project.feature_image}", class: "project__detail__image")
 
       .project__detail__bottom
         .investments__btn 支援するコースを選択する

@@ -6,7 +6,6 @@ class CreateProjects < ActiveRecord::Migration
       t.integer     :goal_price, null: false
       t.date        :end_date, null: false
       t.string      :main_image, null: false
-      t.text        :main_body, null: false
       t.text        :introduction, null: false
       t.text        :intro_body, null: false
       t.string      :intro_image, null: false

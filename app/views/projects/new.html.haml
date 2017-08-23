@@ -5,56 +5,69 @@
     %p.post__copy 世の中にまだない、新しくて面白い新製品や新サービスを誕生させましょう。
   .post__form
     = form_for (@project), url: planner_projects_path do |f|
+      .post__field
+        .post__field__text 企画タイトル
+        = f.text_field :main_title, class: 'post__field__box form-short'
+      .post__field
+        .post__field__text 目標金額
+        = f.text_field :goal_price, class: 'post__field__box form-short'
+      .post__field
+        .post__field__text 期日(yyyy.mm.dd)
+        = f.text_field :end_date, class: 'post__field__box form-short'
+      .post__field
+        .post__field__text メインイメージ
+        %p.input-file-btn
+          ファイルを選択
+          = f.file_field :main_image, class: "input-file" do
+            %span 選択されていません
+      .post__field
+        .post__field__text 紹介用見出し①
+        = f.text_field :introduction, class: 'post__field__box form-short'
+      .post__field
+        .post__field__text 詳細文①
+        = f.text_area :intro_body, class: 'post__field__box form-long'
+      .post__field
+        .post__field__text 画像①
+        %p.input-file-btn
+          ファイルを選択
+          = f.file_field :intro_image, class: "input-file" do
+            %span 選択されていません
+      .post__field
+        .post__field__text 紹介用見出し②
+        = f.text_field :desc_title, class: 'post__field__box form-short'
+      .post__field
+        .post__field__text 詳細文②
+        = f.text_area  :desc_body, class: 'post__field__box form-long'
+      .post__field
+        .post__field__text 画像②
+        %p.input-file-btn
+          ファイルを選択
+          = f.file_field :desc_image, class: "input-file" do
+            %span 選択されていません
+      .post__field
+        .post__field__text 紹介用見出し③
+        = f.text_field :content_title, class: 'post__field__box form-short'
+      .post__field
+        .post__field__text 詳細文③
+        = f.text_area :content_body, class: 'post__field__box form-long'
+      .post__field
+        .post__field__text 画像③
+        %p.input-file-btn
+          ファイルを選択
+          = f.file_field :content_image, class: "input-file" do
+            %span 選択されていません
+      .post__field
+        .post__field__text 紹介用見出し④
+        = f.text_field :feature_title, class: 'post__field__box form-short'
+      .post__field
+        .post__field__text 詳細文④
+        = f.text_area :feature_body, class: 'post__field__box form-long'
+      .post__field
+        .post__field__text 画像④
+        %p.input-file-btn
+          ファイルを選択
+          = f.file_field :feature_image, class: "input-file" do
+            %span 選択されていません
       .field
-        .login__form__text メインタイトル
-        = f.text_field :main_title, class: 'login__form__box'
-      .field
-        .login__form__text 目標金額
-        = f.text_field :goal_price, class: 'login__form__box'
-      .field
-        .login__form__text 期日
-        = f.text_field :end_date, class: 'login__form__box'
-      .field
-        .login__form__text メインイメージ
-        = f.file_field :main_image, class: "login__form__box"
-      .field
-        .login__form__text メインテキスト
-        = f.text_field :main_body, class: 'login__form__box'
-      .field
-        .login__form__text introduction
-        = f.text_field :introduction, class: 'login__form__box'
-      .field
-        .login__form__text intro_body
-        = f.text_field :intro_body, class: 'login__form__box'
-      .field
-        .login__form__text intro_image
-        = f.file_field :intro_image, class: "login__form__box"
-      .field
-        .login__form__text desc_title
-        = f.text_field :desc_title, class: 'login__form__box'
-      .field
-        .login__form__text desc_body
-        = f.text_field :desc_body, class: 'login__form__box'
-      .field
-        .login__form__text desc_image
-        = f.file_field :desc_image, class: "login__form__box"
-      .field
-        .login__form__text content_title
-        = f.text_field :content_title, class: 'login__form__box'
-      .field
-        .login__form__text content_body
-        = f.text_field :content_body, class: 'login__form__box'
-      .field
-        .login__form__text content_image
-        = f.file_field :content_image, class: "login__form__box"
-      .field
-        .login__form__text feature_title
-        = f.text_field :feature_title, class: 'login__form__box'
-      .field
-        .login__form__text feature_body
-        = f.text_field :feature_body, class: 'login__form__box'
-      .field
-        .login__form__text feature_image
-        = f.file_field :feature_image, class: "login__form__box"
-      .action-btn-signup
-        = f.submit "OK"
+        = f.submit "投稿する", class: "post__btn"
+= render partial: "footer"

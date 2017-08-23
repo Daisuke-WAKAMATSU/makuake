@@ -30,10 +30,10 @@
       = link_to "プロジェクトを掲載する", new_planner_project_path(current_planner), class: "inbox-published"
 
 .modal.fade#my-modal-login
-  .modal-dialog 
-    .login.my-modal-position
+  .modal-dialog
+    .login.my-modal-view
       = render partial: "devise/shared/signup_new"
 .modal.fade#my-modal-signup
   .modal-dialog
-    .login.my-modal-position
+    .login.my-modal-view
       = render partial: "devise/shared/login_new"

@@ -37,7 +37,6 @@ ActiveRecord::Schema.define(version: 20170817112252) do
     t.integer  "goal_price",    limit: 4,     null: false
     t.date     "end_date",                    null: false
     t.string   "main_image",    limit: 255,   null: false
-    t.text     "main_body",     limit: 65535, null: false
     t.text     "introduction",  limit: 65535, null: false
     t.text     "intro_body",    limit: 65535, null: false
     t.string   "intro_image",   limit: 255,   null: false

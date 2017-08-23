@@ -23,7 +23,6 @@
 |goal_price|integer|null: false|
 |end_date|integer|null: false|
 |main_image|text|null: false|
-|main_body|text|null: false|
 
 |introduction|text|null: false|
 |intro_body|null: false|
