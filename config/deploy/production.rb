@@ -8,6 +8,7 @@
 # server "db.example.com", user: "deploy", roles: %w{db}
 
 server '13.113.233.196', user: 'ec2-user', roles: %w{app db web}
+set :ssh_options, keys: '~/.ssh/key_pair'
 
 # role-based syntax
 # ==================
