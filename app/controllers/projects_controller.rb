@@ -1,8 +1,11 @@
 class ProjectsController < ApplicationController
   def index
+    @projects = Project.limit(9)
+  #   @projects = Project.includes(:planner).limit(9)
   end
 
   def show
+    @project = Project.find(params[:id])
   end
 
   def new
