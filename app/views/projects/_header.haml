@@ -9,7 +9,7 @@
             .search__form__btn
               = image_tag("search.png", class: "search__form__btn-image", size: "27x27")
               %input{type: "submit", value: "探す", class: "search__form__btn-text"}
-    - unless planner_signed_in?
+    - unless user_signed_in?
       .inbox__icon
         .signup__btn.icon-right{data: {toggle: "modal", target: "#my-modal-signup"}} 新規登録
         .signin__btn.icon-right{data: {toggle: "modal", target: "#my-modal-login"}} ログイン
@@ -17,17 +17,22 @@
         .signin__icon-text.icon-right お気に入り
       = image_tag("heart.jpg", class: "icon-right signin__icon-heart", size: "18x18")
       = link_to "プロジェクトを掲載する", "", class: "inbox-published"
-    - if planner_signed_in?
+    - if user_signed_in?
       .inbox__icon
-        = link_to destroy_user_session_path, method: :delete do
-          = image_tag("icon_yellow.png", class: "icon-right inbox__icon-own")
+        = image_tag("icon_yellow.png", class: "icon-right inbox__icon-own")
+        .more
+          %ul.more_list
+            %li
+              = link_to 'マイページ', "", method: :get
+            %li
+              = link_to 'ログアウト', destroy_user_session_path, method: :delete
         = link_to "https://www.makuake.com" do
           = image_tag("bell.jpg", class: "icon-right inbox__icon-bell")
         = link_to "https://www.makuake.com" do
           = image_tag("mail.jpg", class: "icon-right inbox__icon-mail")
         = link_to "https://www.makuake.com" do
           = image_tag("heart.jpg", class: "icon-right inbox__icon-heart")
-      = link_to "プロジェクトを掲載する", new_planner_project_path(current_planner), class: "inbox-published"
+      / = link_to "プロジェクトを掲載する", new_planner_project_path(current_planner), class: "inbox-published"
 
 .modal.fade#my-modal-login
   .modal-dialog

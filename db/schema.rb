@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170823124244) do
+ActiveRecord::Schema.define(version: 20170823154807) do
 
   create_table "investments", force: :cascade do |t|
     t.integer  "project_id", limit: 4,     null: false
@@ -27,18 +27,22 @@ ActiveRecord::Schema.define(version: 20170823124244) do
   add_index "investments", ["project_id"], name: "fk_rails_a503dd8531", using: :btree
 
   create_table "planners", force: :cascade do |t|
-    t.string   "email",                  limit: 255, default: "", null: false
-    t.string   "encrypted_password",     limit: 255, default: "", null: false
+    t.string   "email",                  limit: 255,   default: "", null: false
+    t.string   "encrypted_password",     limit: 255,   default: "", null: false
     t.string   "reset_password_token",   limit: 255
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          limit: 4,   default: 0,  null: false
+    t.integer  "sign_in_count",          limit: 4,     default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip",     limit: 255
     t.string   "last_sign_in_ip",        limit: 255
-    t.datetime "created_at",                                      null: false
-    t.datetime "updated_at",                                      null: false
+    t.datetime "created_at",                                        null: false
+    t.datetime "updated_at",                                        null: false
+    t.string   "name",                   limit: 255,                null: false
+    t.string   "image",                  limit: 255
+    t.text     "location",               limit: 65535
+    t.date     "birthday"
   end
 
   add_index "planners", ["email"], name: "index_planners_on_email", unique: true, using: :btree
