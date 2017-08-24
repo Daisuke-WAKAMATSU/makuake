@@ -6,11 +6,14 @@
         %h2.recommend__top-text #{project.main_title}
       .recommend__planner
         = link_to "", class: "recommend__planner-link" do
-          = image_tag("icon_yellow.png", class: "recommend__planner-link-image", size: "36x36")
-          .recommend__planner-link-name T1project 若松大輔
+          - if project.planner.image == nil
+            = image_tag("icon_yellow.png", class: "recommend__planner-link-image", size: "36x36")
+          - else
+            = image_tag("#{project.planner.image}", class: "recommend__planner-link-image", size: "36x36")
+          .recommend__planner-link-name #{project.planner.name}
         = link_to "", class: "recommend__planner-genre" do
           = image_tag("pencil.gif", class: "recommend__planner-genre-image", size: "24x24")
-          .recommend__planner-genre-name アイドル 世界のももクロ
+          .recommend__planner-genre-name 料理 エンタメ
       .recommend__money
         %dl
           %dt.money

@@ -1,7 +1,6 @@
 class ProjectsController < ApplicationController
   def index
-    @projects = Project.limit(9)
-  #   @projects = Project.includes(:planner).limit(9)
+    @projects = Project.order(created_at: :DESC).includes(:planner).limit(9)
   end
 
   def show
