@@ -9,6 +9,7 @@ html, body {
 a {
   cursor: pointer;
   text-decoration: none;
+  color: #000;
 }
 
 .main {
@@ -27,7 +28,7 @@ a {
 
 .catch-copy {
   height: 63px;
-  margin-top: 24px;
+  margin-top: 45px;
   text-align: center;
   &-top {
     font-size: 26px;

@@ -10,7 +10,9 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
   }
   root "projects#index"
-  resources :projects, only: [:show]
+  resources :projects, only: [:show] do
+    resources :investments, only: [:show]
+  end
   resources :planners, only: [:index] do
     resources :projects, only: [:new, :create]
   end
