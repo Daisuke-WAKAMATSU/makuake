@@ -35,7 +35,7 @@
             %li
               = link_to 'マイページ', "", method: :get
             %li
-              = link_to 'ログアウト', destroy_planner_session_path, method: :delete
+              = link_to '企画者ログアウト', destroy_planner_session_path, method: :delete
         = link_to "https://www.makuake.com" do
           = image_tag("bell.jpg", class: "icon-right inbox__icon-bell")
         = link_to "https://www.makuake.com" do
@@ -46,8 +46,20 @@
 
     - else
       .inbox__icon
-        .signup__btn.icon-right{data: {toggle: "modal", target: "#my-modal-signup"}} 新規登録
-        .signin__btn.icon-right{data: {toggle: "modal", target: "#my-modal-login"}} ログイン
+        .signup__btn.icon-right 新規登録
+        .more.more__icon
+          %ul.more_list
+            %li
+              %a{data: {toggle: "modal", target: "#my-modal-signup"}} ユーザー登録
+            %li
+              = link_to "企画者登録", "",  method: :get
+        .signin__btn.icon-right ログイン
+        .more.more__login
+          %ul.more_list
+            %li
+              %a{data: {toggle: "modal", target: "#my-modal-login"}} ユーザーログイン
+            %li
+              = link_to "企画者ログイン", "",  method: :get
       = link_to new_planner_registration_path do
         .signin__icon-text.icon-right お気に入り
       = image_tag("heart.jpg", class: "icon-right signin__icon-heart", size: "18x18")

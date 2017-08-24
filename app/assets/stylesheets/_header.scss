@@ -92,17 +92,22 @@
       margin-top: 17px;
       border-radius: 4px;
     }
-
-
+    .more__icon {
+      top: 50px;
+      right: 203px;
+    }
+    .more__login{
+      top: 50px;
+      right: 310px;
+    }
     .more {
       position: absolute;
       cursor: pointer;
-      top: 50px;
-      right: 200px;
       z-index: 2;
       height: 100px;
       width: 80px;
       text-align: right;
+      color: black;
       &:hover ul.more_list {
         display: block;
       }
