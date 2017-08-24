@@ -9,4 +9,5 @@ class Project < ActiveRecord::Base
   has_many :projects_users
   belongs_to :planner
   has_many :investments
+  accepts_nested_attributes_for :investments
 end
