@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170823154807) do
+ActiveRecord::Schema.define(version: 20170824074424) do
 
   create_table "investments", force: :cascade do |t|
     t.integer  "project_id", limit: 4,     null: false
@@ -72,6 +72,26 @@ ActiveRecord::Schema.define(version: 20170823154807) do
 
   add_index "projects", ["planner_id"], name: "fk_rails_757b2fc52b", using: :btree
 
+  create_table "projects_users", force: :cascade do |t|
+    t.integer  "project_id", limit: 4, null: false
+    t.integer  "user_id",    limit: 4, null: false
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
+
+  add_index "projects_users", ["project_id"], name: "fk_rails_1e950bec4e", using: :btree
+  add_index "projects_users", ["user_id"], name: "fk_rails_0a98a1147c", using: :btree
+
+  create_table "supporters", force: :cascade do |t|
+    t.integer  "investment_id", limit: 4, null: false
+    t.integer  "user_id",       limit: 4, null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+  end
+
+  add_index "supporters", ["investment_id"], name: "fk_rails_3b7d12eb58", using: :btree
+  add_index "supporters", ["user_id"], name: "fk_rails_20f2c914c7", using: :btree
+
   create_table "users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
     t.string   "encrypted_password",     limit: 255, default: "", null: false
@@ -93,4 +113,8 @@ ActiveRecord::Schema.define(version: 20170823154807) do
 
   add_foreign_key "investments", "projects"
   add_foreign_key "projects", "planners"
+  add_foreign_key "projects_users", "projects"
+  add_foreign_key "projects_users", "users"
+  add_foreign_key "supporters", "investments"
+  add_foreign_key "supporters", "users"
 end
