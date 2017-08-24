@@ -5,8 +5,11 @@
     %p.post__copy 世の中にまだない、新しくて面白い新製品や新サービスを誕生させましょう。
   .post__form
     = form_for (@project), url: planner_projects_path do |f|
-      %p.post__copy まず、下記に企画内容を入力しましょう。
-      %p.post__copy 全項目入力必須です。内容を充実させ、たくさん支援してもらいましょう。
+      .post__form__project
+        .post__form__project-border
+        %p.post__copy まず、下記に企画内容を入力しましょう。
+        %p.post__copy 全項目入力必須です。内容を充実させ、たくさん支援してもらいましょう。
+        .post__form__project-border
       .post__field
         .post__field__text 企画タイトル
         = f.text_field :main_title, class: 'post__field__box form-short'
@@ -70,8 +73,11 @@
           ファイルを選択
           = f.file_field :feature_image, class: "input-file" do
             %span 選択されていません
-      %p.post__copy 次に支援者様へのリターンを入力しましょう。
-      %p.post__copy こちらも全項目入力必須です。魅力的なリターンを用意して、皆で幸せになりましょう。
+      .post__form__project
+        .post__form__project-border
+        %p.post__copy 次に支援者様へのリターンを入力しましょう。
+        %p.post__copy こちらも全項目入力必須です。魅力的なリターンを用意して、皆で幸せになりましょう。
+        .post__form__project-border
       = f.fields_for :investments do |i|
         .post__field
           .post__field__text リターンタイトル①
