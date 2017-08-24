@@ -17,7 +17,7 @@
         .post__field__text 目標金額
         = f.text_field :goal_price, class: 'post__field__box form-short'
       .post__field
-        .post__field__text 期日(yyyy.mm.dd)
+        .post__field__text 期日
         = f.text_field :end_date, class: 'post__field__box form-short'
       .post__field
         .post__field__text メインイメージ
@@ -97,6 +97,9 @@
         .post__field
           .post__field__text 用意個数①
           = i.text_field :stock, class: 'post__field__box form-short'
+        .post__field
+          .post__field__text 納品予定日①(yyyy.mm.dd)
+          = i.text_field :delivery_date, class: 'post__field__box form-short'
       = f.fields_for :investments do |i|
         .post__field
           .post__field__text リターンタイトル②
@@ -116,6 +119,9 @@
         .post__field
           .post__field__text 用意個数②
           = i.text_field :stock, class: 'post__field__box form-short'
+        .post__field
+          .post__field__text 納品予定日②
+          = i.text_field :delivery_date, class: 'post__field__box form-short'
       = f.fields_for :investments do |i|
         .post__field
           .post__field__text リターンタイトル③
@@ -135,6 +141,9 @@
         .post__field
           .post__field__text 用意個数③
           = i.text_field :stock, class: 'post__field__box form-short'
+        .post__field
+          .post__field__text 納品予定日③
+          = i.text_field :delivery_date, class: 'post__field__box form-short'
       = f.fields_for :investments do |i|
         .post__field
           .post__field__text リターンタイトル④
@@ -154,5 +163,8 @@
         .post__field
           .post__field__text 用意個数④
           = i.text_field :stock, class: 'post__field__box form-short'
+        .post__field
+          .post__field__text 納品予定日④
+          = i.text_field :delivery_date, class: 'post__field__box form-short'
         = f.submit "投稿する", class: "post__btn"
 = render partial: "footer"

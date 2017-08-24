@@ -11,17 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170824074424) do
+ActiveRecord::Schema.define(version: 20170824145308) do
 
   create_table "investments", force: :cascade do |t|
-    t.integer  "project_id", limit: 4,     null: false
-    t.string   "title",      limit: 255,   null: false
-    t.text     "body",       limit: 65535, null: false
-    t.integer  "price",      limit: 4,     null: false
-    t.string   "image",      limit: 255,   null: false
-    t.string   "stock",      limit: 255,   null: false
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.integer  "project_id",    limit: 4,     null: false
+    t.string   "title",         limit: 255,   null: false
+    t.text     "body",          limit: 65535, null: false
+    t.integer  "price",         limit: 4,     null: false
+    t.string   "image",         limit: 255,   null: false
+    t.string   "stock",         limit: 255,   null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.date     "delivery_date",               null: false
   end
 
   add_index "investments", ["project_id"], name: "fk_rails_a503dd8531", using: :btree

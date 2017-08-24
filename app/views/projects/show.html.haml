@@ -31,7 +31,7 @@
         %dt
           = image_tag("clock-white.png", class: "st__money__limit-icon")
           .st__money__limit-title 残り
-        %dd.st__money__limit-days 23日
+        %dd.st__money__limit-days #{(@project.end_date - Date.today).to_i}日
       .st__money-btn 支援するコースを選択する
     .project__main__name
       .project__main__name-text #{@project.main_title}
@@ -93,16 +93,15 @@
             .investments__supporter-count 
               = image_tag("black-people.png", class: "investments__supporter-count-image")
               .investments__supporter-count-text 95人が支援しています。
-            / .investments__supporter-duedata
-            /   = image_tag("bag.png", class: "investments__supporter-duedata-image")
-            /   .investments__supporter-duedata-text 2017年12月にお届け予定です。
+            .investments__supporter-duedata
+              = image_tag("bag.png", class: "investments__supporter-duedata-image")
+              .investments__supporter-duedata-text #{investment.delivery_date.strftime("%Y年%m月")}にお届け予定です。
           .investments__bar__link__box
             = link_to "このコースに申し込む","/projects/#{@project.id}/investments/#{investment.id}", class: "order__btn"
 
         .planner__inquiry
           .planner__inquiry-text 実行者へ問合せ
 = render partial: "footer"
-
 
 
 
