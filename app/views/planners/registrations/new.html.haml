@@ -2,7 +2,7 @@
   .login
     %h2.login__title 企画者登録
     - if devise_mapping.registerable? && controller_name != 'registrations'
-      = link_to "企画者のログインはこちら >", new_registration_path(resource_name), class: "login__link"
+      = link_to "企画者のログインはこちら >", new_planner_registration_path, class: "login__link"
     %p.login__copy ＼約1分で登録でき、Makuakeを楽しめます!／
     .login__sns
       %h3.login__subtitle SNSで登録
@@ -16,14 +16,14 @@
         = link_to "Ameba", "/", class: "login__sns__bar-btn ameba"
     .login__makuake
       %h3.login__subtitle メールアドレスで新規登録
-      = form_for(resource, as: resource_name, url: planner_registration_path(resource_name)) do |f|
+      = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
         = devise_error_messages!
         .field
           = f.label :メールアドレス, class: "login__form__text"
           = f.email_field :email, class: 'login__form__box'
         .field
-          = f.label :企画者名, class: "login__form__text login__form__margin" do
-            企画者、団体名
+          = f.label :name, class: "login__form__text login__form__margin" do
+            企画者名
             %p.login__form__small
               ※全角・半角
               %br

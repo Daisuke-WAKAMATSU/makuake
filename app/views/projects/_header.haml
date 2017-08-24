@@ -52,7 +52,7 @@
             %li
               %a{data: {toggle: "modal", target: "#my-modal-signup"}} ユーザー登録
             %li
-              = link_to "企画者登録", "",  method: :get
+              = link_to "企画者登録", new_planner_registration_path,  method: :get
         .signin__btn.icon-right ログイン
         .more.more__login
           %ul.more_list
@@ -60,7 +60,7 @@
               %a{data: {toggle: "modal", target: "#my-modal-login"}} ユーザーログイン
             %li
               = link_to "企画者ログイン", "",  method: :get
-      = link_to new_planner_registration_path do
+      = link_to  do
         .signin__icon-text.icon-right お気に入り
       = image_tag("heart.jpg", class: "icon-right signin__icon-heart", size: "18x18")
       = link_to "プロジェクトを掲載する", "", class: "inbox-published"
@@ -69,8 +69,8 @@
 .modal.fade#my-modal-login
   .modal-dialog
     .login.my-modal-view
-      = render partial: "devise/shared/signup_new"
+      = render partial: "devise/shared/login_new"
 .modal.fade#my-modal-signup
   .modal-dialog
     .login.my-modal-view
-      = render partial: "devise/shared/login_new"
+      = render partial: "devise/shared/signup_new"

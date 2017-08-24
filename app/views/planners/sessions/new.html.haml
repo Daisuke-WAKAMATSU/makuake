@@ -1,48 +1,31 @@
-/ .background__view
-/   .login
-/     %h2.login__title 企画者登録
-/     - if devise_mapping.registerable? && controller_name != 'registrations'
-/       = link_to "企画者のログインはこちら >", new_registration_path(resource_name), class: "login__link"
-/     %p.login__copy ＼約1分で登録でき、Makuakeを楽しめます!／
-/     .login__sns
-/       %h3.login__subtitle SNSで登録
-/       .login__sns__bar
-/         = link_to "Facebook", "/", class: "login__sns__bar-btn facebook"
-/       .login__sns__bar
-/         = link_to "Twitter", "/", class: "login__sns__bar-btn twitter"
-/       .login__sns__bar
-/         = link_to "LINE", "/", class: "login__sns__bar-btn line"
-/       .login__sns__bar
-/         = link_to "Ameba", "/", class: "login__sns__bar-btn ameba"
-/     .login__makuake
-/       %h3.login__subtitle メールアドレスで新規登録
-/       = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-/         = devise_error_messages!
-/         .field
-/           = f.label :メールアドレス, class: "login__form__text"
-/           = f.email_field :email, class: 'login__form__box'
-/         .field
-/           = f.label :企画者名, class: "login__form__text login__form__margin" do
-/             企画者、団体名
-/             %p.login__form__small
-/               ※全角・半角
-/               %br
-/                 英数字3-20文字
-/           = f.text_field :name, class: 'login__form__box'
-/         .field
-/           = f.label :パスワード, class: "login__form__text login__form__margin" do
-/             パスワード
-/             %p.login__form__small
-/               ※半角英数字
-/               %br
-/                 6文字以上
-/           - if @minimum_password_length
-/             %em
-/               (#{@minimum_password_length} characters minimum)
-/           = f.password_field :password, class: 'login__form__box'
-/         .field
-/           = f.label :確認, class: "login__form__text"
-/           = f.password_field :password_confirmation, class: 'login__form__box'
-/         .action
-/           = f.submit "OK", class: 'action-btn'
-
+.background__view
+  .login
+    %h2.login__title 企画者ログイン
+    = link_to "新規会員登録はこちら  >", planner_session_path, class: "login__link"
+    .login__sns
+      %h3.login__subtitle SNSで登録
+      .login__sns__bar
+        = link_to "Facebook", "/", class: "login__sns__bar-btn facebook"
+      .login__sns__bar
+        = link_to "Twitter", "/", class: "login__sns__bar-btn twitter"
+      .login__sns__bar
+        = link_to "LINE", "/", class: "login__sns__bar-btn line"
+      .login__sns__bar
+        = link_to "Ameba", "/", class: "login__sns__bar-btn ameba"
+    .login__makuake
+      %h3.login__subtitle Makuake IDでログイン
+      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+        .field
+          .login__form__text メールアドレス
+          = f.email_field :email, class: 'login__form__box'
+        .field
+          .login__form__text.login__form__margin
+            パスワード
+            %p.login__form__small
+              ※半角英数字
+              %br
+                6文字以上
+          = f.password_field :password, class: 'login__form__box'
+        = link_to "パスワードを忘れた方はこちら  >", new_password_path(resource_name), class: "pw__forget"
+        .action
+          = f.submit "OK", class: 'action-btn-signup'
