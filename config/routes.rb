@@ -11,7 +11,9 @@ Rails.application.routes.draw do
   }
   root "projects#index"
   resources :projects, only: [:show] do
-    resources :investments, only: [:show]
+    resources :investments, only: [:show] do
+      resources :supporters, only: [:new]
+    end
   end
   resources :planners, only: [:index] do
     resources :projects, only: [:new, :create]
