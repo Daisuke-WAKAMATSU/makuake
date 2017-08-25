@@ -1,7 +1,6 @@
 .main__investment {
   width: 1000px;
   margin: 0 auto;
-  height: 2000px;
   padding-top: 31px;
   .investment__header {
     @include clearfix();
@@ -108,17 +107,10 @@
       }
     }
   }
-  .investment__caution {
-    @include clearfix();
+  .btn__field {
+    height: 90px;
     width: 100%;
-    background: #f5f5f5;
-    border: 1px solid #ededed;
-    padding: 22px 30px 20px 30px;
-    box-sizing: border-box;
-    margin-top: 31px;
-    &-body {
-      margin-bottom: 20px;
-    }
+    padding: 30px 0 30px;
   }
 }
 
