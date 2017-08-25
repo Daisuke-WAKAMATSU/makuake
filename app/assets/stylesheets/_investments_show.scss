@@ -108,6 +108,18 @@
       }
     }
   }
+  .investment__caution {
+    @include clearfix();
+    width: 100%;
+    background: #f5f5f5;
+    border: 1px solid #ededed;
+    padding: 22px 30px 20px 30px;
+    box-sizing: border-box;
+    margin-top: 31px;
+    &-body {
+      margin-bottom: 20px;
+    }
+  }
 }
 
 

@@ -89,7 +89,7 @@
           .investments__bar__detail
             .investments__bar__detail-title #{investment.title}
             = image_tag("#{investment.image}", class: "investments__bar__detail-image")
-            .investments__bar__detail-body #{investment.body}
+            .investments__bar__detail-body #{simple_format(investment.body)}
             .investments__supporter-count 
               = image_tag("black-people.png", class: "investments__supporter-count-image")
               .investments__supporter-count-text 95人が支援しています。
