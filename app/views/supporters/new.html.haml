@@ -12,48 +12,48 @@
     .investment__menu
       %h2.investment__menu__title お届け先情報をご入力ください
       .investment__menu__text 
-      Makuakeサイトで取得した情報の取り扱いに関する
-      = link_to "プライバシーポリシー", "", class: "investment__menu__text-link"
-      について
-    .investment__detail
-      .supporter__form
-        / = form_for (@Supporter), url: project_investment_supporters_path do |f|
-        /   .supporter__field
-        /     .post__field__text 企画タイトル
-        /     = f.text_field :main_title, class: 'post__field__box form-short'
-        /   .supporter__field
-        /     .post__field__text 目標金額
-        /     = f.text_field :goal_price, class: 'post__field__box form-short'
-        /   .post__field
-        /     .post__field__text 期日
-        /     = f.text_field :end_date, class: 'post__field__box form-short'
-        /   .post__field
-        /     .post__field__text メインイメージ
-        /     %p.input-file-btn
-        /       ファイルを選択
-        /       = f.file_field :main_image, class: "input-file" do
-        /         %span 選択されていません
-        /   .post__field
-        /     .post__field__text 紹介用見出し①
-        /     = f.text_field :introduction, class: 'post__field__box form-short'
-        /   .post__field
-        /     .post__field__text 詳細文①
-        /     = f.text_area :intro_body, class: 'post__field__box form-long'
-        /   .post__field
-        /     .post__field__text 画像①
-        /     %p.input-file-btn
-        /       ファイルを選択
-        /       = f.file_field :intro_image, class: "input-file" do
-        /         %span 選択されていません
-        /   .post__field
-        /     .post__field__text 紹介用見出し②
-        /     = f.text_field :desc_title, class: 'post__field__box form-short'
-        /   .post__field
-        /     .post__field__text 詳細文②
-        /     = f.text_area  :desc_body, class: 'post__field__box form-long'
-        /   .post__field
-        /     .post__field__text 画像②
-        /     %p.input-file-btn
-        /       ファイルを選択
-        /       = f.file_field :desc_image, class: "input-file" do
-        /         %span 選択されていません
+        Makuakeサイトで取得した情報の取り扱いに関する
+        = link_to "プライバシーポリシー", "", class: "investment__menu__text-link"
+        について
+    / .investment__detail
+    /   .supporter__form
+    /     = form_for (@Supporter), url: project_investment_supporters_path do |f|
+    /       .post__field
+    /         .post__field__text 企画タイトル
+    /         = f.text_field :main_title, class: 'post__field__box form-short'
+    /       .post__field
+    /         .post__field__text 目標金額
+    /         = f.text_field :goal_price, class: 'post__field__box form-short'
+    /       .post__field
+    /         .post__field__text 期日
+    /         = f.text_field :end_date, class: 'post__field__box form-short'
+    /       .post__field
+    /         .post__field__text メインイメージ
+    /         %p.input-file-btn
+    /           ファイルを選択
+    /           = f.file_field :main_image, class: "input-file" do
+    /             %span 選択されていません
+    /       .post__field
+    /         .post__field__text 紹介用見出し①
+    /         = f.text_field :introduction, class: 'post__field__box form-short'
+    /       .post__field
+    /         .post__field__text 詳細文①
+    /         = f.text_area :intro_body, class: 'post__field__box form-long'
+    /       .post__field
+    /         .post__field__text 画像①
+    /         %p.input-file-btn
+    /           ファイルを選択
+    /           = f.file_field :intro_image, class: "input-file" do
+    /             %span 選択されていません
+    /       .post__field
+    /         .post__field__text 紹介用見出し②
+    /         = f.text_field :desc_title, class: 'post__field__box form-short'
+    /       .post__field
+    /         .post__field__text 詳細文②
+    /         = f.text_area  :desc_body, class: 'post__field__box form-long'
+    /       .post__field
+    /         .post__field__text 画像②
+    /         %p.input-file-btn
+    /           ファイルを選択
+    /           = f.file_field :desc_image, class: "input-file" do
+    /             %span 選択されていません
