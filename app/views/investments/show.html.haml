@@ -33,6 +33,6 @@
           %li.pay__select-list.list-last ネットバンク振込
         = image_tag("convenience.gif", class: "pay__image-convenience")
     .btn__field
-      = link_to "次へ", "", class: "next__btn"
+      = link_to "次へ", new_project_investment_supporter_path(@investment.project_id, @investment.id), class: "next__btn"
 
 / #{simple_format(@investment.body.truncate(100, omission: '...'))}
