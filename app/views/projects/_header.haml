@@ -59,13 +59,12 @@
             %li
               %a{data: {toggle: "modal", target: "#my-modal-login"}} ユーザーログイン
             %li
-              = link_to "企画者ログイン", "",  method: :get
+              = link_to "企画者ログイン", new_planner_session_path,  method: :get
       = link_to  do
         .signin__icon-text.icon-right お気に入り
       = image_tag("heart.jpg", class: "icon-right signin__icon-heart", size: "18x18")
       = link_to "プロジェクトを掲載する", "", class: "inbox-published"
-
-
+      
 .modal.fade#my-modal-login
   .modal-dialog
     .login.my-modal-view
