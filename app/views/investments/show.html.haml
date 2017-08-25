@@ -3,3 +3,34 @@
     = link_to "/" do
       = image_tag("makuake-logo.png", class: "inbox__logo")
 .main
+  .main__investment
+    %ul.investment__header
+      %li.investment__header-list.list-farst  1.支払方法の選択
+      %li.investment__header-list 2.お届け先の入力
+      %li.investment__header-list 3.申込み内容の確認
+      %li.investment__header-list.list-last 4.完了
+    .investment__menu
+      %h2.investment__menu__title 選択中のコース
+      = link_to "変更する", project_path(@investment.project), class: "investment__menu-link"
+    .investment__detail
+      = image_tag("#{@investment.image}", class: "investment__detail-image")
+      .investment__detail__main
+        .investment__detail__main-price #{@investment.price.to_s(:delimited)}円コース(税込)
+        .investment__detail__main-title #{@investment.title}
+        .investment__detail__main-body #{simple_format(@investment.body)}
+    .investment__menu
+      %h2.investment__menu__title 支払い方法を選択する
+      .investment__menu__text 
+        合計金額が1,000円(税込)以上の場合、クレジットカード以外の決済手段もご利用可能です。支払い方法の詳細については
+        = link_to "ヘルプ", "", class: "investment__menu__text-link"
+        をご覧ください。
+    .investment__detail
+      .investment__detail__pay
+        %ul.pay__select
+          %li.pay__select-list クレジットカード
+          %li.pay__select-list コンビニ支払い
+          %li.pay__select-list 銀行振込
+          %li.pay__select-list.list-last ネットバンク振込
+        = image_tag("convenience.gif", class: "pay__image-convenience")
+
+/ #{simple_format(@investment.body.truncate(100, omission: '...'))}

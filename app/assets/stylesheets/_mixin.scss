@@ -8,6 +8,16 @@
   cursor: pointer;
 }
 
+@mixin blue-btn() {
+  color: #fff;
+  background-color: #4fc1e9;
+  border-radius: 3px;
+  text-align: center;
+  display: block;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 @mixin white-btn() {
   color: #f7c600;
   background-color: #fff;
@@ -61,5 +71,7 @@
   color: #b3b2b3;
   float: left;
 }
+
+
 
 
