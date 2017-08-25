@@ -1,9 +1,8 @@
 .background__view
   .login
     %h2.login__title 企画者登録
-    - if devise_mapping.registerable? && controller_name != 'registrations'
-      = link_to "企画者のログインはこちら >", new_planner_registration_path, class: "login__link"
-    %p.login__copy ＼約1分で登録でき、Makuakeを楽しめます!／
+    = link_to "企画者ログインはこちら >", new_planner_session_path, class: "login__link"
+    %p.login__copy ＼企画を投稿するには、企画者情報の登録が必要です!／
     .login__sns
       %h3.login__subtitle SNSで登録
       .login__sns__bar

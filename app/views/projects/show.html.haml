@@ -97,8 +97,7 @@
               = image_tag("bag.png", class: "investments__supporter-duedata-image")
               .investments__supporter-duedata-text #{investment.delivery_date.strftime("%Y年%m月")}にお届け予定です。
           .investments__bar__link__box
-            = link_to "このコースに申し込む","/projects/#{@project.id}/investments/#{investment.id}", class: "order__btn"
-
+            = link_to "このコースに申し込む",project_investment_path(@project, investment), class: "order__btn"
         .planner__inquiry
           .planner__inquiry-text 実行者へ問合せ
 = render partial: "footer"
