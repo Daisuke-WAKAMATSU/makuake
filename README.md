@@ -2,9 +2,8 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false|
 |image|text|null: false|
-|nickname|string|null: false|
+|username|string|null: false|
 |email|string|null: false, unique: true|
 
 ### Association
@@ -23,19 +22,15 @@
 |goal_price|integer|null: false|
 |end_date|integer|null: false|
 |main_image|text|null: false|
-
 |introduction|text|null: false|
 |intro_body|null: false|
 |intro_image|text|null: false|
-
 |desc_title|text|null: false|
 |desc_body|text|null: false|
 |desc_image|text|null: false|
-
 |content_title|text|null: false|
 |content_body|text|null: false|
 |content_image|text|null: false|
-
 |feature_title|text|null: false|
 |feature_top|text|null: false|
 |feature_image|text|null: false|
@@ -52,12 +47,10 @@
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
-|nickname|string|null: false|
 |image|text|null: false|
 |location|text|
 |birthday|text|
 |email|string|null: false, unique: true|
-
 
 ### Association
 - has_many :investments
@@ -74,6 +67,7 @@
 |price|integer|null: false|
 |image|text|null: false|
 |stock|string|null: false|
+|delivery_date|date|null: false|
 
 ### Association
 - has_many :users, through: :supporters
@@ -103,6 +97,19 @@
 ### Association
 - belongs_to :investment
 - belongs_to :user
+
+## shipsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|supporter_id|integer|foreign_key: true|
+|name|string|null: false|
+|gender|integer|null: false, unique: true|
+|birthday|date|null: false|
+|mobile|integer|null: false|
+|postal_code|integer|null: false|
+|region|string|null: false|
+|city|string|null: false|
+|block|integer|null: false|
 
 
 ## 下記は追加機能で実装の可能性のため、記載。

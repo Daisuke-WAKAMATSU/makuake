@@ -1,7 +1,7 @@
 class CreateShips < ActiveRecord::Migration
   def change
     create_table :ships do |t|
-      t.references  :supporters, null: false
+      t.references  :supporter, null: false
       t.string      :name, null: false
       t.integer     :gender, null: false
       t.date        :birthday, null: false
