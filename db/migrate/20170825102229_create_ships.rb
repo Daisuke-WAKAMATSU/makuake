@@ -1,7 +1,7 @@
 class CreateShips < ActiveRecord::Migration
   def change
     create_table :ships do |t|
-      t.references  :user, null: false, foreign_key: true
+      t.references  :supporters, null: false
       t.string      :name, null: false
       t.integer     :gender, null: false
       t.date        :birthday, null: false
@@ -11,7 +11,7 @@ class CreateShips < ActiveRecord::Migration
       t.string      :city, null: false
       t.integer     :block, null: false
       t.string      :building
-      t.timestamps null: false
+      t.timestamps   null: false
     end
   end
 end

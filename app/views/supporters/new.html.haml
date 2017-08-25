@@ -12,16 +12,16 @@
     .investment__menu
       %h2.investment__menu__title お届け先情報をご入力ください
       .investment__menu__text 
-        Makuakeサイトで取得した情報の取り扱いに関する
-        = link_to "プライバシーポリシー", "", class: "investment__menu__text-link"
-        について
+      Makuakeサイトで取得した情報の取り扱いに関する
+      = link_to "プライバシーポリシー", "", class: "investment__menu__text-link"
+      について
     .investment__detail
       .supporter__form
         / = form_for (@Supporter), url: project_investment_supporters_path do |f|
-        /   .post__field
+        /   .supporter__field
         /     .post__field__text 企画タイトル
         /     = f.text_field :main_title, class: 'post__field__box form-short'
-        /   .post__field
+        /   .supporter__field
         /     .post__field__text 目標金額
         /     = f.text_field :goal_price, class: 'post__field__box form-short'
         /   .post__field
