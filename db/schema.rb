@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170824145308) do
+ActiveRecord::Schema.define(version: 20170825102229) do
 
   create_table "investments", force: :cascade do |t|
     t.integer  "project_id",    limit: 4,     null: false
@@ -83,6 +83,23 @@ ActiveRecord::Schema.define(version: 20170824145308) do
   add_index "projects_users", ["project_id"], name: "fk_rails_1e950bec4e", using: :btree
   add_index "projects_users", ["user_id"], name: "fk_rails_0a98a1147c", using: :btree
 
+  create_table "ships", force: :cascade do |t|
+    t.integer  "user_id",     limit: 4,   null: false
+    t.string   "name",        limit: 255, null: false
+    t.integer  "gender",      limit: 4,   null: false
+    t.date     "birthday",                null: false
+    t.integer  "mobile",      limit: 4,   null: false
+    t.integer  "postal_code", limit: 4,   null: false
+    t.string   "region",      limit: 255, null: false
+    t.string   "city",        limit: 255, null: false
+    t.integer  "block",       limit: 4,   null: false
+    t.string   "building",    limit: 255
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+  end
+
+  add_index "ships", ["user_id"], name: "fk_rails_49961d4f3a", using: :btree
+
   create_table "supporters", force: :cascade do |t|
     t.integer  "investment_id", limit: 4, null: false
     t.integer  "user_id",       limit: 4, null: false
@@ -116,6 +133,7 @@ ActiveRecord::Schema.define(version: 20170824145308) do
   add_foreign_key "projects", "planners"
   add_foreign_key "projects_users", "projects"
   add_foreign_key "projects_users", "users"
+  add_foreign_key "ships", "users"
   add_foreign_key "supporters", "investments"
   add_foreign_key "supporters", "users"
 end
