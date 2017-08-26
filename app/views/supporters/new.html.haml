@@ -15,8 +15,8 @@
         Makuakeサイトで取得した情報の取り扱いに関する
         = link_to "プライバシーポリシー", "", class: "investment__menu__text-link"
         について
-    / .investment__detail
-    /   .supporter__form
+    .investment__detail
+      .supporter__form
     /     = form_for (@Supporter), url: project_investment_supporters_path do |f|
     /       .post__field
     /         .post__field__text 企画タイトル

@@ -7,9 +7,8 @@
 |email|string|null: false, unique: true|
 
 ### Association
-- has_many :projects_users
 - has_many :supporters
-- has_many :projects, through: :projects_users
+- has_many :projects
 - has_many :investments, through: :supporters
 
 
@@ -36,8 +35,7 @@
 |feature_image|text|null: false|
 
 ### Association
-- has_many :users, through: :projects_users
-- has_many :projects_users
+- has_many :users
 - belongs_to :planner
 - has_many :investments
 
@@ -76,32 +74,11 @@
 - has_many :supporters
 
 
-## projects_usersテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|user_id|integer|foreign_key: true|
-|project_id|integer|foreign_key: true|
-
-### Association
-- belongs_to :project
-- belongs_to :user
-
-
 ## supportersテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|foreign_key: true|
 |investment_id|integer|foreign_key: true|
-
-### Association
-- belongs_to :investment
-- belongs_to :user
-
-## shipsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|supporter_id|integer|foreign_key: true|
 |name|string|null: false|
 |gender|integer|null: false, unique: true|
 |birthday|date|null: false|
@@ -111,6 +88,9 @@
 |city|string|null: false|
 |block|integer|null: false|
 
+### Association
+- belongs_to :investment
+- belongs_to :user
 
 ## 下記は追加機能で実装の可能性のため、記載。
 ※コメント、お気に入り登録、タグ付け。

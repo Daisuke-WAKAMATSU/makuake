@@ -5,8 +5,7 @@ class Project < ActiveRecord::Base
   mount_uploader :content_image, ImageUploader
   mount_uploader :feature_image, ImageUploader
 
-  has_many :users, through: :projects_users
-  has_many :projects_users
+  has_many :users
   belongs_to :planner
   has_many :investments
   accepts_nested_attributes_for :investments
