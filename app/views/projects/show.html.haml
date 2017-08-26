@@ -85,14 +85,14 @@
             .investments__bar__menu-money
               #{investment.price.to_s(:delimited)}円コース
               %span.investments__bar__menu-tax (税込)
-            .investments__bar__menu-qty 残り55個
+            .investments__bar__menu-qty 残り#{(investment.stock.to_i) - (investment.supporters.ids.count)}個
           .investments__bar__detail
             .investments__bar__detail-title #{investment.title}
             = image_tag("#{investment.image}", class: "investments__bar__detail-image")
             .investments__bar__detail-body #{simple_format(investment.body)}
             .investments__supporter-count 
               = image_tag("black-people.png", class: "investments__supporter-count-image")
-              .investments__supporter-count-text 95人が支援しています。
+              .investments__supporter-count-text #{investment.supporters.ids.count}人が支援しています。
             .investments__supporter-duedata
               = image_tag("bag.png", class: "investments__supporter-duedata-image")
               .investments__supporter-duedata-text #{investment.delivery_date.strftime("%Y年%m月")}にお届け予定です。

@@ -27,7 +27,9 @@
           %dt.money__supporter
             = image_tag("people.gif", class: "money__supporter-image", size: "24x24")
             .money__supporter-name サポーター
-          %dd.money__supporter-count 1345人
+        - project.investments do |investment|
+        - binding.pry
+          %dd.money__supporter-count 38人
         %dl
           %dt.money__limit
             = image_tag("clock-small.gif", class: "money__limit-image", size: "24x24")
