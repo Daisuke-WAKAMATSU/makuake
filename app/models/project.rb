@@ -9,4 +9,12 @@ class Project < ActiveRecord::Base
   belongs_to :planner
   has_many :investments
   accepts_nested_attributes_for :investments
+
+  def clear_rate
+    self.investments.map{|investment|(investment.supporters.count)*(investment.price)}.sum/self.goal_price.to_f*100
+  end
+
+  def sum_price
+    self.investments.map{|investment|(investment.supporters.count)*investment.price}.sum
+  end
 end

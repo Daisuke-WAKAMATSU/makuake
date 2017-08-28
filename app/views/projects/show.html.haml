@@ -17,16 +17,16 @@
           %project__main__detail
             = image_tag("yen-white.png", class: "st__money-icon")
             .st__money-title 集まっている金額
-          %dd.st__money-num 11,208,781円
+          %dd.st__money-num #{@project.sum_price.to_s(:delimited)}円
           .st__money-goal 目標金額 #{@project.goal_price.to_s(:delimited)}円
       .money__gage.st__money-gage
-        .money__gage__in{ style: "width:65%" }
-          .money__gage__in__percent 65%
+        .money__gage__in{ style: "width:#{@project.clear_rate.round(0)}%" }
+          .money__gage__in__percent #{@project.clear_rate.round(0)}%
       %dl
         %dt
           = image_tag("people-white.png", class: "st__money__supporter-icon")
           .st__money__supporter-name サポーター
-        %dd.st__money__supporter-count 932人
+        %dd.st__money__supporter-count #{@project.investments.map{|investment|(investment.supporters.count)}.sum}人
       %dl
         %dt
           = image_tag("clock-white.png", class: "st__money__limit-icon")
