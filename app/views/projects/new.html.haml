@@ -12,13 +12,13 @@
         .post__form__project-border
       .post__field
         .post__field__text 企画タイトル
-        = f.text_field :main_title, class: 'post__field__box form-short'
+        = f.text_field :main_title, class: 'post__field__box form-short', placeholder: '例）18文字以内', maxlength: "18"
       .post__field
         .post__field__text 目標金額
-        = f.text_field :goal_price, class: 'post__field__box form-short'
+        = f.text_field :goal_price, class: 'post__field__box form-short', placeholder: '例）210000', maxlength: "7"
       .post__field
         .post__field__text 期日
-        = f.text_field :end_date, class: 'post__field__box form-short'
+        = f.text_field :end_date, class: 'post__field__box form-short', placeholder: '例）2017-03-22'
       .post__field
         .post__field__text メインイメージ
         %p.input-file-btn
@@ -27,7 +27,7 @@
             %span 選択されていません
       .post__field
         .post__field__text 紹介用見出し①
-        = f.text_field :introduction, class: 'post__field__box form-short'
+        = f.text_field :introduction, class: 'post__field__box form-short', placeholder: '例）18文字以内', maxlength: "18"
       .post__field
         .post__field__text 詳細文①
         = f.text_area :intro_body, class: 'post__field__box form-long'
@@ -39,7 +39,7 @@
             %span 選択されていません
       .post__field
         .post__field__text 紹介用見出し②
-        = f.text_field :desc_title, class: 'post__field__box form-short'
+        = f.text_field :desc_title, class: 'post__field__box form-short', placeholder: '例）18文字以内', maxlength: "18"
       .post__field
         .post__field__text 詳細文②
         = f.text_area  :desc_body, class: 'post__field__box form-long'
@@ -51,7 +51,7 @@
             %span 選択されていません
       .post__field
         .post__field__text 紹介用見出し③
-        = f.text_field :content_title, class: 'post__field__box form-short'
+        = f.text_field :content_title, class: 'post__field__box form-short', placeholder: '例）18文字以内', maxlength: "18"
       .post__field
         .post__field__text 詳細文③
         = f.text_area :content_body, class: 'post__field__box form-long'
@@ -63,7 +63,7 @@
             %span 選択されていません
       .post__field
         .post__field__text 紹介用見出し④
-        = f.text_field :feature_title, class: 'post__field__box form-short'
+        = f.text_field :feature_title, class: 'post__field__box form-short', placeholder: '例）18文字以内', maxlength: "18"
       .post__field
         .post__field__text 詳細文④
         = f.text_area :feature_body, class: 'post__field__box form-long'
@@ -81,13 +81,13 @@
       = f.fields_for :investments do |i|
         .post__field
           .post__field__text リターンタイトル①
-          = i.text_field :title, class: 'post__field__box form-short'
+          = i.text_field :title, class: 'post__field__box form-short', placeholder: '例）18文字以内', maxlength: "18"
         .post__field
           .post__field__text リターン詳細文①
           = i.text_area :body, class: 'post__field__box form-long'
         .post__field
           .post__field__text 金額①
-          = i.text_field :price, class: 'post__field__box form-short'
+          = i.text_field :price, class: 'post__field__box form-short', placeholder: '例）10000', maxlength: "6"
         .post__field
           .post__field__text リターン用画像①
           %p.input-file-btn
@@ -96,20 +96,20 @@
               %span 選択されていません
         .post__field
           .post__field__text 用意個数①
-          = i.text_field :stock, class: 'post__field__box form-short'
+          = i.text_field :stock, class: 'post__field__box form-short', placeholder: '例）20', maxlength: "3"
         .post__field
           .post__field__text 納品予定日①
-          = i.text_field :delivery_date, class: 'post__field__box form-short'
+          = i.text_field :delivery_date, class: 'post__field__box form-short', placeholder: '例）2017-12-22'
       = f.fields_for :investments do |i|
         .post__field
           .post__field__text リターンタイトル②
-          = i.text_field :title, class: 'post__field__box form-short'
+          = i.text_field :title, class: 'post__field__box form-short', placeholder: '例）18文字以内', maxlength: "18"
         .post__field
           .post__field__text リターン詳細文②
           = i.text_area :body, class: 'post__field__box form-long'
         .post__field
           .post__field__text 金額②
-          = i.text_field :price, class: 'post__field__box form-short'
+          = i.text_field :price, class: 'post__field__box form-short', placeholder: '例）10000', maxlength: "6"
         .post__field
           .post__field__text リターン用画像②
           %p.input-file-btn
@@ -118,20 +118,20 @@
               %span 選択されていません
         .post__field
           .post__field__text 用意個数②
-          = i.text_field :stock, class: 'post__field__box form-short'
+          = i.text_field :stock, class: 'post__field__box form-short', placeholder: '例）20', maxlength: "3"
         .post__field
           .post__field__text 納品予定日②
-          = i.text_field :delivery_date, class: 'post__field__box form-short'
+          = i.text_field :delivery_date, class: 'post__field__box form-short', placeholder: '例）2017-12-22'
       = f.fields_for :investments do |i|
         .post__field
           .post__field__text リターンタイトル③
-          = i.text_field :title, class: 'post__field__box form-short'
+          = i.text_field :title, class: 'post__field__box form-short', placeholder: '例）18文字以内', maxlength: "18"
         .post__field
           .post__field__text リターン詳細文③
           = i.text_area :body, class: 'post__field__box form-long'
         .post__field
           .post__field__text 金額③
-          = i.text_field :price, class: 'post__field__box form-short'
+          = i.text_field :price, class: 'post__field__box form-short', placeholder: '例）10000', maxlength: "6"
         .post__field
           .post__field__text リターン用画像③
           %p.input-file-btn
@@ -140,20 +140,20 @@
               %span 選択されていません
         .post__field
           .post__field__text 用意個数③
-          = i.text_field :stock, class: 'post__field__box form-short'
+          = i.text_field :stock, class: 'post__field__box form-short', placeholder: '例）20', maxlength: "3"
         .post__field
           .post__field__text 納品予定日③
-          = i.text_field :delivery_date, class: 'post__field__box form-short'
+          = i.text_field :delivery_date, class: 'post__field__box form-short', placeholder: '例）2017-12-22'
       = f.fields_for :investments do |i|
         .post__field
           .post__field__text リターンタイトル④
-          = i.text_field :title, class: 'post__field__box form-short'
+          = i.text_field :title, class: 'post__field__box form-short', placeholder: '例）18文字以内', maxlength: "18"
         .post__field
           .post__field__text リターン詳細文④
           = i.text_area :body, class: 'post__field__box form-long'
         .post__field
           .post__field__text 金額④
-          = i.text_field :price, class: 'post__field__box form-short'
+          = i.text_field :price, class: 'post__field__box form-short', placeholder: '例）10000', maxlength: "6"
         .post__field
           .post__field__text リターン用画像④
           %p.input-file-btn
@@ -162,9 +162,9 @@
               %span 選択されていません
         .post__field
           .post__field__text 用意個数④
-          = i.text_field :stock, class: 'post__field__box form-short'
+          = i.text_field :stock, class: 'post__field__box form-short', placeholder: '例）20', maxlength: "3"
         .post__field
           .post__field__text 納品予定日④
-          = i.text_field :delivery_date, class: 'post__field__box form-short'
+          = i.text_field :delivery_date, class: 'post__field__box form-short', placeholder: '例）2017-12-22'
         = f.submit "投稿する", class: "post__btn"
 = render partial: "footer"

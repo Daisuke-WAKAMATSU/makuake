@@ -10,6 +10,24 @@ class Project < ActiveRecord::Base
   has_many :investments
   accepts_nested_attributes_for :investments
 
+  validates :main_title, presence: true,      length: { maximum: 18 }
+  validates :goal_price, presence: true,      length: { maximum: 7 }
+  validates :end_date, presence: true
+  validates :main_image, presence: true
+  validates :introduction, presence: true,    length: { maximum: 18 }
+  validates :intro_body, presence: true
+  validates :intro_image, presence: true
+  validates :desc_title, presence: true,      length: { maximum: 18 }
+  validates :desc_body, presence: true
+  validates :desc_image, presence: true
+  validates :content_title, presence: true,   length: { maximum: 18 }
+  validates :content_body, presence: true
+  validates :content_image, presence: true
+  validates :feature_title, presence: true,   length: { maximum: 18 }
+  validates :feature_body, presence: true
+  validates :feature_image, presence: true
+
+
   def clear_rate
     self.investments.map{|investment|(investment.supporters.count)*(investment.price)}.sum/self.goal_price.to_f*100
   end
