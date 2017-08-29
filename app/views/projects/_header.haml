@@ -31,24 +31,24 @@
 
     - elsif !user_signed_in? && !planner_signed_in?
       .inbox__icon
-        .signup__btn.icon-right 新規登録
+        .signup__btn.icon-right#signup__btn 新規登録
         .more.more__icon
           %ul.more_list
             %li
               %a{data: {toggle: "modal", target: "#my-modal-signup"}} ユーザー登録
             %li
-              = link_to "企画者登録", new_planner_registration_path,  method: :get
+              %a{data: {toggle: "modal", target: "#my-modal-signup-planner"}} 企画者登録
         .signin__btn.icon-right ログイン
         .more.more__login
           %ul.more_list
             %li
               %a{data: {toggle: "modal", target: "#my-modal-login"}} ユーザーログイン
             %li
-              = link_to "企画者ログイン", new_planner_session_path,  method: :get
+              %a{data: {toggle: "modal", target: "#my-modal-login-planner"}} 企画者ログイン
       = link_to  do
         .signin__icon-text.icon-right お気に入り
       = image_tag("heart.jpg", class: "icon-right signin__icon-heart", size: "18x18")
-      = link_to "プロジェクトを掲載する", "", class: "inbox-published"
+      %a.inbox-published{data: {toggle: "modal", target: "#my-modal-login-planner"}} プロジェクトを掲載する
 
     - elsif user_signed_in?
       .inbox__icon
@@ -69,7 +69,7 @@
       = link_to  do
         .signin__icon-text.icon-right お気に入り
       = image_tag("heart.jpg", class: "icon-right signin__icon-heart", size: "18x18")
-      = link_to "プロジェクトを掲載する", "", class: "inbox-published"
+      %a.inbox-published{data: {toggle: "modal", target: "#my-modal-login-planner"}} プロジェクトを掲載する
 
     - else
       .inbox__icon
@@ -90,7 +90,7 @@
       = link_to  do
         .signin__icon-text.icon-right お気に入り
       = image_tag("heart.jpg", class: "icon-right signin__icon-heart", size: "18x18")
-      = link_to "プロジェクトを掲載する", "", class: "inbox-published"
+      = link_to "プロジェクトを掲載する", new_planner_project_path(current_planner), class: "inbox-published"
 
 .modal.fade#my-modal-login
   .modal-dialog
@@ -98,14 +98,30 @@
       %h2.login__title ログイン
       = link_to "新規会員登録はこちら  >", new_registration_path(resource_name), class: "login__link"
       = render partial: "devise/shared/login_new"
+
 .modal.fade#my-modal-signup
   .modal-dialog
     .login.my-modal-view
       %h2.login__title 会員登録
-      - if devise_mapping.registerable? && controller_name != 'registrations'
-        = link_to "ログインはこちら >", user_session_path, class: "login__link"
+      = link_to "ログインはこちら >", user_session_path, class: "login__link"
       %p.login__copy ＼約1分で登録でき、Makuakeを楽しめます!／
       = render partial: "devise/shared/signup_new"
+
+.modal.fade#my-modal-login-planner
+  .modal-dialog
+    .login.my-modal-view
+      %h2.login__title 企画者ログイン
+      = link_to "新規企画者登録はこちら  >",new_planner_registration_path, class: "login__link"
+      %p.login__copy ＼企画を投稿するには、企画者情報の登録が必要です!／
+      = render partial: "planners/shared/login_new"
+
+.modal.fade#my-modal-signup-planner
+  .modal-dialog
+    .login.my-modal-view
+      %h2.login__title 企画者登録
+      = link_to "企画者ログインはこちら >", new_planner_session_path, class: "login__link"
+      %p.login__copy ＼企画を投稿するには、企画者情報の登録が必要です!／
+      = render partial: "planners/shared/signup_new"
 
 
 
