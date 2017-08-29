@@ -20,8 +20,12 @@
           %dd.st__money-num #{@project.sum_price.to_s(:delimited)}円
           .st__money-goal 目標金額 #{@project.goal_price.to_s(:delimited)}円
       .money__gage.st__money-gage
-        .money__gage__in{ style: "width:#{@project.clear_rate.round(0)}%" }
-          .money__gage__in__percent #{@project.clear_rate.round(0)}%
+        - if @project.clear_rate.round(0) > 100
+          .money__gage__in{style: "width:100%" }
+            .money__gage__in__percent #{@project.clear_rate.round(0)}%
+        - else
+          .money__gage__in{style: "width:#{@project.clear_rate.round(0)}%" }
+            .money__gage__in__percent #{@project.clear_rate.round(0)}%
       %dl
         %dt
           = image_tag("people-white.png", class: "st__money__supporter-icon")

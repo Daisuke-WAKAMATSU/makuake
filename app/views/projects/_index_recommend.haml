@@ -22,8 +22,12 @@
             .money__title 集まっている金額
           %dd.money__sum #{project.sum_price.to_s(:delimited)}円
         .money__gage
-          .money__gage__in{style: "width:#{project.clear_rate.round(0)}%" }
-            .money__gage__in__percent #{project.clear_rate.round(0)}%
+          - if project.clear_rate.round(0) > 100
+            .money__gage__in{style: "width:100%" }
+              .money__gage__in__percent #{project.clear_rate.round(0)}%
+          - else
+            .money__gage__in{style: "width:#{project.clear_rate.round(0)}%" }
+              .money__gage__in__percent #{project.clear_rate.round(0)}%
         %dl
           %dt.money__supporter
             = image_tag("people.gif", class: "money__supporter-image", size: "24x24")
