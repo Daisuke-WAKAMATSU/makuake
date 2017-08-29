@@ -72,6 +72,15 @@
   float: left;
 }
 
+@mixin stockout-btn() {
+  color: #cacaca;
+  background-color: #f5f5f5;
+  border-radius: 3px;
+  text-align: center;
+  display: block;
+  text-decoration: none;
+}
+
 
 
 

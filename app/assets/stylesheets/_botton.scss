@@ -138,6 +138,12 @@
   line-height: 60px;
 }
 
+.stockout__btn {
+  @include stockout-btn();
+  font-size: 20px;
+  line-height: 60px;
+}
+
 .post__btn {
   @include blue-btn();
   width: 800px;

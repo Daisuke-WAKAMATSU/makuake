@@ -69,6 +69,10 @@
     text-decoration: none;
     color: black;
   }
+  &-published:hover{
+    text-decoration: underline;
+    opacity: 0.9;
+  }
   &__icon {
     float: right;
     &-heart {
@@ -87,9 +91,9 @@
       margin-top: 20px;
     }
     &-own{
-      height: 32px;
-      width: 32px;
-      margin: 17px 0 0  34px;
+      height: 34px;
+      width: 34px;
+      margin: 15px 0 0  34px;
       border-radius: 4px;
     }
     .more__icon {

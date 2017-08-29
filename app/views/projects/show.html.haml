@@ -97,10 +97,13 @@
               = image_tag("bag.png", class: "investments__supporter-duedata-image")
               .investments__supporter-duedata-text #{investment.delivery_date.strftime("%Y年%m月")}にお届け予定です。
           .investments__bar__link__box
-            - if user_signed_in?
-              = link_to "このコースに申し込む",project_investment_path(@project, investment), class: "order__btn"
+            - if ((investment.stock.to_i) - (investment.supporters.ids.count)) == 0
+              .stockout__btn 在庫切れ
             - else
-              %a.order__btn{data: {toggle: "modal", target: "#my-modal-login-investments"}} このコースに申し込む
+              - if user_signed_in?
+                = link_to "このコースに申し込む",project_investment_path(@project, investment), class: "order__btn"
+              - else
+                %a.order__btn{data: {toggle: "modal", target: "#my-modal-login-investments"}} このコースに申し込む
         .planner__inquiry
           .planner__inquiry-text 実行者へ問合せ
 = render partial: "footer"

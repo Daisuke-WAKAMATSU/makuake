@@ -2,6 +2,7 @@ class ProjectsController < ApplicationController
 
   def index
     @projects = Project.order(created_at: :DESC).includes(:planner).limit(9)
+    @new_projects = Project.order(created_at: :DESC).includes(:planner).limit(8)
   end
 
   def show
@@ -18,7 +19,6 @@ class ProjectsController < ApplicationController
     if @project.save
       redirect_to root_path, notice: "企画が投稿されました。"
     else
-      flash.now[:alert] = "企画投稿が失敗しました。"
       render :new
     end
   end

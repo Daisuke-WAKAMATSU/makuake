@@ -1,3 +1,4 @@
+/ おすすめプロジェクト一覧
 .recommend
   - @projects.each do |project|
     .recommend__area
@@ -35,3 +36,16 @@
           %dd.money__limit-days #{(project.end_date - Date.today).to_i}日
   .ditail
     = link_to "more >", "", class: "ditail__botton"
+
+/ 最近始まったプロジェクト
+.new
+  .new__title 
+    = image_tag("new.gif", class: "new__title-image", size: "32x32")
+    .new__title-name 最近始まったプロジェクト
+  - @new_projects.each do |project|
+    .new__area
+      = link_to "/projects/#{project.id}", class: "new__area__top" do
+        = image_tag("#{project.main_image}", class: "new__area__image", size: "230x129")
+        %h2.new__area-text #{project.main_title}
+  .ditail
+    = link_to "more >", "https://www.makuake.com", class: "ditail__botton"
