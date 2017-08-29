@@ -10,7 +10,7 @@
     = link_to "Ameba", "/", class: "login__sns__bar-btn ameba"
 .login__makuake
   %h3.login__subtitle Makuake IDでログイン
-  = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+  = form_for(@planner, url: planner_session_path) do |f|
     .field
       .login__form__text メールアドレス
       = f.email_field :email, class: 'login__form__box'

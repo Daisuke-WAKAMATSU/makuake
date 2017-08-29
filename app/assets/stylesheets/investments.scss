@@ -1,3 +1,152 @@
-// Place all the styles related to the investments controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.main__investment {
+  width: 1000px;
+  margin: 0 auto;
+  padding-top: 31px;
+  .investment__header {
+    @include clearfix();
+    background-color: #fff;
+    &-list {
+      list-style: none;
+      float: left;
+      box-sizing: border-box;
+      width: 25%;
+      height: 39px;
+      border-right: 1px solid #d9d9d9;
+      text-align: center;
+      line-height: 39px;
+    }
+    .list-select {
+      color: #4fc1e9;
+      border-bottom: 2px solid #4fc1e9;
+    }
+    .list-last {
+      border: none;
+    }
+  }
+  .investment__menu {
+    @include clearfix();
+    width: 100%;
+    background: #fcfcfc;
+    border-bottom: 1px solid #ededed;
+    padding: 22px 30px 20px 30px;
+    box-sizing: border-box;
+    margin-top: 31px;
+    &__title {
+      font-size: 24px;
+      margin-right: 10px;
+      float: left;
+    }
+    &-link {
+      float: left;
+      font-size: 16px;
+      color: #05a1c6;
+      line-height: 37px;
+    }
+    &__text {
+      font-size: 14px;
+      color: #6B6B6B;
+      margin-left: 1px;
+      float: left;
+      width: 100%;
+      &-link {
+        color: #4fc1e9;
+      }
+    }
+  }
+  .investment__detail {
+    @include clearfix();
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 4px;
+    border-bottom: 2px solid #e7e7e7;
+    &-image {
+      width: 280px;
+      float: left;
+    }
+    &__main {
+      float: right;
+      margin-left: 30px;
+      width: 630px;
+      background-color: white;
+      &-price {
+        font-size: 26px;
+        margin: 0 0 10px 0;
+      }
+      &-title {
+        font-size: 18px;
+        margin-bottom: 20px;
+        line-height: 1.2;
+      }
+      &-body {
+        font-size: 14px;
+        line-height: 1.6;
+      }
+    }
+    &__pay {
+      height: 160px;
+      text-align: center;
+      .pay__select {
+        @include clearfix();
+        width: 750px;
+        border-radius: 2px;
+        border: 1px solid #d9d9d9;
+        margin: auto;
+        text-align: center;
+        &-list {
+          height: 50px;
+          width: 25%;
+          display: block;
+          float: left;
+          box-sizing: border-box;
+          cursor: pointer;
+          border-right: 1px solid #d9d9d9;
+          line-height: 50px;
+        }
+      }
+      .pay__image-convenience {
+        margin-top: 30px;
+      }
+    }
+  }
+  .btn__field {
+    height: 90px;
+    width: 100%;
+    padding: 30px 0 30px;
+  }
+}
+
+.supporter__form {
+  width: 848px;
+  background-color: #fff;
+  margin: 0 auto 40px;
+  border-radius: 4px;
+  font-size: 15px;
+  padding: 10px 0 10px 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
