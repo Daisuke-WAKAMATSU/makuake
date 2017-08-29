@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170825164145) do
+ActiveRecord::Schema.define(version: 20170826074016) do
 
   create_table "investments", force: :cascade do |t|
     t.integer  "project_id",    limit: 4,     null: false
@@ -99,10 +99,19 @@ ActiveRecord::Schema.define(version: 20170825164145) do
   end
 
   create_table "supporters", force: :cascade do |t|
-    t.integer  "investment_id", limit: 4, null: false
-    t.integer  "user_id",       limit: 4, null: false
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.integer  "investment_id", limit: 4,   null: false
+    t.integer  "user_id",       limit: 4,   null: false
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.string   "name",          limit: 255, null: false
+    t.integer  "gender",        limit: 4,   null: false
+    t.date     "birthday",                  null: false
+    t.integer  "mobile",        limit: 4,   null: false
+    t.integer  "postal_code",   limit: 4,   null: false
+    t.string   "region",        limit: 255, null: false
+    t.string   "city",          limit: 255, null: false
+    t.integer  "block",         limit: 4,   null: false
+    t.string   "building",      limit: 255
   end
 
   add_index "supporters", ["investment_id"], name: "fk_rails_3b7d12eb58", using: :btree

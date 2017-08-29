@@ -17,16 +17,16 @@
           %project__main__detail
             = image_tag("yen-white.png", class: "st__money-icon")
             .st__money-title 集まっている金額
-          %dd.st__money-num 11,208,781円
+          %dd.st__money-num #{@project.sum_price.to_s(:delimited)}円
           .st__money-goal 目標金額 #{@project.goal_price.to_s(:delimited)}円
       .money__gage.st__money-gage
-        .money__gage__in{ style: "width:65%" }
-          .money__gage__in__percent 65%
+        .money__gage__in{ style: "width:#{@project.clear_rate.round(0)}%" }
+          .money__gage__in__percent #{@project.clear_rate.round(0)}%
       %dl
         %dt
           = image_tag("people-white.png", class: "st__money__supporter-icon")
           .st__money__supporter-name サポーター
-        %dd.st__money__supporter-count 932人
+        %dd.st__money__supporter-count #{@project.investments.map{|investment|(investment.supporters.count)}.sum}人
       %dl
         %dt
           = image_tag("clock-white.png", class: "st__money__limit-icon")
@@ -85,22 +85,33 @@
             .investments__bar__menu-money
               #{investment.price.to_s(:delimited)}円コース
               %span.investments__bar__menu-tax (税込)
-            .investments__bar__menu-qty 残り55個
+            .investments__bar__menu-qty 残り#{(investment.stock.to_i) - (investment.supporters.ids.count)}個
           .investments__bar__detail
             .investments__bar__detail-title #{investment.title}
             = image_tag("#{investment.image}", class: "investments__bar__detail-image")
             .investments__bar__detail-body #{simple_format(investment.body)}
             .investments__supporter-count 
               = image_tag("black-people.png", class: "investments__supporter-count-image")
-              .investments__supporter-count-text 95人が支援しています。
+              .investments__supporter-count-text #{investment.supporters.ids.count}人が支援しています。
             .investments__supporter-duedata
               = image_tag("bag.png", class: "investments__supporter-duedata-image")
               .investments__supporter-duedata-text #{investment.delivery_date.strftime("%Y年%m月")}にお届け予定です。
           .investments__bar__link__box
-            = link_to "このコースに申し込む",project_investment_path(@project, investment), class: "order__btn"
+            - if user_signed_in?
+              = link_to "このコースに申し込む",project_investment_path(@project, investment), class: "order__btn"
+            - else
+              %a.order__btn{data: {toggle: "modal", target: "#my-modal-login-investments"}} このコースに申し込む
         .planner__inquiry
           .planner__inquiry-text 実行者へ問合せ
 = render partial: "footer"
+
+.modal.fade#my-modal-login-investments
+  .modal-dialog
+    .login.my-modal-view
+      %h2.login__title ログイン
+      = link_to "新規会員登録はこちら  >", new_registration_path(resource_name), class: "login__link"
+      %p.login__copy ＼企画を支援するにはユーザーログインが必要です!／
+      = render partial: "devise/shared/login_new"
 
 
 

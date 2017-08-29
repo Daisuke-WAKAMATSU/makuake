@@ -10,13 +10,15 @@
               = image_tag("search.png", class: "search__form__btn-image", size: "27x27")
               %input{type: "submit", value: "探す", class: "search__form__btn-text"}
 
-    - if user_signed_in?
+    - if user_signed_in? && planner_signed_in?
       .inbox__icon
         = image_tag("icon_yellow.png", class: "icon-right inbox__icon-own")
         .more.more__icon
           %ul.more_list
             %li
-              = link_to 'マイページ', "", method: :get
+              = link_to 'ユーザーマイページ', "", method: :get
+            %li
+              = link_to '企画者マイページ', "", method: :get
             %li
               = link_to 'ログアウト', destroy_user_session_path, method: :delete
         = link_to "https://www.makuake.com" do
@@ -25,26 +27,9 @@
           = image_tag("mail.jpg", class: "icon-right inbox__icon-mail")
         = link_to "https://www.makuake.com" do
           = image_tag("heart.jpg", class: "icon-right inbox__icon-heart")
-        = link_to "プロジェクトを掲載する", "", class: "inbox-published"
-
-    - elsif planner_signed_in?
-      .inbox__icon
-        = image_tag("icon_yellow.png", class: "icon-right inbox__icon-own")
-        .more.more__icon
-          %ul.more_list
-            %li
-              = link_to 'マイページ', "", method: :get
-            %li
-              = link_to '企画者ログアウト', destroy_planner_session_path, method: :delete
-        = link_to "https://www.makuake.com" do
-          = image_tag("bell.jpg", class: "icon-right inbox__icon-bell")
-        = link_to "https://www.makuake.com" do
-          = image_tag("mail.jpg", class: "icon-right inbox__icon-mail")
-        = link_to "https://www.makuake.com" do
-          = image_tag("heart.jpg", class: "icon-right inbox__icon-heart")
         = link_to "プロジェクトを掲載する", new_planner_project_path(current_planner), class: "inbox-published"
 
-    - else
+    - elsif !user_signed_in? && !planner_signed_in?
       .inbox__icon
         .signup__btn.icon-right 新規登録
         .more.more__icon
@@ -64,12 +49,78 @@
         .signin__icon-text.icon-right お気に入り
       = image_tag("heart.jpg", class: "icon-right signin__icon-heart", size: "18x18")
       = link_to "プロジェクトを掲載する", "", class: "inbox-published"
-      
+
+    - elsif user_signed_in?
+      .inbox__icon
+        = image_tag("icon_yellow.png", class: "icon-right inbox__icon-own")
+        .more.more__icon
+          %ul.more_list
+            %li
+              = link_to 'ユーザーマイページ', "", method: :get
+            %li
+              = link_to 'ログアウト', destroy_user_session_path, method: :delete
+        .signin__btn.icon-right 企画者
+        .more.more__login
+          %ul.more_list
+            %li
+              = link_to "企画者登録", new_planner_registration_path,  method: :get
+            %li
+              = link_to "企画者ログイン", new_planner_session_path,  method: :get
+      = link_to  do
+        .signin__icon-text.icon-right お気に入り
+      = image_tag("heart.jpg", class: "icon-right signin__icon-heart", size: "18x18")
+      = link_to "プロジェクトを掲載する", "", class: "inbox-published"
+
+    - else
+      .inbox__icon
+        = image_tag("icon_yellow.png", class: "icon-right inbox__icon-own")
+        .more.more__icon
+          %ul.more_list
+            %li
+              = link_to '企画者マイページ', "", method: :get
+            %li
+              = link_to 'ログアウト', destroy_user_session_path, method: :delete
+        .signin__btn.icon-right ユーザー
+        .more.more__login
+          %ul.more_list
+            %li
+              %a{data: {toggle: "modal", target: "#my-modal-signup"}} ユーザー登録
+            %li
+              %a{data: {toggle: "modal", target: "#my-modal-login"}} ユーザーログイン
+      = link_to  do
+        .signin__icon-text.icon-right お気に入り
+      = image_tag("heart.jpg", class: "icon-right signin__icon-heart", size: "18x18")
+      = link_to "プロジェクトを掲載する", "", class: "inbox-published"
+
 .modal.fade#my-modal-login
   .modal-dialog
     .login.my-modal-view
+      %h2.login__title ログイン
+      = link_to "新規会員登録はこちら  >", new_registration_path(resource_name), class: "login__link"
       = render partial: "devise/shared/login_new"
 .modal.fade#my-modal-signup
   .modal-dialog
     .login.my-modal-view
+      %h2.login__title 会員登録
+      - if devise_mapping.registerable? && controller_name != 'registrations'
+        = link_to "ログインはこちら >", user_session_path, class: "login__link"
+      %p.login__copy ＼約1分で登録でき、Makuakeを楽しめます!／
       = render partial: "devise/shared/signup_new"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -47,6 +47,7 @@
       color: #6B6B6B;
       margin-left: 1px;
       float: left;
+      width: 100%;
       &-link {
         color: #4fc1e9;
       }
@@ -114,9 +115,14 @@
   }
 }
 
-
-
-
+.supporter__form {
+  width: 848px;
+  background-color: #fff;
+  margin: 0 auto 40px;
+  border-radius: 4px;
+  font-size: 15px;
+  padding: 10px 0 10px 0;
+}
 
 
 
