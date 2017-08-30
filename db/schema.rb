@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170830042108) do
+ActiveRecord::Schema.define(version: 20170830090646) do
 
   create_table "investments", force: :cascade do |t|
     t.integer  "project_id",    limit: 4,     null: false
@@ -79,7 +79,7 @@ ActiveRecord::Schema.define(version: 20170830042108) do
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
     t.string   "name",          limit: 255, null: false
-    t.integer  "gender",        limit: 4,   null: false
+    t.string   "gender",        limit: 255, null: false
     t.date     "birthday",                  null: false
     t.string   "mobile",        limit: 255, null: false
     t.string   "postal_code",   limit: 255, null: false

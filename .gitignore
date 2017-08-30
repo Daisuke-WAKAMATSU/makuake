@@ -11,5 +11,5 @@
 /log/*
 !/log/.keep
 /tmp
-
+/app/assets/images/*
 /public/uploads/*

@@ -23,12 +23,14 @@
             = f.text_field :name, class: 'post__field__box form-short', placeholder: '例）若松大輔'
           .post__field
             .post__field__text 性別
-            %label.post__field__box
-              男
-              = f.radio_button :gender, "男"
-            %label.post__field__box
-              女
-              = f.radio_button :gender, "女"
+            .radio__field
+              %label
+                男
+                = f.radio_button :gender, "男"
+              %label
+                女
+                = f.radio_button :gender, "女"
+          .post__field
             .post__field__text 誕生日
             = f.text_field :birthday, class: 'post__field__box form-short', placeholder: '例）1986-12-22', maxlength: "10"
           .post__field

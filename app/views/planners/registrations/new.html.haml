@@ -1,6 +1,8 @@
+= render partial: "header"
 .background__view
   .login
     %h2.login__title 企画者登録
     = link_to "企画者ログインはこちら >", new_planner_session_path, class: "login__link"
     %p.login__copy ＼企画を投稿するには、企画者情報の登録が必要です!／
     = render partial: "planners/shared/signup_new"
+= render partial: "footer"

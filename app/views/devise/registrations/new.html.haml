@@ -1,8 +1,8 @@
+= render partial: "header"
 .background-view
   .login
     %h2.login__title ユーザー登録
     = link_to "ログインはこちら >", user_session_path, class: "login__link"
     %p.login__copy ＼約1分で登録でき、Makuakeを楽しめます!／
     = render partial: "devise/shared/signup_new"
-
-
+= render partial: "footer"
