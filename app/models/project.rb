@@ -29,7 +29,7 @@ class Project < ActiveRecord::Base
 
 
   def clear_rate
-    self.investments.map{|investment|(investment.supporters.count)*(investment.price)}.sum/self.goal_price.to_f*100
+    self.investments.map{|investment|(investment.supporters.count)*(investment.price)}.sum/(self.goal_price.to_i).to_f*100
   end
 
   def sum_price

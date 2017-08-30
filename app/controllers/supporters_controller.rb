@@ -8,7 +8,8 @@ class SupportersController < ApplicationController
     if @supporter.save
       redirect_to root_path, notice: "ご支援ありがとうございました。"
     else
-      redirect_to root_path
+      flash.now[:alert] = "未入力項目があります。"
+      render :new
     end
   end
 
