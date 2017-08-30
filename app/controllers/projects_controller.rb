@@ -19,7 +19,7 @@ class ProjectsController < ApplicationController
     if @project.save
       redirect_to root_path, notice: "企画が投稿されました。"
     else
-      render :new
+      redirect_to new_planner_project_path
     end
   end
 

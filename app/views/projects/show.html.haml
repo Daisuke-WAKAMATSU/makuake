@@ -18,7 +18,7 @@
             = image_tag("yen-white.png", class: "st__money-icon")
             .st__money-title 集まっている金額
           %dd.st__money-num #{@project.sum_price.to_s(:delimited)}円
-          .st__money-goal 目標金額 #{@project.goal_price.to_s(:delimited)}円
+          .st__money-goal 目標金額 #{(@project.goal_price.to_i).to_s(:delimited)}円
       .money__gage.st__money-gage
         - if @project.clear_rate.round(0) > 100
           .money__gage__in{style: "width:100%" }
