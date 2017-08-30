@@ -1,6 +1,20 @@
 = render partial: "header"
 .main
-  = image_tag("1.jpg", class: "full__width")
+  #carousel-example.carousel.slide{data: {ride: "carousel"}}
+    %ol.carousel-indicators
+      %li.active{data: {target: "#carousel-example",slide_to: "0"}}
+      %li{data: {target: "#carousel-example", slide_to: "1"}}
+      %li{data: {target: "#carousel-example", slide_to: "2"}}
+      %li{data: {target: "#carousel-example", slide_to: "3"}}
+    .carousel-inner
+      .item.active
+        = image_tag("1.jpg", class: "full__width")
+      .item
+        = image_tag("2.jpg", class: "full__width")
+      .item
+        = image_tag("3.jpg", class: "full__width")
+      .item
+        = image_tag("4.jpg", class: "full__width")
   .contents
     .catch-copy
       %h1.catch-copy-top 新たなチャレンジを応援しよう。
