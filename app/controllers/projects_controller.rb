@@ -20,7 +20,8 @@ class ProjectsController < ApplicationController
       redirect_to root_path, notice: "企画が投稿されました。"
     else
       flash.now[:alert] = "未入力項目があります。"
-      redirect_to new_planner_project_path
+      render :new
+      # redirect_to new_planner_project_path
     end
   end
 

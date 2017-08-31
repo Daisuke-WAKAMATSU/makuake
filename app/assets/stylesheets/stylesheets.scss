@@ -27,8 +27,8 @@ p {
 }
 
 .full__width {
-  height: 430px;
-  width: 100vw;
+  max-height: 430px;
+  width: 100%;
   background: url(main_project.jpg) no-repeat center center ;
 }
 

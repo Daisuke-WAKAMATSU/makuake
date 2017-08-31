@@ -12,39 +12,42 @@
 
     - if user_signed_in? && planner_signed_in?
       .inbox__icon
-        = image_tag("icon_yellow.png", class: "icon-right inbox__icon-own")
-        .more.more__icon
-          %ul.more_list
-            %li
-              = link_to 'ユーザーマイページ', "", method: :get
-            %li
-              = link_to '企画者マイページ', "", method: :get
-            %li
-              = link_to 'ログアウト', destroy_user_session_path, method: :delete
-        = link_to "https://www.makuake.com" do
-          = image_tag("bell.jpg", class: "icon-right inbox__icon-bell")
-        = link_to "https://www.makuake.com" do
-          = image_tag("mail.jpg", class: "icon-right inbox__icon-mail")
-        = link_to "https://www.makuake.com" do
-          = image_tag("heart.jpg", class: "icon-right inbox__icon-heart")
-        = link_to "プロジェクトを掲載する", new_planner_project_path(current_planner), class: "inbox-published"
+        .inbox__icon__imagebox
+          = image_tag("icon_yellow.png", class: "inbox__icon__imagebox-own")
+          .more
+            %ul.more_list
+              %li
+                = link_to 'ユーザーマイページ', "", method: :get
+              %li
+                = link_to '企画者マイページ', "", method: :get
+              %li
+                = link_to 'ログアウト', destroy_user_session_path, method: :delete
+        / = link_to "/" do
+        /   = image_tag("bell.jpg", class: "icon-right inbox__icon-bell")
+        / = link_to "/" do
+        /   = image_tag("mail.jpg", class: "icon-right inbox__icon-mail")
+        = link_to "/" do
+          = image_tag("heart.jpg", class: "inbox__icon-heart")
+        = link_to "プロジェクトを掲載する", new_planner_project_path(current_planner), class: "inbox__icon-published"
 
     - elsif !user_signed_in? && !planner_signed_in?
       .inbox__icon
-        .signup__btn.icon-right#signup__btn 新規登録
-        .more.more__icon
-          %ul.more_list
-            %li
-              %a{data: {toggle: "modal", target: "#my-modal-signup"}} ユーザー登録
-            %li
-              %a{data: {toggle: "modal", target: "#my-modal-signup-planner"}} 企画者登録
-        .signin__btn.icon-right ログイン
-        .more.more__login
-          %ul.more_list
-            %li
-              %a{data: {toggle: "modal", target: "#my-modal-login"}} ユーザーログイン
-            %li
-              %a{data: {toggle: "modal", target: "#my-modal-login-planner"}} 企画者ログイン
+        .signup__btn.icon-right#signup__btn
+          新規登録
+          .more
+            %ul.more_list#signup__menu
+              %li
+                %a{data: {toggle: "modal", target: "#my-modal-signup"}} ユーザー登録
+              %li
+                %a{data: {toggle: "modal", target: "#my-modal-signup-planner"}} 企画者登録
+        .signin__btn.icon-right#login__btn
+          ログイン
+          .more
+            %ul.more_list#login__menu
+              %li
+                %a{data: {toggle: "modal", target: "#my-modal-login"}} ユーザーログイン
+              %li
+                %a{data: {toggle: "modal", target: "#my-modal-login-planner"}} 企画者ログイン
       = link_to  do
         .signin__icon-text.icon-right お気に入り
       = image_tag("heart.jpg", class: "icon-right signin__icon-heart", size: "18x18")

@@ -1,12 +1,21 @@
-.icon-right{
-  float: right;
+.header {
+  height: 66px;
+}
+
+.inbox {
+  margin: 0 auto;
+  width: 1000px;
+  &__logo {
+  margin-top: 17px;
+  float: left;
+  }
 }
 
 .search__form {
-  width: 350px;
+  @include clearfix();
   float: left;
-  margin-top: 15px;
-  margin-left: 18px;
+  width: 350px;
+  margin: 15px 0 0 18px;
   &__box {
     width: 185px;
     height: 34px;
@@ -26,7 +35,7 @@
     height: 34px;
     border: 1px solid #d3d3d3;
     border-radius: 0 4px 4px 0;
-    background: #ffffff;
+    background: #fff;
     overflow: hidden;
     outline: none;
     cursor: pointer;
@@ -35,8 +44,7 @@
     color: #333333;
     float: left;
     &-image {
-      margin-left: 13px;
-      margin-top: 6px;
+      margin: 5px 0 0 13px;
       float: left;
     }
     &-text {
@@ -51,81 +59,39 @@
   }
 }
 
-.header {
+.inbox__icon {
+  @include clearfix();
+  float: right;
   height: 66px;
-}
-.inbox {
-  margin: 0 auto;
-  width: 1000px;
-  height: 66px;
-  &__logo {
-    margin-top: 17px;
-    float: left;
-  }
-  &-published {
-    float: right;
-    font-size: 14px;
-    margin-top: 23px;
-    text-decoration: none;
-    color: black;
-  }
-  &-published:hover{
-    text-decoration: underline;
-    opacity: 0.9;
-  }
-  &__icon {
-    float: right;
-    &-heart {
-      height: 24px;
-      width: 24px;
-      margin: 21px 30px 0 30px;
-    }
-    &-mail {
-      height: 31px;
-      width: 28px;
-      margin: 18px 30px 0 0;
-    }
-    &-bell {
-      height: 25px;
-      width: 25px;
-      margin-top: 20px;
-    }
-    &-own{
-      height: 34px;
-      width: 34px;
+  width: 490px;
+  &__imagebox {
+    position: relative;
+    cursor: pointer;
+    height: 35px;
+    width: 35px;
+    &-own {
       margin: 15px 0 0  34px;
       border-radius: 4px;
-    }
-    .more__icon {
-      top: 50px;
-      right: 203px;
-    }
-    .more__login{
-      top: 50px;
-      right: 310px;
+      height: 35px;
+      width: 35px;
     }
     .more {
-      position: absolute;
-      cursor: pointer;
-      z-index: 2;
-      height: 100px;
-      width: 80px;
-      text-align: right;
-      color: black;
-      &:hover ul.more_list {
+    position: absolute;
+    z-index: 2;
+    height: 100px;
+    width: 80px;
+    color: black;
+      &_list {
         display: block;
-      }
-      ul.more_list {
-        position: absolute;
         text-align: left;
-        width: 150px;
-        right: 0;
+        width: 120px;
         background-color: #fff;
         border: 1px solid #ddd;
         font-size: 12px;
         display: none;
         box-shadow: 1px 1px 2px rgba(0,0,0,0.2);
         border-radius: 3px;
+        cursor: pointer;
         li {
           border-bottom: 1px solid #ddd;
           &:last-child {
@@ -133,7 +99,7 @@
           }
           a {
             display: block;
-            padding: 5px;
+            padding-left: 5px;
             &:hover {
               background-color: #f7c600;
               color: #fff;
@@ -143,7 +109,54 @@
       }
     }
   }
+  &-heart {
+    height: 24px;
+    width: 24px;
+  }
+  &-published {
+    position: relative;
+    top: -10px;
+    font-size: 14px;
+    margin-top: 23px;
+    text-decoration: none;
+    color: black;
+  }
+  &-published:hover{
+    text-decoration: underline;
+    opacity: 0.9;
+  }
 }
+
+
+
+
+
+
+
+
+
+// &-mail {
+//   height: 31px;
+//   width: 28px;
+//   margin: 18px 30px 0 0;
+// }
+// &-bell {
+//   height: 25px;
+//   width: 25px;
+//   margin-top: 20px;
+// }
+
+
+
+
+.icon-right{
+  float: right;
+}
+
+
+
+
+
 
 .signin__icon {
   &-heart {
@@ -155,18 +168,6 @@
     color: black;
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
