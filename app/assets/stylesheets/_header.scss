@@ -64,99 +64,113 @@
   float: right;
   height: 66px;
   width: 490px;
-  &__imagebox {
+  text-align: right;
+  &-favorite {
     position: relative;
-    cursor: pointer;
-    height: 35px;
-    width: 35px;
-    &-own {
-      margin: 15px 0 0  34px;
-      border-radius: 4px;
-      height: 35px;
-      width: 35px;
-    }
-    .more {
-    position: absolute;
-    z-index: 2;
-    height: 100px;
-    width: 80px;
+    font-size: 14px;
+    text-decoration: none;
     color: black;
-      &_list {
-        display: block;
-        text-align: left;
-        width: 120px;
-        background-color: #fff;
-        border: 1px solid #ddd;
-        font-size: 12px;
-        display: none;
-        box-shadow: 1px 1px 2px rgba(0,0,0,0.2);
-        border-radius: 3px;
-        cursor: pointer;
-        li {
-          border-bottom: 1px solid #ddd;
-          &:last-child {
-            border-bottom: 0;
-          }
-          a {
-            display: block;
-            padding-left: 5px;
-            &:hover {
-              background-color: #f7c600;
-              color: #fff;
-            }
-          }
-        }
-      }
-    }
+    top: 5px;
+    right: 21px;
   }
-  &-heart {
-    height: 24px;
-    width: 24px;
+  &-favorite:hover{
+    text-decoration: underline;
+    opacity: 0.9;
   }
   &-published {
     position: relative;
-    top: -10px;
     font-size: 14px;
-    margin-top: 23px;
     text-decoration: none;
     color: black;
+    line-height: 70px;
+    float: left;
   }
   &-published:hover{
     text-decoration: underline;
     opacity: 0.9;
   }
+  .fa {
+    position: relative;
+    font-size: 25px;
+    margin: 20px 20px 0 0;
+  }
+  .fa:hover {
+    text-decoration: none;
+    color: #f7c600;
+  }
+  &-heart {
+    right: 20px;
+    top: 2px;
+  }
+  &-small-heart {
+    font-size: 17px !important;
+    top: 6px;
+  }
+  &-mail {
+    right: 12px;
+    top: 1px;
+  }
+  &-bell {
+    right: 6px;
+    top: 2px;
+  }
+  &__imagebox {
+    display: inline-block;
+    position: relative;
+    height: 35px;
+    width: 35px;
+    top: 10px;
+    &-own {
+      border-radius: 4px;
+      position: relative;
+      margin-right: 30px;
+      cursor: pointer;
+    }
+  }
 }
 
+.more {
+  position: absolute;
+  z-index: 2;
+  height: 100px;
+  width: 80px;
+  color: black;
+  &__list {
+    display: block;
+    text-align: left;
+    width: 120px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    font-size: 12px;
+    display: none;
+    box-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    border-radius: 3px;
+    cursor: pointer;
+    &__text {
+      display: block;
+      padding-left: 5px;
+      height: 30px;
+      font-size: 12px;
+      line-height: 30px;
+      &:hover {
+        background-color: #f7c600;
+        color: #fff;
+      }
+    }
+  }
+}
 
+.planner__margin {
+  margin-right: 33px;
+}
 
-
-
-
-
-
-
-// &-mail {
-//   height: 31px;
-//   width: 28px;
-//   margin: 18px 30px 0 0;
-// }
-// &-bell {
-//   height: 25px;
-//   width: 25px;
-//   margin-top: 20px;
-// }
-
-
-
+.mypage__top-position {
+  margin-top: 6px;
+}
 
 .icon-right{
   float: right;
 }
-
-
-
-
-
 
 .signin__icon {
   &-heart {
@@ -168,7 +182,6 @@
     color: black;
   }
 }
-
 
 
 

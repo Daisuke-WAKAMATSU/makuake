@@ -1,6 +1,10 @@
 !!!
 %html
   %head
+    %link{:href => "https://cdnjs.cloudflare.com/ajax/libs/font-awesome-animation/0.0.10/font-awesome-animation.css", :media => "all", :rel => "stylesheet", :type => "text/css"}/
+    %link{ href: "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css", rel: "stylesheet" }
+    %link{ href: "font-awesome-animation.min.css", rel: "stylesheet" }
+    %link{ href: "https://cdnjs.cloudflare.com/ajax/libs/font-awesome-animation/0.0.10/font-awesome-animation.css", rel: "stylesheet", type: "text/css"}
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %title Makuake
     = favicon_link_tag('favicon.ico')
@@ -10,3 +14,4 @@
   %body
     = render 'layouts/flash'
     = yield
+
