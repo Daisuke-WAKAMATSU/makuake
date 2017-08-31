@@ -51,8 +51,17 @@ p {
   }
 }
 
-
-
-
+#page-top {
+  position: fixed;
+  right: 40px;
+}
+#page-top a {
+  display: block;
+  border-radius: 5px;
+}
+#page-top a:hover {
+  text-decoration: none;
+  opacity: 0.8;
+}
 
 

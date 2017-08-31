@@ -117,13 +117,14 @@
   &__imagebox {
     display: inline-block;
     position: relative;
-    cursor: pointer;
     height: 35px;
     width: 35px;
     top: 10px;
     &-own {
       border-radius: 4px;
       position: relative;
+      margin-right: 30px;
+      cursor: pointer;
     }
   }
 }
@@ -159,6 +160,14 @@
   }
 }
 
+.planner__margin {
+  margin-right: 33px;
+}
+
+.mypage__top-position {
+  margin-top: 6px;
+}
+
 .icon-right{
   float: right;
 }
@@ -173,7 +182,6 @@
     color: black;
   }
 }
-
 
 
 
