@@ -1,12 +1,24 @@
 = render partial: "header"
 .main
   #carousel-example.carousel.slide{data: {ride: "carousel"}}
-    %ol.carousel-indicators
-      %li.active{data: {target: "#carousel-example",slide_to: "0"}}
-      %li{data: {target: "#carousel-example", slide_to: "1"}}
-      %li{data: {target: "#carousel-example", slide_to: "2"}}
-      %li{data: {target: "#carousel-example", slide_to: "3"}}
-      %li{data: {target: "#carousel-example", slide_to: "4"}}
+    .main__under-bar 
+      %ol.carousel-indicators
+        %li.active{data: {target: "#carousel-example",slide_to: "0"}}
+        %li{data: {target: "#carousel-example", slide_to: "1"}}
+        %li{data: {target: "#carousel-example", slide_to: "2"}}
+        %li{data: {target: "#carousel-example", slide_to: "3"}}
+        %li{data: {target: "#carousel-example", slide_to: "4"}}
+
+        / .test__none{data: {target: "#carousel-example",slide_to: "0"}}
+        /   %img.test__image.active{src: "assets/5.jpg"}
+        / .test__none{data: {target: "#carousel-example", slide_to: "1"}}
+        /   %img.test__image.active{src: "assets/2.jpg"}
+        / .test__none{data: {target: "#carousel-example", slide_to: "2"}}
+        /   %img.test__image.active{src: "assets/3.jpg"}
+        / .test__none{data: {target: "#carousel-example", slide_to: "3"}}
+        /   %img.test__image.active{src: "assets/4.jpg"}
+        / .test__none{data: {target: "#carousel-example", slide_to: "4"}}
+        /   %img.test__image.active{src: "assets/1.jpg"}
     .carousel-inner
       .item.active
         = image_tag("5.jpg", class: "full__width")

@@ -6,6 +6,28 @@ html, body {
   font-family: Lucida Grande;
 }
 
+.main__under-bar {
+  position: absolute;
+  bottom: 0px;
+  width: 100vw;
+  height: 56px;
+  z-index: 2;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+
+// .test__image {
+//   height: 34px;
+//   width: 60px;
+//   cursor: pointer;
+//   margin-left: 100px;
+// }
+
+// .test__none {
+//   float: left;
+// }
+
 a {
   cursor: pointer;
   text-decoration: none;
@@ -29,7 +51,6 @@ p {
 .full__width {
   max-height: 430px;
   width: 100%;
-  background: url(main_project.jpg) no-repeat center center ;
 }
 
 .contents {
