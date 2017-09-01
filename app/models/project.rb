@@ -10,7 +10,7 @@ class Project < ActiveRecord::Base
   has_many :investments
   accepts_nested_attributes_for :investments
 
-  validates :main_title, presence: true,      length: { maximum: 30 }
+  validates :main_title, presence: true,      length: { maximum: 50 }
   validates :goal_price, presence: true,      length: { maximum: 7 }
   validates :end_date, presence: true
   validates :main_image, presence: true
