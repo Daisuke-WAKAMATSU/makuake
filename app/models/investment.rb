@@ -5,7 +5,7 @@ class Investment < ActiveRecord::Base
   belongs_to :planner
   has_many :supporters
 
-  validates :title, presence: true,           length: { maximum: 18 }
+  validates :title, presence: true,           length: { maximum: 40 }
   validates :body, presence: true
   validates :price, presence: true,           length: { maximum: 6 }
   validates :image, presence: true

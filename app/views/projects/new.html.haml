@@ -81,7 +81,7 @@
       = f.fields_for :investments do |i|
         .post__field
           .post__field__text リターンタイトル
-          = i.text_field :title, class: 'post__field__box form-short', placeholder: '例）18文字以内', maxlength: "18"
+          = i.text_field :title, class: 'post__field__box form-short', placeholder: '例）40文字以内', maxlength: "40"
         .post__field
           .post__field__text リターン詳細文
           = i.text_area :body, class: 'post__field__box form-long'
