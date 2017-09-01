@@ -10,4 +10,5 @@ class Investment < ActiveRecord::Base
   validates :price, presence: true,           length: { maximum: 6 }
   validates :image, presence: true
   validates :stock, presence: true,           length: { maximum: 3 }
+  validates :delivery_date, presence: true,   length: { maximum: 10 }
 end

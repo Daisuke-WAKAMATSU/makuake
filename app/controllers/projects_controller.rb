@@ -11,7 +11,7 @@ class ProjectsController < ApplicationController
 
   def new
     @project = Project.new
-    @project.investments.build
+    4.times { @project.investments.build }
   end
 
   def create
@@ -21,7 +21,6 @@ class ProjectsController < ApplicationController
     else
       flash.now[:alert] = "未入力項目があります。"
       render :new
-      # redirect_to new_planner_project_path
     end
   end
 
