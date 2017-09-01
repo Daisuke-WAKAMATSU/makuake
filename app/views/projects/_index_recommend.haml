@@ -16,28 +16,33 @@
           = image_tag("pencil.gif", class: "recommend__planner-genre-image", size: "24x24")
           .recommend__planner-genre-name 料理 エンタメ
       .recommend__money
-        %dl
-          %dt.money
-            = image_tag("yen.gif", class: "money__image", size: "25x25")
-            .money__title 集まっている金額
-          %dd.money__sum #{project.sum_price.to_s(:delimited)}円
-        .money__gage
-          - if project.clear_rate.round(0) > 100
-            .money__gage__in{style: "width:100%" }
-              .money__gage__in__percent #{project.clear_rate.round(0)}%
-          - else
-            .money__gage__in{style: "width:#{project.clear_rate.round(0)}%" }
-              .money__gage__in__percent #{project.clear_rate.round(0)}%
-        %dl
-          %dt.money__supporter
-            = image_tag("people.gif", class: "money__supporter-image", size: "24x24")
-            .money__supporter-name サポーター
-          %dd.money__supporter-count #{project.investments.map{|investment|(investment.supporters.count)}.sum}人
-        %dl
-          %dt.money__limit
-            = image_tag("clock-small.gif", class: "money__limit-image", size: "24x24")
-            .money__limit-title 残り
-          %dd.money__limit-days #{(project.end_date - Date.today).to_i}日
+        .box__money
+          %dl
+            %dt.money
+              = image_tag("yen.gif", class: "money__image", size: "25x25")
+              .money__title 集まっている金額
+            %dd.money__sum #{project.sum_price.to_s(:delimited)}円
+        .box__gage
+          .money__gage
+            - if project.clear_rate.round(0) > 100
+              .money__gage__in{style: "width:100%" }
+                .money__gage__in__percent #{project.clear_rate.round(0)}%
+            - else
+              .money__gage__in{style: "width:#{project.clear_rate.round(0)}%" }
+                .money__gage__in__percent #{project.clear_rate.round(0)}%
+        .box__limit
+          .box__limit-in
+            %dl
+              %dt.money__supporter
+                = image_tag("people.gif", class: "money__supporter-image", size: "24x24")
+                .money__supporter-name サポーター
+              %dd.money__supporter-count #{project.investments.map{|investment|(investment.supporters.count)}.sum}人
+          .box__limit-in
+            %dl
+              %dt.money__limit
+                = image_tag("clock-small.gif", class: "money__limit-image", size: "24x24")
+                .money__limit-title 残り
+              %dd.money__limit-days #{(project.end_date - Date.today).to_i}日
   .ditail
     = link_to "more >", "", class: "ditail__botton"
 
