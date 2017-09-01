@@ -70,7 +70,7 @@
     font-size: 14px;
     text-decoration: none;
     color: black;
-    top: 5px;
+    top: 4px;
     right: 21px;
   }
   &-favorite:hover{
@@ -104,7 +104,7 @@
   }
   &-small-heart {
     font-size: 19px !important;
-    top: 6px;
+    top: 5px;
     color: #f7c600;
   }
   &-mail {
@@ -129,7 +129,6 @@
     }
   }
 }
-
 .more {
   position: absolute;
   z-index: 2;
