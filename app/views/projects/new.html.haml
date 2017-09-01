@@ -78,30 +78,29 @@
         %p.post__copy 次に支援者様へのリターンを入力しましょう。
         %p.post__copy こちらも全項目入力必須です。魅力的なリターンを用意しましょう。
         .post__form__project-border
-      - 4.times do |i|
-        = f.fields_for :investments do |i|
-          .post__field
-            .post__field__text リターンタイトル
-            = i.text_field :title, class: 'post__field__box form-short', placeholder: '例）18文字以内', maxlength: "18"
-          .post__field
-            .post__field__text リターン詳細文
-            = i.text_area :body, class: 'post__field__box form-long'
-          .post__field
-            .post__field__text 金額
-            = i.text_field :price, class: 'post__field__box form-short', placeholder: '例）10000', maxlength: "6"
-          .post__field
-            .post__field__text リターン用画像
-            %p.input-file-btn
-              ファイルを選択
-              = i.file_field :image, class: "input-file" do
-                %span 選択されていません
-          .post__field
-            .post__field__text 用意個数
-            = i.text_field :stock, class: 'post__field__box form-short', placeholder: '例）20', maxlength: "3"
-          .post__field
-            .post__field__text 納品予定日
-            = i.text_field :delivery_date, class: 'post__field__box form-short', placeholder: '例）2017-12-22'
-          .post__form__project
-            .post__form__project-border
+      = f.fields_for :investments do |i|
+        .post__field
+          .post__field__text リターンタイトル
+          = i.text_field :title, class: 'post__field__box form-short', placeholder: '例）18文字以内', maxlength: "18"
+        .post__field
+          .post__field__text リターン詳細文
+          = i.text_area :body, class: 'post__field__box form-long'
+        .post__field
+          .post__field__text 金額
+          = i.text_field :price, class: 'post__field__box form-short', placeholder: '例）10000', maxlength: "6"
+        .post__field
+          .post__field__text リターン用画像
+          %p.input-file-btn
+            ファイルを選択
+            = i.file_field :image, class: "input-file" do
+              %span 選択されていません
+        .post__field
+          .post__field__text 用意個数
+          = i.text_field :stock, class: 'post__field__box form-short', placeholder: '例）20', maxlength: "3"
+        .post__field
+          .post__field__text 納品予定日
+          = i.text_field :delivery_date, class: 'post__field__box form-short', placeholder: '例）2017-12-22', maxlength: "10"
+        .post__form__project
+          .post__form__project-border
       = f.submit "投稿する", class: "post__btn"
 = render partial: "footer"
