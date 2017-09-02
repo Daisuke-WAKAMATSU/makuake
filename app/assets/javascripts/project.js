@@ -58,9 +58,12 @@ $(document).on('turbolinks:load', function() {
   });
 });
 
-
-
-
+// フラッシュメッセージを消す
+$(function() {
+  if($(".flash").length){
+    $('.flash').fadeOut(1500);
+  }
+});
 
 
 
