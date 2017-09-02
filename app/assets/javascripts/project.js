@@ -48,13 +48,13 @@ $(document).on('turbolinks:load', function() {
 // 特定の位置までスクロール
 $(document).on('turbolinks:load', function() {
   $('#investments__btn').on('click', function(){
-    $("html,body").animate({scrollTop:$('#investments__bar__menu').offset().top},{ duration: 1000, easing: 'swing', });
+    $("html,body").animate({scrollTop:$('#investments__bar').offset().top},{ duration: 1000, easing: 'swing', });
   });
 });
 
 $(document).on('turbolinks:load', function() {
   $('#st__money-btn').on('click', function(){
-    $("html,body").animate({scrollTop:$('#investments__bar__menu').offset().top},{ duration: 1000, easing: 'swing', });
+    $("html,body").animate({scrollTop:$('#investments__bar').offset().top},{ duration: 1000, easing: 'swing', });
   });
 });
 
@@ -68,27 +68,3 @@ $(function() {
     $(".flash").fadeOut(1000);
   }
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

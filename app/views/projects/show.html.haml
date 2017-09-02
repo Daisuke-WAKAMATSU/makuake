@@ -81,11 +81,11 @@
       /         %span.detail__fb-link-text-span いいね!
       /         をしよう
     .project__right
-      .investments__bar
+      .investments__bar#investments__bar
         .investments__bar__title 支援するコースを選択する
         .investments__bar__text このプロジェクトは目標金額の達成有無にかかわらず、サポーターがプロジェクトに支援を申し込んだ時点でプロジェクトの成立（売買契約の成立）となります。
         - @project.investments.each do |investment|
-          .investments__bar__menu#investments__bar__menu
+          .investments__bar__menu
             .investments__bar__menu-money
               #{investment.price.to_s(:delimited)}円コース
               %span.investments__bar__menu-tax (税込)
