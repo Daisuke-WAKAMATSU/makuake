@@ -3,6 +3,8 @@
   .post
     %h1.post__title プロジェクト投稿
     %p.post__copy 世の中にまだない、新しくて面白い新製品や新サービスを誕生させましょう。
+    - if @project.errors.any?
+      .post__copy{style:"color:red"} #{@project.errors.count}件のエラーがあります。
   .post__form
     = form_for (@project), url: planner_projects_path do |f|
       .post__form__project
@@ -13,66 +15,98 @@
       .post__field
         .post__field__text 企画タイトル
         = f.text_field :main_title, class: 'post__field__box form-short', placeholder: '例）50文字以内', maxlength: "50"
+      - if @project.errors.full_messages_for(:main_title).any?
+        .post__error メインタイトルを入力してください。
       .post__field
         .post__field__text 目標金額
         = f.text_field :goal_price, class: 'post__field__box form-short', placeholder: '例）210000', maxlength: "7"
+      - if @project.errors.full_messages_for(:goal_price).any?
+        .post__error 目標金額を入力してください。
       .post__field
         .post__field__text 期日
         = f.text_field :end_date, class: 'post__field__box form-short', placeholder: '例）2017-03-22'
+      - if @project.errors.full_messages_for(:end_date).any?
+        .post__error 期日を入力してください。
       .post__field
         .post__field__text メインイメージ
         %p.input-file-btn
           ファイルを選択
           = f.file_field :main_image, class: "input-file" do
             %span 選択されていません
+      - if @project.errors.full_messages_for(:main_image).any?
+        .post__error__image メインイメージを選択してください。
       .post__field
         .post__field__text 紹介用見出し①
         = f.text_field :introduction, class: 'post__field__box form-short', placeholder: '例）18文字以内', maxlength: "18"
+      - if @project.errors.full_messages_for(:introduction).any?
+        .post__error 見出しを入力してください。
       .post__field
         .post__field__text 詳細文①
         = f.text_area :intro_body, class: 'post__field__box form-long'
+      - if @project.errors.full_messages_for(:intro_body).any?
+        .post__error 詳細文を入力してください。
       .post__field
         .post__field__text 画像①
         %p.input-file-btn
           ファイルを選択
           = f.file_field :intro_image, class: "input-file" do
             %span 選択されていません
+      - if @project.errors.full_messages_for(:intro_image).any?
+        .post__error__image 画像を選択してください。
       .post__field
         .post__field__text 紹介用見出し②
         = f.text_field :desc_title, class: 'post__field__box form-short', placeholder: '例）18文字以内', maxlength: "18"
+      - if @project.errors.full_messages_for(:desc_title).any?
+        .post__error 見出しを入力してください。
       .post__field
         .post__field__text 詳細文②
         = f.text_area  :desc_body, class: 'post__field__box form-long'
+      - if @project.errors.full_messages_for(:desc_body).any?
+        .post__error 詳細文を入力してください。
       .post__field
         .post__field__text 画像②
         %p.input-file-btn
           ファイルを選択
           = f.file_field :desc_image, class: "input-file" do
             %span 選択されていません
+      - if @project.errors.full_messages_for(:desc_image).any?
+        .post__error__image 画像を選択してください。
       .post__field
         .post__field__text 紹介用見出し③
         = f.text_field :content_title, class: 'post__field__box form-short', placeholder: '例）18文字以内', maxlength: "18"
+      - if @project.errors.full_messages_for(:content_title).any?
+        .post__error 見出しを入力してください。
       .post__field
         .post__field__text 詳細文③
         = f.text_area :content_body, class: 'post__field__box form-long'
+      - if @project.errors.full_messages_for(:content_body).any?
+        .post__error 詳細文を入力してください。
       .post__field
         .post__field__text 画像③
         %p.input-file-btn
           ファイルを選択
           = f.file_field :content_image, class: "input-file" do
             %span 選択されていません
+      - if @project.errors.full_messages_for(:content_image).any?
+        .post__error__image 画像を選択してください。
       .post__field
         .post__field__text 紹介用見出し④
         = f.text_field :feature_title, class: 'post__field__box form-short', placeholder: '例）18文字以内', maxlength: "18"
+      - if @project.errors.full_messages_for(:feature_title).any?
+        .post__error 見出しを入力してください。
       .post__field
         .post__field__text 詳細文④
         = f.text_area :feature_body, class: 'post__field__box form-long'
+      - if @project.errors.full_messages_for(:feature_body).any?
+        .post__error 詳細文を入力してください。
       .post__field
         .post__field__text 画像④
         %p.input-file-btn
           ファイルを選択
           = f.file_field :feature_image, class: "input-file" do
             %span 選択されていません
+      - if @project.errors.full_messages_for(:feature_image).any?
+        .post__error__image 画像を選択してください。
       .post__form__project
         .post__form__project-border
         %p.post__copy 次に支援者様へのリターンを入力しましょう。
@@ -82,24 +116,36 @@
         .post__field
           .post__field__text リターンタイトル
           = i.text_field :title, class: 'post__field__box form-short', placeholder: '例）40文字以内', maxlength: "40"
+        - if @project.errors.full_messages_for(:"investments.title").any?
+          .post__error リターンタイトルを入力してください。
         .post__field
           .post__field__text リターン詳細文
           = i.text_area :body, class: 'post__field__box form-long'
+        - if @project.errors.full_messages_for(:"investments.body").any?
+          .post__error 詳細文を入力してください。
         .post__field
           .post__field__text 金額
           = i.text_field :price, class: 'post__field__box form-short', placeholder: '例）10000', maxlength: "6"
+        - if @project.errors.full_messages_for(:"investments.price").any?
+          .post__error 金額を入力してください。
         .post__field
           .post__field__text リターン用画像
           %p.input-file-btn
             ファイルを選択
             = i.file_field :image, class: "input-file" do
               %span 選択されていません
+        - if @project.errors.full_messages_for(:"investments.image").any?
+          .post__error__image 画像を選択してください。
         .post__field
           .post__field__text 用意個数
           = i.text_field :stock, class: 'post__field__box form-short', placeholder: '例）20', maxlength: "3"
+        - if @project.errors.full_messages_for(:"investments.stock").any?
+          .post__error 用意している個数を入力してください。
         .post__field
           .post__field__text 納品予定日
           = i.text_field :delivery_date, class: 'post__field__box form-short', placeholder: '例）2017-12-22', maxlength: "10"
+        - if @project.errors.full_messages_for(:"investments.delivery_date").any?
+          .post__error 納品予定日を入力してください。
         .post__form__project
           .post__form__project-border
       = f.submit "投稿する", class: "post__btn"
