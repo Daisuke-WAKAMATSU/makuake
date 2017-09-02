@@ -61,17 +61,13 @@ $(document).on('turbolinks:load', function() {
 // フラッシュメッセージを消す
 $(function() {
   if($(".flash").length){
-    $('.flash').fadeOut(1500);
+    $(".flash").fadeIn().queue(function() {
+      setTimeout(function(){$(".flash").dequeue();
+      }, 2000);
+    });
+    $(".flash").fadeOut(1000);
   }
 });
-
-
-
-
-
-
-
-
 
 
 
