@@ -21,6 +21,8 @@
           .post__field
             .post__field__text 名前
             = f.text_field :name, class: 'post__field__box form-short', placeholder: '例）若松大輔'
+          - if @supporter.errors.full_messages_for(:name).any?
+            .post__error 名前を入力してください。
           .post__field
             .post__field__text 性別
             .radio__field
@@ -30,26 +32,42 @@
               %label
                 女
                 = f.radio_button :gender, "女"
+          - if @supporter.errors.full_messages_for(:gender).any?
+            .post__error 性別を選択してください。
           .post__field
             .post__field__text 誕生日
             = f.text_field :birthday, class: 'post__field__box form-short', placeholder: '例）1986-12-22', maxlength: "10"
+          - if @supporter.errors.full_messages_for(:birthday).any?
+            .post__error 誕生日を入力してください。
           .post__field
             .post__field__text 電話番号
             = f.text_field :mobile, class: 'post__field__box form-short', placeholder: '例）09012345678', maxlength: "11"
+          - if @supporter.errors.full_messages_for(:mobile).any?
+            .post__error 電話番号を入力してください。
           .post__field
             .post__field__text 郵便番号
             = f.text_field :postal_code, class: 'post__field__box form-short', placeholder: '例）3350005', maxlength: "7"
+          - if @supporter.errors.full_messages_for(:postal_code).any?
+            .post__error 郵便番号を入力してください。
           .post__field
             .post__field__text 都道府県
             = f.text_field :region, class: 'post__field__box form-short', placeholder: '例）埼玉県'
+          - if @supporter.errors.full_messages_for(:region).any?
+            .post__error 都道府県を入力してください。
           .post__field
             .post__field__text 市町村
             = f.text_field :city, class: 'post__field__box form-short', placeholder: '例）豊田市深見町'
+          - if @supporter.errors.full_messages_for(:city).any?
+            .post__error 市町村を入力してください。
           .post__field
             .post__field__text 番地
             = f.text_field :block, class: 'post__field__box form-short', placeholder: '例）1287-49'
+          - if @supporter.errors.full_messages_for(:block).any?
+            .post__error 番地を入力してください。
           .post__field
             .post__field__text 建物名
             = f.text_field :building, class: 'post__field__box form-short', placeholder: '例）メゾン305号室'
+          - if @supporter.errors.full_messages_for(:building).any?
+            .post__error 建物名を入力してください。
           .btn__field
             = f.submit "投稿する", class: "next__btn"
