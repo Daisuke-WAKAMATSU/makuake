@@ -36,7 +36,7 @@
           = image_tag("clock-white.png", class: "st__money__limit-icon")
           .st__money__limit-title 残り
         %dd.st__money__limit-days #{(@project.end_date - Date.today).to_i}日
-      .st__money-btn 支援するコースを選択する
+      .st__money-btn#st__money-btn 支援するコースを選択する
     .project__main__name
       .project__main__name-text #{@project.main_title}
       / .tag__btn #ももいろクローバーZ
@@ -69,7 +69,7 @@
         = image_tag("#{@project.feature_image}", class: "project__detail__image")
 
       .project__detail__bottom
-        .investments__btn 支援するコースを選択する
+        .investments__btn#investments__btn 支援するコースを選択する
       / = image_tag("logo1.png", class: "project__detail__bottom-image")
       / .project__detail__logo-text “まだここにない”を手に入れよう
       / .project__detail__bottom-box
@@ -85,7 +85,7 @@
         .investments__bar__title 支援するコースを選択する
         .investments__bar__text このプロジェクトは目標金額の達成有無にかかわらず、サポーターがプロジェクトに支援を申し込んだ時点でプロジェクトの成立（売買契約の成立）となります。
         - @project.investments.each do |investment|
-          .investments__bar__menu
+          .investments__bar__menu#investments__bar__menu
             .investments__bar__menu-money
               #{investment.price.to_s(:delimited)}円コース
               %span.investments__bar__menu-tax (税込)
@@ -112,15 +112,21 @@
           .planner__inquiry-text 実行者へ問合せ
 = render partial: "footer"
 
-.modal.fade#my-modal-login-investments
+.modal#my-modal-login-investments
   .modal-dialog
     .login.my-modal-view
       %h2.login__title ログイン
-      = link_to "新規会員登録はこちら  >", new_registration_path(resource_name), class: "login__link"
+      %a.login__link{data: {toggle: "modal", target: "#my-modal-signup-investments", dismiss:"modal"}} 新規会員登録はこちら  >
       %p.login__copy ＼企画を支援するにはユーザーログインが必要です!／
       = render partial: "devise/shared/login_new"
 
-
+.modal#my-modal-signup-investments
+  .modal-dialog
+    .login.my-modal-view
+      %h2.login__title ユーザー登録
+      %a.login__link{data: {toggle: "modal", target: "#my-modal-login-investments", dismiss:"modal"}} ログインはこちら >
+      %p.login__copy ＼約1分で登録でき、Makuakeを楽しめます!／
+      = render partial: "devise/shared/signup_new"
 
 
 
