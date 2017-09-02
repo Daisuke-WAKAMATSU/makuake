@@ -1,6 +1,7 @@
 class SupportersController < ApplicationController
   def new
     @supporter = Supporter.new
+    @investment = Investment.find(params[:investment_id])
   end
 
   def create

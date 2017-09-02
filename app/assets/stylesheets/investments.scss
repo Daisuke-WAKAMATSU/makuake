@@ -111,7 +111,7 @@
   .btn__field {
     height: 90px;
     width: 100%;
-    padding: 30px 0 30px;
+    padding: 30px 0 15px;
   }
 }
 
@@ -130,7 +130,25 @@
   padding-left: 199px;
 }
 
-
+.caution__box {
+  @include clearfix();
+  width: 950px;
+  height: 196px;
+  margin: auto;
+  padding: 30px 24px;
+  border: 1px solid #e3e3e3;
+  color: #5F5F5F;
+  margin-bottom: 100px;
+  .caution__inbox {
+    &-image {
+      float: left;
+    }
+    &-text {
+      float: left;
+      margin: 15px 0 0 10px; 
+    }
+  }
+}
 
 
 

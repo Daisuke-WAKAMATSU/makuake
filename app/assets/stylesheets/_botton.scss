@@ -167,4 +167,42 @@
   margin-bottom: 60px;
 }
 
+.support__submit {
+  border : none;
+  border-bottom: 2px solid #32a9d3;
+}
+.back__btn {
+  @include silver-btn();
+  font-size: 24px;
+  border-radius: 4px;
+  line-height: 64px;
+  height: 64px;
+  padding: 0 120px;
+  border-bottom: 2px solid #b8b8b8;
+  float: left;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

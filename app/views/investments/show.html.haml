@@ -34,5 +34,12 @@
         = image_tag("convenience.gif", class: "pay__image-convenience")
     .btn__field
       = link_to "次へ", new_project_investment_supporter_path(@investment.project_id, @investment.id), class: "next__btn"
+  .caution__box
+    %p ご確認お願いします
+    %p このプロジェクトは目標金額の達成有無にかかわらず、サポーターがプロジェクトに支援を申し込んだ時点でプロジェクトの成立（売買契約の成立）となります。※Makuakeは、プロジェクトオーナーのプロジェクトが必ず成功することや、プロジェクトの品質、リターン内容を保証するものではありません。従って、プロジェクト進行中に関するトラブル、返金要求、リターン返品要求はプロジェクトオーナーの責任のもと行われます。
+    %p セキュリティについて
+    .caution__inbox
+      = image_tag("siteSealImage.gif", class: "caution__inbox-image")
+      %p.caution__inbox-text サイトはSSL暗号化通信に対応しておりますので、入力した情報は安全に送信されます。
 
 / #{simple_format(@investment.body.truncate(100, omission: '...'))}

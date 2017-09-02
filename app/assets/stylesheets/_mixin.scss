@@ -18,6 +18,16 @@
   cursor: pointer;
 }
 
+@mixin silver-btn() {
+  color: #fff;
+  background-color: #c8c8c8;
+  border-radius: 3px;
+  text-align: center;
+  display: block;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 @mixin white-btn() {
   color: #f7c600;
   background-color: #fff;
