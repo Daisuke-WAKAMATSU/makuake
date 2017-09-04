@@ -1,5 +1,5 @@
 class SupportersController < ApplicationController
-  before_action :set_investment, only: [:new, :create]
+  before_action :set_investment, only: [:new, :create, :confirm]
 
   def new
     @supporter = @investment.supporters.new
@@ -7,9 +7,19 @@ class SupportersController < ApplicationController
 
   def create
     @supporter  = current_user.supporters.new(supporter_params)
-    if @supporter.save
-      redirect_to root_path, notice: "ご支援ありがとうございました。"
+    if params[:back]
+      render :new
+    elsif @supporter.save
+      redirect_to root_path , notice: "ご支援ありがとうございました。"
     else
+      flash.now[:alert] = "支援できませんでした。"
+      render :new
+    end
+  end
+
+  def confirm
+    @supporter  = current_user.supporters.new(supporter_params)
+    if @supporter.invalid?
       flash.now[:alert] = "未入力項目があります。"
       render :new
     end
