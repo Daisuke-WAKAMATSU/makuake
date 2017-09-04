@@ -5,28 +5,28 @@
       .carousel-indicators
         = link_to "", class: "content__box" do
           .content__box-background
-          %img.content__box-image{src: "assets/hero_thumb.png", data: {target: "#carousel-example",slide_to: "0"}}
+          = image_tag("hero_thumb.png", class: "content__box-image", data: {target: "#carousel-example",slide_to: "0"})
         = link_to "", class: "content__box" do
           .content__box-background
-          %img.content__box-image{src: "assets/27.png", data: {target: "#carousel-example",slide_to: "1"}}
+          = image_tag("27.png", class: "content__box-image", data: {target: "#carousel-example",slide_to: "1"})
         = link_to "", class: "content__box" do
           .content__box-background
-          %img.content__box-image{src: "assets/4.jpg", data: {target: "#carousel-example",slide_to: "2"}}
+          = image_tag("4.jpg", class: "content__box-image", data: {target: "#carousel-example",slide_to: "2"})
         = link_to "", class: "content__box" do
           .content__box-background
-          %img.content__box-image{src: "assets/1.jpg", data: {target: "#carousel-example",slide_to: "3"}}
+          = image_tag("1.jpg", class: "content__box-image", data: {target: "#carousel-example",slide_to: "3"})
         = link_to "", class: "content__box" do
           .content__box-background
-          %img.content__box-image{src: "assets/3.jpg", data: {target: "#carousel-example",slide_to: "4"}}
+          = image_tag("3.jpg", class: "content__box-image", data: {target: "#carousel-example",slide_to: "4"})
         = link_to "", class: "content__box" do
           .content__box-background
-          %img.content__box-image{src: "assets/4.jpg", data: {target: "#carousel-example",slide_to: "5"}}
+          = image_tag("4.jpg", class: "content__box-image", data: {target: "#carousel-example",slide_to: "5"})
         = link_to "", class: "content__box" do
           .content__box-background
-          %img.content__box-image{src: "assets/5.jpg", data: {target: "#carousel-example",slide_to: "6"}}
+          = image_tag("5.jpg", class: "content__box-image", data: {target: "#carousel-example",slide_to: "6"})
         = link_to "", class: "content__box" do
           .content__box-background
-          %img.content__box-image{src: "assets/1.jpg", data: {target: "#carousel-example",slide_to: "7"}}
+          = image_tag("1.jpg", class: "content__box-image", data: {target: "#carousel-example",slide_to: "7"})
     .carousel-inner
       .item.active
         = image_tag("2.jpg", class: "full__width")
