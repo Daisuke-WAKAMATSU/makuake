@@ -1,7 +1,8 @@
 class SupportersController < ApplicationController
+  before_action :set_investment, only: [:new, :create]
+
   def new
-    @supporter = Supporter.new
-    @investment = Investment.find(params[:investment_id])
+    @supporter = @investment.supporters.new
   end
 
   def create
@@ -17,5 +18,9 @@ class SupportersController < ApplicationController
   private
   def supporter_params
     params.require(:supporter).permit(:name, :gender, :birthday, :mobile, :postal_code, :region, :city, :block, :building).merge(investment_id: params[:investment_id])
+  end
+
+  def set_investment
+    @investment = Investment.find(params[:investment_id])
   end
 end
