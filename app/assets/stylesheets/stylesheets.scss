@@ -6,27 +6,46 @@ html, body {
   font-family: Lucida Grande;
 }
 
+.carousel-indicators {
+  position: relative !important;
+  height: 56px !important;
+  top: 0px !important;
+  padding-left: 40px;
+  min-width: 1000px;
+}
+
 .main__under-bar {
   position: absolute;
   bottom: 0px;
   width: 100vw;
   height: 56px;
   z-index: 2;
-  text-align: center;
   background-color: rgba(0, 0, 0, 0.2);
 }
 
+.content__box{
+  cursor: pointer;
+  float: left;
+  width: 95px !important;
+  height: 56px !important;
+  &-background {
+    height: 56px;
+  }
+  &-image {
+    height: 34px !important;
+    width: 60px !important;
+    cursor: pointer;
+    border-radius: 2px;
+    position: relative;
+    top: -45px;
+    opacity: 1 !important;
+  }
+}
+.content__box-background:hover{
+  background: black;
+  opacity: 0.7;
+}
 
-// .test__image {
-//   height: 34px;
-//   width: 60px;
-//   cursor: pointer;
-//   margin-left: 100px;
-// }
-
-// .test__none {
-//   float: left;
-// }
 
 a {
   cursor: pointer;

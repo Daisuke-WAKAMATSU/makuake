@@ -3,21 +3,31 @@
   #carousel-example.carousel.slide{data: {ride: "carousel"}}
     .main__under-bar 
       %ol.carousel-indicators
-        %li.active{data: {target: "#carousel-example",slide_to: "0"}}
-        %li{data: {target: "#carousel-example", slide_to: "1"}}
-        %li{data: {target: "#carousel-example", slide_to: "2"}}
-        %li{data: {target: "#carousel-example", slide_to: "3"}}
-        %li{data: {target: "#carousel-example", slide_to: "4"}}
-        / .test__none{data: {target: "#carousel-example",slide_to: "0"}}
-        /   %img.test__image.active{src: "assets/5.jpg"}
-        / .test__none{data: {target: "#carousel-example", slide_to: "1"}}
-        /   %img.test__image.active{src: "assets/2.jpg"}
-        / .test__none{data: {target: "#carousel-example", slide_to: "2"}}
-        /   %img.test__image.active{src: "assets/3.jpg"}
-        / .test__none{data: {target: "#carousel-example", slide_to: "3"}}
-        /   %img.test__image.active{src: "assets/4.jpg"}
-        / .test__none{data: {target: "#carousel-example", slide_to: "4"}}
-        /   %img.test__image.active{src: "assets/1.jpg"}
+        = link_to "", class: "content__box" do
+          .content__box-background
+          %img.content__box-image{src: "assets/5.jpg", data: {target: "#carousel-example",slide_to: "0"}}
+          .content__box-background
+        = link_to "", class: "content__box" do
+          .content__box-background
+          %img.content__box-image{src: "assets/2.jpg", data: {target: "#carousel-example",slide_to: "1"}}
+        = link_to "", class: "content__box" do
+          .content__box-background
+          %img.content__box-image{src: "assets/3.jpg", data: {target: "#carousel-example",slide_to: "2"}}
+        = link_to "", class: "content__box" do
+          .content__box-background
+          %img.content__box-image{src: "assets/4.jpg", data: {target: "#carousel-example",slide_to: "3"}}
+        = link_to "", class: "content__box" do
+          .content__box-background
+          %img.content__box-image{src: "assets/1.jpg", data: {target: "#carousel-example",slide_to: "4"}}
+        = link_to "", class: "content__box" do
+          .content__box-background
+          %img.content__box-image{src: "assets/5.jpg", data: {target: "#carousel-example",slide_to: "5"}}
+        = link_to "", class: "content__box" do
+          .content__box-background
+          %img.content__box-image{src: "assets/2.jpg", data: {target: "#carousel-example",slide_to: "6"}}
+        = link_to "", class: "content__box" do
+          .content__box-background
+          %img.content__box-image{src: "assets/3.jpg", data: {target: "#carousel-example",slide_to: "7"}}
     .carousel-inner
       .item.active
         = image_tag("5.jpg", class: "full__width")
@@ -29,6 +39,12 @@
         = image_tag("4.jpg", class: "full__width")
       .item
         = image_tag("1.jpg", class: "full__width")
+      .item
+        = image_tag("5.jpg", class: "full__width")
+      .item
+        = image_tag("2.jpg", class: "full__width")
+      .item
+        = image_tag("3.jpg", class: "full__width")
   .contents
     .catch-copy
       %h1.catch-copy-top 新たなチャレンジを応援しよう。
