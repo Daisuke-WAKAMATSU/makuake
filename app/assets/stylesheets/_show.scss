@@ -7,15 +7,23 @@
   border-bottom: 1px solid #eaeaea; 
   &__link {
     height: 15px;
-    padding: 15px 0 0 187px;
+    padding-top: 15px;
     &-text {
       @include breadcrumbs();
     }
   }
 }
 
+.project__header__box {
+  height: 86px;
+  width: 1000px;
+  margin:  0 auto;
+}
+
+
+
 .project__menu {
-  margin: 8px 0 0 183px;
+  margin-top: 8px;
 }
 
 .project {

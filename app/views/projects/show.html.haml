@@ -1,14 +1,15 @@
 = render partial: "header"
 .project__main
   .project__header
-    .project__header__link
-      = link_to "TOP  >  ", "/", class: "project__header__link-text"
-      = link_to "プロジェクト一覧  >  ", "/", class: "project__header__link-text"
-      .project__header__link-text #{@project.main_title}
-    .project__menu
-      = link_to "プロジェクト", "/", class: "nav-btn"
-      = link_to "活動レポート", "/", class: "nav-btn"
-      = link_to "応援コメント", "/", class: "nav-btn"
+    .project__header__box
+      .project__header__link
+        = link_to "TOP  >  ", "/", class: "project__header__link-text"
+        = link_to "プロジェクト一覧  >  ", "/", class: "project__header__link-text"
+        .project__header__link-text #{@project.main_title}
+      .project__menu
+        = link_to "プロジェクト", "/", class: "nav-btn"
+        = link_to "活動レポート", "/", class: "nav-btn"
+        = link_to "応援コメント", "/", class: "nav-btn"
   .project
     = image_tag("#{@project.main_image}", class: "project__main__image")
     .project__main__detail
