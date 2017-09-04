@@ -171,6 +171,7 @@
   border : none;
   border-bottom: 2px solid #32a9d3;
 }
+
 .back__btn {
   @include silver-btn();
   font-size: 24px;
@@ -182,7 +183,31 @@
   float: left;
 }
 
+.view__btn {
+  position: relative;
+  bottom: 25px;
+  @include white-btn();
+  border: none;
+  color: #696969;
+  height: 13px;
+  width: 40px;
+  line-height: 13px;
+  margin: 0 auto;
+  padding: 15px 45px 14px 45px;
+  font-size: 14px;
+  letter-spacing: 1px;
+  font-weight: 700;
+  text-transform: uppercase;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+  border-radius: 2px;
+  font-family: "Open Sans", sans-serif;
+}
 
+.view__btn:hover{
+  color: #fff;
+  background-color: #f7c600;
+}
 
 
 

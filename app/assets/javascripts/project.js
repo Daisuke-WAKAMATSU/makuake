@@ -68,3 +68,43 @@ $(function() {
     $(".flash").fadeOut(1000);
   }
 });
+
+// $(function() {
+//   $(".carousel-indicators").css("left","70%");
+// });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
