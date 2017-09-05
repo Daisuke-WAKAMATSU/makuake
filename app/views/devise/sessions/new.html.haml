@@ -1,7 +1,7 @@
-= render partial: "header"
+= render partial: "projects/header"
 .background__view
   .login
     %h2.login__title ユーザーログイン
     = link_to "新規会員登録はこちら  >", new_registration_path(resource_name), class: "login__link"
     = render partial: "devise/shared/login_new"
-= render partial: "footer"
+= render partial: "projects/footer"
