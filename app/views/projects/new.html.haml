@@ -27,8 +27,7 @@
         .post__error 期日を入力してください。
       .post__field
         .post__field__text メインイメージ
-        %p.input-file-btn
-          ファイルを選択
+        .input-file 
           = f.file_field :main_image, class: "input-file" do
             %span 選択されていません
       - if @project.errors.full_messages_for(:main_image).any?
@@ -45,8 +44,7 @@
         .post__error 詳細文を入力してください。
       .post__field
         .post__field__text 画像①
-        %p.input-file-btn
-          ファイルを選択
+        .input-file
           = f.file_field :intro_image, class: "input-file" do
             %span 選択されていません
       - if @project.errors.full_messages_for(:intro_image).any?
@@ -63,8 +61,7 @@
         .post__error 詳細文を入力してください。
       .post__field
         .post__field__text 画像②
-        %p.input-file-btn
-          ファイルを選択
+        .input-file
           = f.file_field :desc_image, class: "input-file" do
             %span 選択されていません
       - if @project.errors.full_messages_for(:desc_image).any?
@@ -81,8 +78,7 @@
         .post__error 詳細文を入力してください。
       .post__field
         .post__field__text 画像③
-        %p.input-file-btn
-          ファイルを選択
+        .input-file
           = f.file_field :content_image, class: "input-file" do
             %span 選択されていません
       - if @project.errors.full_messages_for(:content_image).any?
@@ -99,8 +95,7 @@
         .post__error 詳細文を入力してください。
       .post__field
         .post__field__text 画像④
-        %p.input-file-btn
-          ファイルを選択
+        .input-file
           = f.file_field :feature_image, class: "input-file" do
             %span 選択されていません
       - if @project.errors.full_messages_for(:feature_image).any?
@@ -111,40 +106,44 @@
         %p.post__copy こちらも全項目入力必須です。魅力的なリターンを用意しましょう。
         .post__form__project-border
       = f.fields_for :investments do |i|
-        .post__field
-          .post__field__text リターンタイトル
-          = i.text_field :title, class: 'post__field__box form-short', placeholder: '例）40文字以内', maxlength: "40"
-        - if @project.investments[i.index].errors.full_messages_for(:title).any?
-          .post__error リターンタイトルを入力してください。
-        .post__field
-          .post__field__text リターン詳細文
-          = i.text_area :body, class: 'post__field__box form-long'
-        - if @project.investments[i.index].errors.full_messages_for(:body).any?
-          .post__error 詳細文を入力してください。
-        .post__field
-          .post__field__text 金額
-          = i.text_field :price, class: 'post__field__box form-short', placeholder: '例）10000', maxlength: "6"
-        - if @project.investments[i.index].errors.full_messages_for(:price).any?
-          .post__error 金額を入力してください。
-        .post__field
-          .post__field__text リターン用画像
-          %p.input-file-btn
-            ファイルを選択
-            = i.file_field :image, class: "input-file" do
-              %span 選択されていません
-        - if @project.investments[i.index].errors.full_messages_for(:image).any?
-          .post__error__image 画像を選択してください。
-        .post__field
-          .post__field__text 用意個数
-          = i.text_field :stock, class: 'post__field__box form-short', placeholder: '例）20', maxlength: "3"
-        - if @project.investments[i.index].errors.full_messages_for(:stock).any?
-          .post__error 用意している個数を入力してください。
-        .post__field
-          .post__field__text 納品予定日
-          = i.text_field :delivery_date, class: 'post__field__box form-short', placeholder: '例）2017-12-22', maxlength: "10"
-        - if @project.investments[i.index].errors.full_messages_for(:delivery_date).any?
-          .post__error 納品予定日を入力してください。
-        .post__form__project
-          .post__form__project-border
-      = f.submit "投稿する", class: "post__btn"
+        .form__box
+          .post__field
+            .post__field__text リターンタイトル
+            = i.text_field :title, class: 'post__field__box form-short', placeholder: '例）40文字以内', maxlength: "40"
+          - if @project.investments[i.index].errors.full_messages_for(:title).any?
+            .post__error リターンタイトルを入力してください。
+          .post__field
+            .post__field__text リターン詳細文
+            = i.text_area :body, class: 'post__field__box form-long'
+          - if @project.investments[i.index].errors.full_messages_for(:body).any?
+            .post__error 詳細文を入力してください。
+          .post__field
+            .post__field__text 金額
+            = i.text_field :price, class: 'post__field__box form-short', placeholder: '例）10000', maxlength: "6"
+          - if @project.investments[i.index].errors.full_messages_for(:price).any?
+            .post__error 金額を入力してください。
+          .post__field
+            .post__field__text リターン用画像
+            .input-file
+              = i.file_field :image, class: "input-file" do
+                %span 選択されていません
+          - if @project.investments[i.index].errors.full_messages_for(:image).any?
+            .post__error__image 画像を選択してください。
+          .post__field
+            .post__field__text 用意個数
+            = i.text_field :stock, class: 'post__field__box form-short', placeholder: '例）20', maxlength: "3"
+          - if @project.investments[i.index].errors.full_messages_for(:stock).any?
+            .post__error 用意している個数を入力してください。
+          .post__field
+            .post__field__text 納品予定日
+            = i.text_field :delivery_date, class: 'post__field__box form-short', placeholder: '例）2017-12-22', maxlength: "10"
+          - if @project.investments[i.index].errors.full_messages_for(:delivery_date).any?
+            .post__error 納品予定日を入力してください。
+          .post__form__project#border__under{data: {number: "#{i.index}"}}
+            .post__form__project-border
+      %i{class: "fa fa-plus-square-o", id: "plus__btn"} 
+        .plus__text 追加する
+      %i{class: "fa fa-minus-square-o", id: "minus__btn"}
+        .minus__text 削除する
+      = f.submit "投稿する", class: "post__btn",id: "project__submit__btn"
 = render partial: "footer"

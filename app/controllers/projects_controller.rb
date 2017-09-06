@@ -11,7 +11,7 @@ class ProjectsController < ApplicationController
 
   def new
     @project = Project.new
-    4.times { @project.investments.build }
+    @project.investments.build
   end
 
   def create
@@ -28,5 +28,4 @@ class ProjectsController < ApplicationController
   def project_params
     params.require(:project).permit(:main_title, :goal_price, :end_date, :main_image, :introduction, :intro_body, :intro_image, :desc_title, :desc_body, :desc_image, :content_title, :content_body, :content_image, :feature_title, :feature_body, :feature_image, investments_attributes: [:title, :body, :price, :image, :stock, :delivery_date]).merge(planner_id: current_planner.id)
   end
-
 end

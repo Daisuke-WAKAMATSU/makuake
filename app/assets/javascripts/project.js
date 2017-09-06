@@ -69,12 +69,6 @@ $(function() {
   }
 });
 
-// $(function() {
-//   $(".carousel-indicators").css("left","70%");
-// });
-
-
-
 
 
 

@@ -13,7 +13,7 @@
     text-align: center;
   }
   &__copy {
-    font-size: 15px;
+    font-size: 13px;
     text-align: center;
     margin-top: 10px;
   }
@@ -24,12 +24,12 @@
   background-color: #fff;
   margin: 0 auto 0;
   border-radius: 4px;
-  font-size: 15px;
+  font-size: 13px;
   padding: 10px 0 10px 0;
   &__project {
     width:  760px;
     padding: 20px;
-    margin: 0 auto 20px;
+    margin: -15px auto -30px;
     &-border {
       background: linear-gradient(to right, #1ad4ff 0%, #1ad4ff 25%, #fb2a79 25%, #fb2a79 50%, #ffe600 50%, #ffe600 75%, #bbf117 75%, #bbf117 100%);
       height: 5px;
@@ -40,14 +40,14 @@
   .post__field{
     width: 800px;
     @include clearfix();
-    margin-top: 20px;
+    margin-top: 10px;
     &__text {
       width: 150px;
-      height: 40px;
-      font-size: 14px;
+      height: 30px;
+      font-size: 12px;
       float: left;
       text-align: center;
-      line-height: 40px;
+      line-height: 30px;
       margin-left: 35px;
     }
     &__box {
@@ -57,56 +57,71 @@
       padding-left: 10px;
       border: solid 1px #D5D5D5;
       border-radius: 2px;
-      font-size: 14px;
+      font-size: 12px;
     }
   }
 }
 
 .form-short {
-  height: 40px;
+  height: 30px;
 }
 
 .form-long {
-  height: 200px;
+  height: 100px;
   padding-top: 10px;
 }
 
-
-.input-file-btn {
-  position: relative;
-  @include white-btn();
-  float: right;
-  width: 600px;
-  float: left;
-  padding-left: 10px;
-  height: 40px;
-  line-height: 40px;
-}
-
 .input-file {
-  opacity: 0;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  cursor: pointer;
+  position: relative;
+  width: 230px;
+  float: left;
+  font-size:12px;
+  margin-top: 3px;
 }
 
 .post__error {
   width: 600px;
-  height: 40px;
-  font-size: 15px;
-  line-height: 58px;
+  height: 30px;
+  font-size: 13px;
+  line-height: 38px;
   margin-left: 195px;
   color: red;
 }
 
 .post__error__image {
   width: 600px;
-  height: 15px;
-  line-height: 15px;
-  font-size: 15px;
+  height: 13px;
+  line-height: 13px;
+  font-size: 13px;
   margin-left: 195px;
   color: red;
+  margin-top: 10px;
+}
+
+#plus__btn {
+  font-size: 28px;
+  cursor: pointer;
+  color: #4fc1e9;
+  float: left;
+  margin-left: 100px;
+}
+
+#minus__btn {
+  font-size: 28px;
+  cursor: pointer;
+  color: #f42e9d;
+  float: left;
+  margin-left: 90px;
+
+}
+.plus__text {
+  font-size: 16px;
+  float: right;
+  margin: 5px 0 0 4px;
+}
+
+.minus__text {
+  font-size: 16px;
+  float: right;
+  margin: 5px 0 0 4px;
 }
