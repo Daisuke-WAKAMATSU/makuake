@@ -27,6 +27,7 @@ class Project < ActiveRecord::Base
   validates :feature_body, presence: true
   validates :feature_image, presence: true
 
+  acts_as_ordered_taggable_on :genre
 
   def clear_rate
     self.investments.map{|investment|(investment.supporters.count)*(investment.price)}.sum/(self.goal_price.to_i).to_f*100

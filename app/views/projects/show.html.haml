@@ -40,12 +40,8 @@
       .st__money-btn#st__money-btn 支援するコースを選択する
     .project__main__name
       .project__main__name-text #{@project.main_title}
-      / .tag__btn #ももいろクローバーZ
-      / .tag__btn #百田夏菜子
-      / .tag__btn #玉井詩織
-      / .tag__btn #有安杏果
-      / .tag__btn #佐々木彩夏
-      / .tag__btn #高城れに
+      - @project.genre_list.each do |tag|
+        .tag__btn ##{tag}
     .project__left
       .project__detail
         .project__detail__border
