@@ -5,10 +5,9 @@
     .search__form
       = form_tag('/', method: :get) do
         %input.search__form__box{name: "title"}
-          %label
-            .search__form__btn
-              = image_tag("search.png", class: "search__form__btn-image", size: "27x27")
-              %input{type: "submit", value: "探す", class: "search__form__btn-text"}
+        %label
+          %input{type: "submit", value: "探す", class: "search__form__btn"}
+          %i.search__form__btn-image{class: "fa fa-search faa-ring animated"}
     - if user_signed_in? && planner_signed_in?
       .inbox__icon
         = link_to "プロジェクトを掲載する", new_planner_project_path(current_planner), class: "inbox__icon-published"

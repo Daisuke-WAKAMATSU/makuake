@@ -12,27 +12,33 @@
 }
 
 .search__form {
-  @include clearfix();
+  position: relative;
   float: left;
   width: 350px;
   margin: 15px 0 0 18px;
+  font-size: 14px;
   &__box {
+    position: absolute;
     width: 185px;
     height: 34px;
     line-height: 36px;
     padding: 0 12px;
-    font-size: 14px;
     border-top: 1px solid #D3D3D3;
     border-left: 1px solid #D3D3D3;
     border-bottom: 1px solid #D3D3D3;
     border-radius: 4px 0 0 4px!important;
     outline: none;
     border-right: none;
-    float: left;
+    top: 0;
+    left: 0;
   }
   &__btn {
+    position: absolute;
+    top: 0;
+    right: 50px;
+    display: block;
     width: 90px;
-    height: 34px;
+    height: 36px;
     border: 1px solid #d3d3d3;
     border-radius: 0 4px 4px 0;
     background: #fff;
@@ -40,24 +46,28 @@
     outline: none;
     cursor: pointer;
     transition: all 0.3s ease;
-    font-size: 14px;
     color: #333333;
-    float: left;
+    padding-left: 20px;
+    padding-top: 2px;
     &-image {
+      display: block;
+      background-color: transparent;
+      position: absolute;
+      top: 3px;
+      right: 105px;
+      font-size: 20px !important;
       margin: 5px 0 0 13px;
-      float: left;
-    }
-    &-text {
-      font-size: 13px;
-      border: none;
-      background-color: #fff;
-      outline: none;
-      cursor: pointer;
-      float: left;
-      margin: 9px 0 0 4px;
     }
   }
+  &__btn:hover {
+    background-color: #f7c600;
+    color: #fff;
+  }
+  &__btn:hover + .search__form__btn-image {
+    color: #fff;
+  }
 }
+
 
 .inbox__icon {
   @include clearfix();
