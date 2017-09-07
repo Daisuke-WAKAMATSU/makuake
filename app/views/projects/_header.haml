@@ -23,9 +23,9 @@
           .more
             %ul.more__list.header__right__menu
               %li
-                = link_to 'ユーザーマイページ', "", class: "more__list__text", method: :get
+                = link_to 'ユーザーマイページ', user_path(current_user), class: "more__list__text", method: :get
               %li
-                = link_to '企画者マイページ', "", class: "more__list__text", method: :get
+                = link_to '企画者マイページ', planner_path(current_planner), class: "more__list__text", method: :get
               %li
                 = link_to 'ログアウト', destroy_user_session_path, class: "more__list__text", method: :delete
 
@@ -61,7 +61,7 @@
           .more
             %ul.more__list.header__right__menu
               %li
-                = link_to 'ユーザーマイページ', "", class: "more__list__text", method: :get
+                = link_to 'ユーザーマイページ',  user_path(current_user), class: "more__list__text", method: :get
               %li
                 = link_to 'ログアウト', destroy_user_session_path, class: "more__list__text", method: :delete
         .signin__btn.icon-right.planner__margin.header__left__btn
@@ -83,7 +83,7 @@
           .more
             %ul.more__list.header__right__menu
               %li
-                = link_to '企画者マイページ', "", class: "more__list__text", method: :get
+                = link_to '企画者マイページ', planner_path(current_planner), class: "more__list__text", method: :get
               %li
                 = link_to 'ログアウト', destroy_planner_session_path, class: "more__list__text", method: :delete
         .signin__btn.icon-right.planner__margin.header__left__btn
