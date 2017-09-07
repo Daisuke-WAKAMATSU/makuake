@@ -22,4 +22,6 @@ Rails.application.routes.draw do
   resources :planners, only: [:index] do
     resources :projects, only: [:new, :create]
   end
+  resources :users, only: [:show]
+  resources :planners, only: [:show]
 end
