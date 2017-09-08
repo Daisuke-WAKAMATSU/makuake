@@ -5,9 +5,8 @@
       - if current_user.image == nil
         = image_tag("icon_yellow.png", class: "mypage__image", size: "175x175")
       - else
-        = image_tag("#{current_user.image}", class: "mypage__image", size: "175x175")
-    - if request.path_info == ("/users/#{current_user.id}/edit")
-      .mypage__edit__name #{current_user.username}
+        = image_tag("#{@user.image}", class: "mypage__image", size: "175x175")
+    .mypage__edit__name #{@hold_user.username}
     .mypage__main
       .mypage__main__left
         .mypage__border
@@ -47,14 +46,25 @@
     .mypage__main__right
       .right__title
         %h2 プロフィール編集
-        = form_for (current_user), url: user_path do |f|
-          .investment__detail
-            .post__form
-              .post__field
-                .post__field__text 名前
-                = f.text_field :username, class: 'post__field__box form-short', placeholder: '例）若松大輔'
-              / - if @supporter.errors.full_messages_for(:username).any?
-              /   .post__error 名前を入力してください。
-          .btn__field
-            = f.submit "確認する", class: "support__submit next__btn", id: "support__submit"
+      = form_for (@user), url: user_path do |f|
+        .profile__field 
+          .post__field__text ユーザー名
+          = f.text_field :username, class: '', placeholder: '例）若松大輔'
+          - if @user.errors.full_messages_for(:username).any?
+            .post__error 名前を入力してください。
+        .profile__field 
+          .post__field__text プロフィール写真
+          = f.file_field :image, class: ''
+        .profile__field 
+          .post__field__text メールアドレス
+          = f.text_field :email, class: ''
+          - if @user.errors.full_messages_for(:email).any?
+            .post__error メールアドレスを入力してください。
+        .profile__field 
+          .post__field__text パスワード
+          = f.password_field :password, class: ''
+          - if @user.errors.full_messages_for(:password).any?
+            .post__error パスワードを入力してください。
+        .btn__field
+          = f.submit "確認する", class: "support__submit next__btn", id: "support__submit"
 = render partial: "projects/footer"
