@@ -19,7 +19,7 @@
           %i.inbox__icon-bell{class: "fa fa-bell-o faa-ring animated"}
         .inbox__icon__imagebox
           = image_tag("icon_yellow.png", class: "inbox__icon__imagebox-own header__right__btn",size: "35x35") 
-          .more
+          .more.more__position
             %ul.more__list.header__right__menu
               %li
                 = link_to 'ユーザーマイページ', user_path(current_user), class: "more__list__text", method: :get
@@ -57,7 +57,7 @@
         = link_to "お気に入り", "", class: "inbox__icon-favorite"
         .inbox__icon__imagebox.icon-right.mypage__top-position
           = image_tag("icon_yellow.png", class: "inbox__icon__imagebox-own header__right__btn",size: "35x35") 
-          .more
+          .more.more__position
             %ul.more__list.header__right__menu
               %li
                 = link_to 'ユーザーマイページ',  user_path(current_user), class: "more__list__text", method: :get
@@ -79,7 +79,7 @@
         = link_to "お気に入り", "", class: "inbox__icon-favorite"
         .inbox__icon__imagebox.icon-right.mypage__top-position
           = image_tag("icon_yellow.png", class: "inbox__icon__imagebox-own header__right__btn",size: "35x35") 
-          .more
+          .more.more__position
             %ul.more__list.header__right__menu
               %li
                 = link_to '企画者マイページ', planner_path(current_planner), class: "more__list__text", method: :get
