@@ -57,6 +57,7 @@
       right: 105px;
       font-size: 20px !important;
       margin: 5px 0 0 13px;
+      opacity: 0.4;
     }
   }
   &__btn:hover {
@@ -65,9 +66,9 @@
   }
   &__btn:hover + .search__form__btn-image {
     color: #fff;
+    opacity: 1;
   }
 }
-
 
 .inbox__icon {
   @include clearfix();

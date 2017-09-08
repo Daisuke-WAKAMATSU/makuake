@@ -9,5 +9,5 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   validates :username, presence: true
-
+  validates :email, presence: true
 end
