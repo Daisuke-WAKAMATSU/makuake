@@ -1,45 +1,68 @@
+.mypage__edit {
+  @include clearfix();
+  width: 1000px;
+  margin: 20px auto 0;
+}
+
+.edit__left {
+  float: left;
+  width: 220px;
+}
+
+.edit__right {
+  float: right;
+  width: 780px;
+  margin-top: 20px;
+}
+
 .mypage__own {
   background-color: #f5f5f5;
-  height: 225px;
   width: 100%;
   &__box {
     height: 225px;
     width: 1000px;
     margin: 0 auto;
-    .mypage__left__box{
-      width: 220px;
-      height: 225px;
-      text-align: center;
-      float: left;
-      .mypage__image {
-        margin-top: 20px;
-      }
+  }
+}
+.mypage__left__box{
+  width: 220px;
+  height: 225px;
+  text-align: center;
+  float: left;
+  .mypage__image {
+    margin-top: 20px;
+  }
+}
+.mypage__right__box {
+  float: right;
+  width: 745px;
+  height: 225px;
+  .mypage__account-name {
+    font-size: 20px;
+    margin: 33px 0 31px 0;
+    letter-spacing: 0.1rem;
+  }
+  .mypage__news{
+    display: table;
+    font-size: 10px;
+    margin: 0 0 9px -28px;
+    border-collapse: separate;
+    border-spacing: 30px 0;
+    &__days {
+      display: table-cell;
     }
-    .mypage__right__box {
-      float: right;
-      width: 745px;
-      height: 225px;
-      .mypage__account-name {
-        font-size: 20px;
-        margin: 33px 0 31px 0;
-        letter-spacing: 0.1rem;
-      }
-      .mypage__news{
-        display: table;
-        font-size: 10px;
-        margin: 0 0 9px -28px;
-        border-collapse: separate;
-        border-spacing: 30px 0;
-        &__days {
-          display: table-cell;
-        }
-        &__body {
-          color: #4AB3DF;
-          display: table-cell;
-        }
-      }
+    &__body {
+      color: #4AB3DF;
+      display: table-cell;
     }
   }
+}
+
+
+.mypage__edit__name {
+  width: 220px;
+  text-align: center;
+  color: #4AB3DF;
 }
 
 .mypage__new__more {
@@ -54,91 +77,92 @@
   @include clearfix();
   width: 1000px;
   margin: 30px auto 0;
-  &__left {
-    float: left;
+}
+
+.mypage__main__left {
+  float: left;
+  width: 220px;
+  height: 630px;
+  .mypage__border {
+    background: linear-gradient(to right, #1ad4ff 0%, #1ad4ff 25%, #fb2a79 25%, #fb2a79 50%, #ffe600 50%, #ffe600 75%, #bbf117 75%, #bbf117 100%);
+    height: 3px;
     width: 220px;
-    height: 630px;
-    .mypage__border {
-      background: linear-gradient(to right, #1ad4ff 0%, #1ad4ff 25%, #fb2a79 25%, #fb2a79 50%, #ffe600 50%, #ffe600 75%, #bbf117 75%, #bbf117 100%);
-      height: 3px;
-      width: 220px;
+  }
+  .mypage__menu__title {
+    height: 47px;
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #ededed;
+    font-size: 11px;
+    text-indent: 40px;
+    padding-top: 3px;
+    font-weight: bold;
+    &-image {
+      float: left;
+      margin: 14px 0 0 13px;
     }
-    .mypage__menu__title {
-      height: 47px;
-      background-color: #f5f5f5;
-      border-bottom: 1px solid #ededed;
-      font-size: 11px;
-      text-indent: 40px;
-      padding-top: 3px;
-      font-weight: bold;
-      &-image {
-        float: left;
-        margin: 14px 0 0 13px;
-      }
-      &-text {
-        float: left;
-        margin: 13px 0 0 -28px;
-      }
+    &-text {
+      float: left;
+      margin: 13px 0 0 -28px;
     }
-    .mypage__inbox {
-      padding: 5px 0;
-      height: 41px;
-      border-bottom: 1px solid #ededed;
-      .mypage__menu {
-        display: block;
-        position: relative;
+  }
+  .mypage__inbox {
+    padding: 5px 0;
+    height: 41px;
+    border-bottom: 1px solid #ededed;
+    .mypage__menu {
+      display: block;
+      position: relative;
+      border-radius: 2px;
+      &__body {
+        position: absolute;
         border-radius: 2px;
-        &__body {
-          position: absolute;
-          border-radius: 2px;
-          float: left;
-          display: block;
-          width: 204px;
-          height: 41px;
-          line-height: 41px;
-          font-size: 11px;
-          padding-left: 16px;
-        }
-        &__body:hover {
-          background-color: #4AB3DF;
-          color: #fff;
-        }
-        &__icon {
-          display: block;
-          position: absolute;
-          top: 12px;
-          right: 12px;
-          color: #4AB3DF;
-        }
-        &__body:hover + .mypage__menu__icon {
-           background-color: #4AB3DF;
-           color: #fff;
-        }
+        float: left;
+        display: block;
+        width: 204px;
+        height: 41px;
+        line-height: 41px;
+        font-size: 11px;
+        padding-left: 16px;
       }
-    }
-    .inbox__last {
-      margin-bottom: 27px;
-    }
-    .security__box {
-      width: 220px;
-      height: 160px;
-      padding: 20px;
-      border: 1px solid #ededed;
-      box-sizing: border-box;
-      text-align: center;
-      .security__text {
-        font-size: 10px;
-        text-align: left;
+      &__body:hover {
+        background-color: #4AB3DF;
+        color: #fff;
       }
-      .security__image {
-        margin-top: 20px;
+      &__icon {
+        display: block;
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        color: #4AB3DF;
+      }
+      &__body:hover + .mypage__menu__icon {
+         background-color: #4AB3DF;
+         color: #fff;
       }
     }
   }
-  &__right {
-    float: right;
-    width: 745px;
+  .inbox__last {
+    margin-bottom: 27px;
   }
+  .security__box {
+    width: 220px;
+    height: 160px;
+    padding: 20px;
+    border: 1px solid #ededed;
+    box-sizing: border-box;
+    text-align: center;
+    .security__text {
+      font-size: 10px;
+      text-align: left;
+    }
+    .security__image {
+      margin-top: 20px;
+    }
+  }
+}
+.mypage__main__right {
+  float: right;
+  width: 745px;
 }
 
 .right__title {

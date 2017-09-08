@@ -42,8 +42,8 @@
       .mypage__menu__title-text アカウント情報
     .mypage__inbox
       .mypage__menu
-        = link_to "プロフィール編集", "", class: "mypage__menu__body"
-        = link_to ">", "", class: "mypage__menu__icon"
+        = link_to "プロフィール編集", edit_user_path, class: "mypage__menu__body"
+        = link_to ">", edit_user_path, class: "mypage__menu__icon"
     .mypage__inbox.inbox__last
       .mypage__menu
         = link_to "メール通知設定", "", class: "mypage__menu__body"

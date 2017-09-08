@@ -1,23 +1,12 @@
 = render partial: "projects/header"
-.mypage__own
-  .mypage__own__box
-    .mypage__left__box
-      - if current_planner.image == nil
-        = image_tag("icon_yellow.png", class: "mypage__image", size: "175x175")
-      - else
-        = image_tag("#{current_planner.image}", class: "mypage__image", size: "175x175")
-    .mypage__right__box
-      .mypage__account-name #{current_planner.name}
-      .mypage__news
-        .mypage__news__days 2017/07/05
-        = link_to "【実行者様向け】7/11（火）システムメンテナンスのお知らせ", "", class: "mypage__news__body"
-      .mypage__news
-        .mypage__news__days 2017/06/13
-        = link_to "【新機能】お気に入り＃タグ機能 の提供が開始されました！", "", class: "mypage__news__body"
-      .mypage__news
-        .mypage__news__days 2017/05/23
-        = link_to "【重要】Makuake利用規約 変更のお知らせ", "", class: "mypage__news__body"
-      = link_to "お知らせ一覧を見る", "", class: "mypage__new__more"
+.mypage__own__box
+  .mypage__left__box
+    - if current_planner.image == nil
+      = image_tag("icon_yellow.png", class: "mypage__image", size: "175x175")
+    - else
+      = image_tag("#{current_user.image}", class: "mypage__image", size: "175x175")
+- if request.path_info == ("/planners/#{current_planner.id}/edit")
+  .mypage__edit__name #{current_planner.name}
 .mypage__main
   .mypage__main__left
     .mypage__border
@@ -53,7 +42,4 @@
     .security__box
       .security__text 当サイトはSSL暗号化通信に対応しておりますので、入力した情報は安全に送信されます。
       = image_tag("siteSealImage.gif", class: "security__image")
-
 = render partial: "projects/footer"
-
-
