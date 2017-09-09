@@ -9,6 +9,7 @@ class UsersController < ApplicationController
 
   def update
     if @user.update(user_params)
+      sign_in(@user, bypass: true)
       redirect_to root_path, notice:"プロフィール情報が編集されました。"
     else
       flash.now[:alert] = "プロフィール編集が失敗しました。"

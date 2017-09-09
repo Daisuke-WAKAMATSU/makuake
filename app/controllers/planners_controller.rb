@@ -9,6 +9,7 @@ class PlannersController < ApplicationController
 
   def update
     if @planner.update(planner_params)
+      sign_in(@planner, bypass: true)
       redirect_to root_path, notice:"企画者プロフィールが編集されました。"
     else
       flash.now[:alert] = "プロフィール編集が失敗しました。"
