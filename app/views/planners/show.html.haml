@@ -2,10 +2,10 @@
 .mypage__own
   .mypage__own__box
     .mypage__left__box
-      - if current_planner.image == nil
-        = image_tag("icon_yellow.png", class: "mypage__image", size: "175x175")
-      - else
+      - if current_planner.image.present?
         = image_tag("#{current_planner.image}", class: "mypage__image", size: "175x175")
+      - else
+        = image_tag("icon_yellow.png", class: "mypage__image", size: "175x175")
     .mypage__right__box
       .mypage__account-name #{current_planner.name}
       .mypage__news
@@ -53,7 +53,13 @@
     .security__box
       .security__text 当サイトはSSL暗号化通信に対応しておりますので、入力した情報は安全に送信されます。
       = image_tag("siteSealImage.gif", class: "security__image")
-
+  .mypage__main__right
+    .right__title
+      %h2 支援したプロジェクト
+      = link_to "支援したプロジェクト一覧へ", "", class: "mypage__new__more"
+    .right__body 支援しているプロジェクトはありません。
+    .right__title
+      %h2 購入履歴(ストア)
+      = link_to "購入履歴(ストア)一覧へ", "", class: "mypage__new__more"
+    .right__body 購入した商品はありません。
 = render partial: "projects/footer"
-
-

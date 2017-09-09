@@ -47,39 +47,37 @@
         %h2 プロフィール編集
       = form_for (@user), url: user_path do |f|
         .profile__field
-          .post__field__text ユーザー名
-          = f.text_field :username, class: '', placeholder: '例）若松大輔'
-          - if @user.errors.full_messages_for(:username).any?
-            .post__error 名前を入力してください。
+          .profile__field__text ユーザー名
+          .profile__field__box
+            = f.text_field :username, class: 'profile__field__box-form', placeholder: '例）若松大輔'
+            - if @user.errors.full_messages_for(:username).any?
+              .profile__error 名前を入力してください。
         .profile__field
-          .post__field__text プロフィール写真
-          = f.file_field :image, class: ''
+          .profile__field__text プロフィール写真
+          .profile__field__box
+            = f.file_field :image, class: 'profile__field__box-form'
         .profile__field
-          .post__field__text メールアドレス
-          = f.text_field :email, class: ''
+          .profile__field__text メールアドレス
+          .profile__field__box
+            = f.text_field :email, class: 'profile__field__box-form'
           - if @user.errors.full_messages_for(:email).any?
             .post__error メールアドレスを入力してください。
         .profile__field
-          = f.label :password, "新しいパスワード", class: 'post__field__text'
-          %br/
-          - if @minimum_password_length
-            %em
-              (#{@minimum_password_length} characters minimum)
-            %br/
-          = f.password_field :password
+          .profile__field__text パスワード
+          .profile__field__box
+            = link_to "編集", password_user_path, class: "profile__pass__edit"
         .profile__field
-          = f.label :password_confirmation, "パスワード(確認)"
-          %br/
-          = f.password_field :password_confirmation
+          .profile__field__text 現在地
+          .profile__field__box
+            = f.text_field :location, class: 'profile__field__box-form'
         .profile__field
-          .post__field__text 現在地
-          = f.text_field :location, class: ''
+          .profile__field__text 誕生日
+          .profile__field__box
+            = f.text_field :birthday, class: 'profile__field__box-form'
         .profile__field
-          .post__field__text 誕生日
-          = f.text_field :birthday, class: ''
-        .profile__field
-          .post__field__text 性別
-          = f.text_field :gender, class: ''
-        .btn__field
-          = f.submit "確認する", class: "support__submit next__btn", id: "support__submit"
+          .profile__field__text 性別
+          .profile__field__box
+            = f.text_field :gender, class: 'profile__field__box-form'
+        .profile__submit
+          = f.submit "変更する", class: "profile__submit__btn"
 = render partial: "projects/footer"

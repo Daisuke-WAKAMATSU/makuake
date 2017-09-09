@@ -63,6 +63,7 @@
   width: 220px;
   text-align: center;
   color: #4AB3DF;
+  margin-bottom: 20px;
 }
 
 .mypage__new__more {
@@ -183,10 +184,65 @@
 }
 
 .profile__field {
-  
+  display: table;
+  font-size: 12px;
+  height: 35px;
+  border-top: 1px solid #e5e5e5;
+  border-left: 1px solid #e5e5e5;
+  border-right: 1px solid #e5e5e5;
+  &__text {
+    display: table-cell;
+    vertical-align: middle;
+    width: 190px;
+    padding-left: 20px;
+    background-color: #fdfdfd;
+    border-right: 1px solid #e5e5e5;
+    color: #505050;
+    font-size: 13px;
+    line-height: 18px;
+    border-bottom: 1px solid #e5e5e5;
+    height: 60px;
+  }
+  &__box {
+    display: table-cell;
+    vertical-align: middle;
+    background: white;
+    width: 520px;
+    margin-right: 10px;
+    border-bottom: 1px solid #e5e5e5;
+    height: 60px;
+    &-form {
+      padding-left: 6px;
+      line-height: 1.5em;
+      width: 400px;
+      font-size: 13px;
+      margin-left: 10px;
+    }
+  }
 }
 
+.profile__error {
+  display: table-cell;
+  padding: 1px 0 0 19px;
+  color : red;
+}
 
+.profile__pass__edit {
+  background-color: red;
+  display: block;
+  height: 30px;
+  width: 75px;
+  line-height: 30px;
+  text-align: center;
+  margin-left: 10px;
+  background-color: #4AB3DF;
+  color: #fff;
+}
+
+.profile__submit {
+  position: relative;
+  width: 100%;
+}
 
 
 

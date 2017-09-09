@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:update, :edit]
+  before_action :set_user, only: [:update, :edit, :password]
+
   def show
   end
 
@@ -13,6 +14,9 @@ class UsersController < ApplicationController
       flash.now[:alert] = "プロフィール編集が失敗しました。"
       render :edit
     end
+  end
+
+  def password
   end
 
   private
