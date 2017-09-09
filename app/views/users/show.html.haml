@@ -2,10 +2,10 @@
 .mypage__own
   .mypage__own__box
     .mypage__left__box
-      - if current_user.image == nil
-        = image_tag("icon_yellow.png", class: "mypage__image", size: "175x175")
-      - else
+      - if current_user.image.present?
         = image_tag("#{current_user.image}", class: "mypage__image", size: "175x175")
+      - else
+        = image_tag("icon_yellow.png", class: "mypage__image", size: "175x175")
     .mypage__right__box
       .mypage__account-name #{current_user.username}
       .mypage__news
@@ -42,8 +42,8 @@
       .mypage__menu__title-text アカウント情報
     .mypage__inbox
       .mypage__menu
-        = link_to "プロフィール編集", "", class: "mypage__menu__body"
-        = link_to ">", "", class: "mypage__menu__icon"
+        = link_to "プロフィール編集", edit_user_path, class: "mypage__menu__body"
+        = link_to ">", edit_user_path, class: "mypage__menu__icon"
     .mypage__inbox.inbox__last
       .mypage__menu
         = link_to "メール通知設定", "", class: "mypage__menu__body"

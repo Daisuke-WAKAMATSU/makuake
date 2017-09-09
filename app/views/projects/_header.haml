@@ -56,7 +56,10 @@
         %i.inbox__icon-small-heart{class: "fa fa-heart-o faa-pulse animated"}
         = link_to "お気に入り", "", class: "inbox__icon-favorite"
         .inbox__icon__imagebox.icon-right.mypage__top-position
-          = image_tag("icon_yellow.png", class: "inbox__icon__imagebox-own header__right__btn",size: "35x35") 
+          - if current_user.image.present?
+            = image_tag("#{current_user.image}", class: "inbox__icon__imagebox-own header__right__btn",size: "35x35")
+          - else
+            = image_tag("icon_yellow.png", class: "inbox__icon__imagebox-own header__right__btn",size: "35x35") 
           .more.more__position
             %ul.more__list.header__right__menu
               %li

@@ -5,9 +5,9 @@ class ApplicationController < ActionController::Base
   after_action  :store_location
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_in, keys: [:username, :name])
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:username, :name])
-    devise_parameter_sanitizer.permit(:account_update, keys: [:username, :name])
+    devise_parameter_sanitizer.permit(:sign_in, keys: [:username, :name, :image, :location, :birthday, :gender, :password, :password_confirmation])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:username, :name, :image, :location, :birthday, :gender, :password, :password_confirmation])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:username, :name,:image, :location, :birthday, :gender, :password, :password_confirmation])
   end
 
   def store_location
