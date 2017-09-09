@@ -2,10 +2,10 @@
 .mypage__own
   .mypage__own__box
     .mypage__left__box
-      - if current_user.image == nil
-        = image_tag("icon_yellow.png", class: "mypage__image", size: "175x175")
-      - else
+      - if current_user.image.present?
         = image_tag("#{current_user.image}", class: "mypage__image", size: "175x175")
+      - else
+        = image_tag("icon_yellow.png", class: "mypage__image", size: "175x175")
     .mypage__right__box
       .mypage__account-name #{current_user.username}
       .mypage__news
