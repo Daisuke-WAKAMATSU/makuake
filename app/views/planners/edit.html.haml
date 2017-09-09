@@ -55,7 +55,7 @@
         .profile__field
           .profile__field__text イメージ写真
           .profile__field__box
-            = f.file_field :image, class: 'profile__field__box-form'
+            = f.file_field :image, style: "margin-left:12px;"
         .profile__field
           .profile__field__text メールアドレス
           .profile__field__box
@@ -74,6 +74,10 @@
           .profile__field__text 誕生日
           .profile__field__box
             = f.text_field :birthday, class: 'profile__field__box-form'
+        .profile__field
+          .profile__field__text 自己紹介
+          .profile__field__box
+            = f.text_area :introduction, class: 'profile__field__long'
         .profile__submit
           = f.submit "変更する", class: "profile__submit__btn"
 = render partial: "projects/footer"

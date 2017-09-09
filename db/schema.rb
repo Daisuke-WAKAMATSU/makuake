@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170908114512) do
+ActiveRecord::Schema.define(version: 20170909085117) do
 
   create_table "investments", force: :cascade do |t|
     t.integer  "project_id",    limit: 4,     null: false
@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 20170908114512) do
     t.string   "image",                  limit: 255
     t.text     "location",               limit: 65535
     t.date     "birthday"
+    t.text     "introduction",           limit: 65535
   end
 
   add_index "planners", ["email"], name: "index_planners_on_email", unique: true, using: :btree
