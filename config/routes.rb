@@ -27,9 +27,11 @@ Rails.application.routes.draw do
       get 'password'
     end
   end
-  resources :planners, only: [:show, :edit, :update] do
+
+  resources :planners, only: [:index, :show, :edit, :update] do
     member do
       get 'password'
+      get 'introduction'
     end
   end
 end

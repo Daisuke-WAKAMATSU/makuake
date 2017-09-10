@@ -6,7 +6,7 @@
         = image_tag("#{project.main_image}", class: "recommend__top-image", size: "310x170")
         %h2.recommend__top-text #{project.main_title}
       .recommend__planner
-        = link_to "", class: "recommend__planner-link" do
+        = link_to introduction_planner_path(project.id), class: "recommend__planner-link" do
           - if project.planner.image == nil
             = image_tag("icon_yellow.png", class: "recommend__planner-link-image", size: "36x36")
           - else

@@ -1,10 +1,17 @@
 class PlannersController < ApplicationController
   before_action :set_planner, only: [:update, :edit, :password]
 
+  def introduction
+    @planner = Project.find(params[:id]).planner
+  end
+
   def show
   end
 
   def edit
+  end
+
+  def password
   end
 
   def update
@@ -15,9 +22,6 @@ class PlannersController < ApplicationController
       flash.now[:alert] = "プロフィール編集が失敗しました。"
       render :edit
     end
-  end
-
-  def password
   end
 
   private

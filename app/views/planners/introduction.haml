@@ -1,0 +1,46 @@
+= render partial: "projects/header"
+.introduction
+.introduction__area
+  .introduction__box
+    = image_tag("#{@planner.image}", class: "introduction__box-image", size: "175x175")
+    .introduction__name #{@planner.name}
+    .introduction__profile
+      .introduction__date 現在地:#{@planner.location}
+      .introduction__date 誕生日:#{@planner.birthday.year}年#{@planner.birthday.month}月#{@planner.birthday.day}日
+    .introduction__detail #{@planner.introduction}
+  .mypage__main
+    .mypage__main__left
+      .mypage__border
+      .mypage__menu__title
+        = image_tag("black-people.png", class: "mypage__menu__title-image")
+        .mypage__menu__title-text サポーター
+      .mypage__inbox
+        .mypage__menu
+          = link_to "支援したプロジェクト", "", class: "mypage__menu__body"
+          = link_to ">", "", class: "mypage__menu__icon"
+      .mypage__inbox.inbox__last
+        .mypage__menu
+          = link_to "お気に入りのプロジェクト", "", class: "mypage__menu__body"
+          = link_to ">", "", class: "mypage__menu__icon"
+      .mypage__border
+      .mypage__menu__title
+        = image_tag("men.gif", class: "mypage__menu__title-image")
+        .mypage__menu__title-text 実行者
+      .mypage__inbox.inbox__last
+        .mypage__menu
+          = link_to "投稿したプロジェクト", "", class: "mypage__menu__body"
+          = link_to ">", "", class: "mypage__menu__icon"
+    .mypage__main__right
+      .right__title
+        %h2 投稿したプロジェクト
+        = link_to "投稿したプロジェクト一覧へ", "", class: "mypage__new__more"
+
+      .right__title
+        %h2 支援したプロジェクト
+        = link_to "支援したプロジェクト一覧へ", "", class: "mypage__new__more"
+      .right__body 支援しているプロジェクトはありません。
+      .right__title
+        %h2 お気に入りのプロジェクト
+        = link_to "お気に入りに追加したプロジェクト一覧へ", "", class: "mypage__new__more"
+      .right__body お気に入りに追加しているプロジェクトはありません。
+= render partial: "projects/footer"
