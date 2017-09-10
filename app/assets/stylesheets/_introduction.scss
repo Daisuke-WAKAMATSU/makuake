@@ -1,4 +1,4 @@
-.introduction {
+.intro {
   background: url(rainbow.png);
   position: relative;
   top: 0;
@@ -8,12 +8,12 @@
   height: 190px
 }
 
-.introduction__area {
+.intro__area {
   width: 100%;
   background-color: #f5f5f5;
 }
 
-.introduction:before {
+.intro:before {
   background: url(dot.png);
   content: '';
   height: 100%;
@@ -23,7 +23,7 @@
   width: 100%;
 }
 
-.introduction__box {
+.intro__box {
   width: 1000px;
   margin: -110px auto 80px;
   position: relative;
@@ -33,26 +33,204 @@
   }
 }
 
-.introduction__name {
+.intro__name {
   font-size: 25px;
   letter-spacing: 0.1rem;
   margin-top: 25px;
 }
 
-.introduction__profile {
+.intro__profile {
   margin: 10px auto 0;
   display: table;
   border-collapse: separate;
  border-spacing: 20px 0;
 }
 
-.introduction__date {
+.intro__date {
   font-size: 14px;
   display: table-cell;
 }
 
-.introduction__detail {
+.intro__detail {
   font-size: 14px;
   text-align: left;
   margin-top: 20px;
 }
+
+.intro__project {
+  width: 745px;
+  height: 175px;
+  border: 1px solid #ededed;
+  position: relative;
+  margin-right: 35px;
+  margin-bottom: 22px;
+  background: white;
+  z-index: 1;
+  &__left {
+    float: left;
+  }
+  &__right {
+    float: left;
+    padding-left: 10px;
+  }
+}
+
+.intro__right__text {
+  font-size: 10px;
+  margin: 6px 0 8px 10px;
+}
+
+.intro__planner {
+  height: 46px;
+  width: 400px;
+  margin: 0 12px;
+  border-bottom: solid 2px #f5f5f5;
+  &-link {
+    &-image {
+      margin-top: 5px;
+      float: left;
+      height: 36px;
+      width: 36px;
+    }
+  }
+  &-box-name {
+    display: inline-block;  
+    text-decoration: none;
+    color: #38aef0;
+    margin: 4px 0 0 12px;
+    width: 312px;
+
+  }
+  &-genre {
+    display: inline-block;
+    height: 23px;
+    &-image {
+      float:left;
+      margin-left: 5px;
+    }
+    &-name {
+      float: left;
+      margin-top: 2px;
+      color: #a8a8a8;
+    }
+  }
+}
+
+.intro__money {
+  height: 114px;
+  width: 400px;
+  margin-left: 10px;
+}
+
+.intro__box__money {
+  height: 33px;
+  width: 400px;
+}
+
+.intro__money {
+  margin: 0 12px;
+  height: 39px;
+  width: 125px;
+  float: left;
+  &__image {
+    float: left;
+    margin-top: 7px;
+  }
+  &__title {
+    margin: 8px 0 0 20px;
+    float: left;
+    position: absolute;
+    color: #ada8a9;
+  }
+  &__sum {
+    float: right; 
+    font-size: 16px;
+    margin: 5px 5px 0 0;
+  }
+}
+
+.intor__box__gage {
+  height: 30px;
+  width: 300px;
+}
+
+.intro__money__gage {
+  float: left;
+  height: 28px;
+  border-radius: 3px;
+  width: 396px;
+  background-color: #e7e7e7;
+  border-bottom: 2px solid #e7e7e7;
+  &__in {
+    background-color: #bbf117;
+    height: 30px;
+    border-radius: 3px;
+    &__percent {
+      font-size: 14px;
+      padding: 6px 0 0 10px;
+    }
+  }
+}
+
+.intro__box__limit {
+  height: 40px;
+  width: 397px;
+  &-in  {
+    width: 155px;
+    height: 40px;
+    float: left;
+  }
+}
+.intro__money__supporter {
+  margin: 0 12px;
+  &-image {
+    margin-top: 8px;
+    float: left;
+  }
+  &-name {
+    float: left;
+    margin-top: 9px;
+    color: #a8a8a8;
+  }
+  &-count {
+    float: left;
+    font-size: 16px;
+    margin: 5px 0 0 -40px;
+  }
+}
+
+.intro__limit {
+  float: right;
+  &-image {
+    float: left;
+    margin: 8px 0 0 140px;
+  }
+  &-title {
+    float: left;
+    margin-top: 8px;
+  }
+  &-days {
+    float: left;
+    font-size: 16px;
+    margin: 5px 0 0 20px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

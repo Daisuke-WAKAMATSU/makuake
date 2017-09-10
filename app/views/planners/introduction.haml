@@ -1,13 +1,13 @@
 = render partial: "projects/header"
-.introduction
-.introduction__area
-  .introduction__box
-    = image_tag("#{@planner.image}", class: "introduction__box-image", size: "175x175")
-    .introduction__name #{@planner.name}
-    .introduction__profile
-      .introduction__date 現在地:#{@planner.location}
-      .introduction__date 誕生日:#{@planner.birthday.year}年#{@planner.birthday.month}月#{@planner.birthday.day}日
-    .introduction__detail #{@planner.introduction}
+.intro
+.intro__area
+  .intro__box
+    = image_tag("#{@planner.image}", class: "intro__box-image", size: "175x175")
+    .intro__name #{@planner.name}
+    .intro__profile
+      .intro__date 現在地:#{@planner.location}
+      .intro__date 誕生日:#{@planner.birthday.year}年#{@planner.birthday.month}月#{@planner.birthday.day}日
+    .intro__detail #{@planner.introduction}
   .mypage__main
     .mypage__main__left
       .mypage__border
@@ -34,7 +34,48 @@
       .right__title
         %h2 投稿したプロジェクト
         = link_to "投稿したプロジェクト一覧へ", "", class: "mypage__new__more"
-
+      - @project.each do |project|
+        .intro__project
+          .intro__project__left
+            = link_to "/projects/#{project.id}" do
+              = image_tag("#{project.main_image}", class: "intro__top__image", size: "310x175")
+          .intro__project__right
+            = link_to "/projects/#{project.id}" do
+              .intro__right__text #{project.main_title}
+            .intro__planner
+              = link_to introduction_planner_path(project.id), class: "intro__planner-link" do
+                - if project.planner.image.present?
+                  = image_tag("#{project.planner.image}", class: "intro__planner-link-image")
+                - else
+                  = image_tag("icon_yellow.png", class: "intro__planner-link-image")
+              .intro__planner-box
+                = link_to introduction_planner_path(project.id) do
+                  .intro__planner-box-name #{project.planner.name}
+                = link_to "", class: "intro__planner-genre" do
+                  = image_tag("pencil.gif", class: "intro__planner-genre-image", size: "24x24")
+                  .intro__planner-genre-name 料理 エンタメ
+            .intro__money
+              .intro__box__money
+                = image_tag("yen.gif", class: "money__image", size: "21x21")
+                .intro__money__title 集まっている金額
+                .intro__money__sum #{project.sum_price.to_s(:delimited)}円
+              .intro__box__gage
+                .intro__money__gage
+                  - if project.clear_rate.round(0) > 100
+                    .intro__money__gage__in{style: "width:100%" }
+                      .intro__money__gage__in__percent #{project.clear_rate.round(0)}%
+                  - else
+                    .intro__money__gage__in{style: "width:#{project.clear_rate.round(0)}%" }
+                      .intro__money__gage__in__percent #{project.clear_rate.round(0)}%
+              .intro__box__limit
+                .intro__box__limit-in
+                  = image_tag("people.gif", class: "intro__money__supporter-image", size: "20x20")
+                  .intro__money__supporter-name サポーター
+                .intro__money__supporter-count #{project.investments.map{|investment|(investment.supporters.count)}.sum}人
+                .intro__limit-in
+                  = image_tag("clock-small.gif", class: "intro__limit-image", size: "20x20")
+                  .intro__limit-title 残り
+                .intro__limit-days #{(project.end_date - Date.today).to_i}日
       .right__title
         %h2 支援したプロジェクト
         = link_to "支援したプロジェクト一覧へ", "", class: "mypage__new__more"

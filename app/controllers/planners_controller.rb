@@ -3,6 +3,7 @@ class PlannersController < ApplicationController
 
   def introduction
     @planner = Project.find(params[:id]).planner
+    @project = @planner.projects.order(created_at: :DESC).limit(1)
   end
 
   def show
