@@ -1,5 +1,5 @@
 .intro {
-  background: url(rainbow.png);
+  background-image: image-url("rainbow.png");
   position: relative;
   top: 0;
   right: 0;
@@ -13,8 +13,9 @@
   background-color: #f5f5f5;
 }
 
+
 .intro:before {
-  background: url(dot.png);
+  background-image: image-url("dot.png");
   content: '';
   height: 100%;
   position: absolute;
