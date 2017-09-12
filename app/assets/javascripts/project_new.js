@@ -1,3 +1,4 @@
+// ボタンクリックでinvestmentsを追加
 $(document).on('turbolinks:load', function() {
   var index = $(".post__form__project:last").data("number");
   var form__box = $(".form__box");
@@ -67,6 +68,75 @@ $(document).on('turbolinks:load', function() {
     }
   });
 });
+
+// ボタンクリックでtagを追加
+$(document).on('turbolinks:load', function() {
+  var tagIndex = 0;
+  var tag__form = $(".tag__input__area");
+  function buildTag() {
+    var tag = `<div class='tag__input__area'>
+                 <div class='tag__input__area-text'>タグ</div>
+                 <input type="text" name="project[genre_list][]" id="project_genre_list_" value="" class="tag__input__area-box" placeholder="例）お肉" />
+               </div>`
+    tag__form.append(tag);
+  }
+
+  // boxが一つの時はminusボタンを表示しない
+  $(function() {
+    if ( tagIndex === 0) {
+      $("#tag__minus").hide();
+    }
+  });
+
+    // plusボタンクリックでボックス追加
+  $("#tag__plus").on('click', function() {
+    tagIndex++;
+    buildTag();
+    if ( tagIndex === 0) {
+      $("#tag__minus").hide();
+    } else  {
+      $("#tag__minus").show();
+    }
+    if ( tagIndex >= 4) {
+      $("#tag__plus").hide();
+      $('#tag__minus').css('margin-left','257px');
+    } else  {
+      $("#tag__plus").show();
+    }
+  });
+
+    // minusボタンクリックでボックス削除
+  $("#tag__minus").on('click', function() {
+    tagIndex--;
+    $(".tag__input__area:last").remove();
+     if ( tagIndex === 0) {
+      $("#tag__minus").hide();
+    } else  {
+      $("#tag__minus").show();
+    }
+    if ( tagIndex >= 4) {
+      $("#tag__plus").hide();
+      $('#tag__minus').css('margin-left','257px');
+    } else  {
+      $("#tag__plus").show();
+      $('#tag__minus').css('margin-left','52px');
+    }
+  });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
