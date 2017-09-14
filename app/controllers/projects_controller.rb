@@ -5,6 +5,10 @@ class ProjectsController < ApplicationController
     @new_projects = Project.order(created_at: :DESC).includes(:planner).limit(8)
   end
 
+  def list
+    @project = Project.all
+  end
+
   def show
     @project = Project.includes(:investments).find(params[:id])
     @project_show = (Array(@project.introductions).push(Array(@project.introduction_bodies)).push(Array(@project.introduction_images))).flatten!

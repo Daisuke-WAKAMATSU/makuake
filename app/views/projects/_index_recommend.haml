@@ -44,9 +44,12 @@
               %dt.money__limit
                 = image_tag("clock-small.gif", class: "money__limit-image", size: "24x24")
                 .money__limit-title 残り
-              %dd.money__limit-days #{(project.end_date - Date.today).to_i}日
+                - if ((project.end_date - Date.today).to_i) <= 0
+                  %dd.money__limit-days 終了
+                - else
+                  %dd.money__limit-days #{(project.end_date - Date.today).to_i}日
   .ditail
-    = link_to "more >", "", class: "ditail__botton"
+    = link_to "more >", list_projects_path, class: "ditail__botton"
 
 / 最近始まったプロジェクト
 .new

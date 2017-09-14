@@ -38,7 +38,10 @@
         %dt
           = image_tag("clock-white.png", class: "st__money__limit-icon")
           .st__money__limit-title 残り
-        %dd.st__money__limit-days #{(@project.end_date - Date.today).to_i}日
+        - if ((@project.end_date - Date.today).to_i) <= 0
+          %dd.st__money__limit-days 終了
+        - else
+          %dd.st__money__limit-days #{(@project.end_date - Date.today).to_i}日
       .st__money-btn#st__money-btn 支援するコースを選択する
     .project__main__name
       .project__main__name-text #{@project.main_title}

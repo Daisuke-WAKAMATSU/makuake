@@ -120,34 +120,6 @@ $(document).on('turbolinks:load', function() {
   });
 });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // ボタンクリックでinvestmentsを追加
 $(document).on('turbolinks:load', function() {
   var index = $(".post__form__project:last").data("number");
@@ -273,25 +245,3 @@ $(document).on('turbolinks:load', function() {
     }
   });
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
