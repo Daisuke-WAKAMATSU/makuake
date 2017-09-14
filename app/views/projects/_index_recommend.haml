@@ -6,6 +6,8 @@
         - if project.clear_rate.round(0) >= 100
           = image_tag("success.png", class: "recommend__top-success")
         = image_tag("#{project.main_image}", class: "recommend__top-image", size: "310x170")
+        - if (project.created_at.since(3.days)) >= Date.today
+          .recommend__top__new New!
         %h2.recommend__top-text #{project.main_title}
       .recommend__planner
         = link_to introduction_planner_path(project.id), class: "recommend__planner-link" do
