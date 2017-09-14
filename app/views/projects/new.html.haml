@@ -50,7 +50,7 @@
             - else
               = i.hidden_field :intro_index, value: "#{i.object.intro_index}"
               .post__field__text.data__body.data__total{data: {body: "#{i.index}", total: "#{i.object.intro_index}"}} テキスト
-            = i.text_area :body, class: 'post__field__box form-long', placeholder: '例）18文字以内', maxlength: "18"
+            = i.text_area :body, class: 'post__field__box form-long'
         = f.fields_for :introduction_images do |i|
           .post__field
             - if request.fullpath == "/planners/1/projects/new"

@@ -18,7 +18,7 @@ $(document).on('turbolinks:load', function() {
     var body = ` <div class='post__field body__post__area'>
                    <input value="${totalNmb}" type="hidden" name="project[introduction_bodies_attributes][${bodyIndex}][intro_index]" id="project_introduction_bodies_attributes_${bodyIndex}_intro_index" />
                    <div class='post__field__text data__body data__total' data-body="${bodyIndex}" data-total="${totalNmb}">テキスト</div>
-                   <textarea class="post__field__box form-long" placeholder="例）18文字以内" maxlength="18" name="project[introduction_bodies_attributes][${bodyIndex}][body]" id="project_introduction_bodies_attributes_${bodyIndex}_body">
+                   <textarea class="post__field__box form-long" name="project[introduction_bodies_attributes][${bodyIndex}][body]" id="project_introduction_bodies_attributes_${bodyIndex}_body">
                    </textarea>
                  </div>`
     newproject__post__area.append(body);
