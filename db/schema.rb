@@ -11,7 +11,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170909085117) do
+ActiveRecord::Schema.define(version: 20170912111510) do
+
+  create_table "introduction_bodies", force: :cascade do |t|
+    t.integer  "project_id",  limit: 4,     null: false
+    t.integer  "intro_index", limit: 4,     null: false
+    t.text     "body",        limit: 65535, null: false
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+  end
+
+  add_index "introduction_bodies", ["project_id"], name: "fk_rails_2eb27bdae8", using: :btree
+
+  create_table "introduction_images", force: :cascade do |t|
+    t.integer  "project_id",  limit: 4,   null: false
+    t.integer  "intro_index", limit: 4,   null: false
+    t.string   "image",       limit: 255, null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+  end
+
+  add_index "introduction_images", ["project_id"], name: "fk_rails_f31f79e4c6", using: :btree
+
+  create_table "introductions", force: :cascade do |t|
+    t.integer  "project_id",  limit: 4,     null: false
+    t.integer  "intro_index", limit: 4,     null: false
+    t.text     "title",       limit: 65535, null: false
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+  end
+
+  add_index "introductions", ["project_id"], name: "fk_rails_e4f9fce14f", using: :btree
 
   create_table "investments", force: :cascade do |t|
     t.integer  "project_id",    limit: 4,     null: false
@@ -51,25 +81,13 @@ ActiveRecord::Schema.define(version: 20170909085117) do
   add_index "planners", ["reset_password_token"], name: "index_planners_on_reset_password_token", unique: true, using: :btree
 
   create_table "projects", force: :cascade do |t|
-    t.integer  "planner_id",    limit: 4,     null: false
-    t.string   "main_title",    limit: 255,   null: false
-    t.string   "goal_price",    limit: 255,   null: false
-    t.date     "end_date",                    null: false
-    t.string   "main_image",    limit: 255,   null: false
-    t.text     "introduction",  limit: 65535, null: false
-    t.text     "intro_body",    limit: 65535, null: false
-    t.string   "intro_image",   limit: 255,   null: false
-    t.text     "desc_title",    limit: 65535, null: false
-    t.text     "desc_body",     limit: 65535, null: false
-    t.string   "desc_image",    limit: 255,   null: false
-    t.text     "content_title", limit: 65535, null: false
-    t.text     "content_body",  limit: 65535, null: false
-    t.string   "content_image", limit: 255,   null: false
-    t.text     "feature_title", limit: 65535, null: false
-    t.text     "feature_body",  limit: 65535, null: false
-    t.string   "feature_image", limit: 255,   null: false
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+    t.integer  "planner_id", limit: 4,   null: false
+    t.string   "main_title", limit: 255, null: false
+    t.string   "goal_price", limit: 255, null: false
+    t.date     "end_date",               null: false
+    t.string   "main_image", limit: 255, null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   add_index "projects", ["planner_id"], name: "fk_rails_757b2fc52b", using: :btree
@@ -143,6 +161,9 @@ ActiveRecord::Schema.define(version: 20170909085117) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "introduction_bodies", "projects"
+  add_foreign_key "introduction_images", "projects"
+  add_foreign_key "introductions", "projects"
   add_foreign_key "investments", "projects"
   add_foreign_key "projects", "planners"
   add_foreign_key "supporters", "investments"
