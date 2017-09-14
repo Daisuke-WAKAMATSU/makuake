@@ -3,6 +3,8 @@
   - @projects.each do |project|
     .recommend__area
       = link_to "/projects/#{project.id}", class: "recommend__top" do
+        - if project.clear_rate.round(0) >= 100
+          = image_tag("success.png", class: "recommend__top-success")
         = image_tag("#{project.main_image}", class: "recommend__top-image", size: "310x170")
         %h2.recommend__top-text #{project.main_title}
       .recommend__planner

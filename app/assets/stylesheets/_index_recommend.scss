@@ -14,9 +14,17 @@
 }
 
 .recommend__top {
+  position: relative;
+  &-success {
+    z-index: 1000;
+    position: absolute;
+    top: -160px;
+    left: -3px;
+  }
   &-image {
     border-top-right-radius: 6px;
     border-top-left-radius: 6px;
+    z-index: 100;
   }
   &-text {
     text-decoration: none;
