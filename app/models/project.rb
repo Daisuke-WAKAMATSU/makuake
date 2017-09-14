@@ -9,23 +9,18 @@ class Project < ActiveRecord::Base
   belongs_to :planner
   has_many :investments
   accepts_nested_attributes_for :investments
+  has_many :introductions
+  accepts_nested_attributes_for :introductions
+  has_many :introduction_bodies
+  accepts_nested_attributes_for :introduction_bodies
+  has_many :introduction_images
+  accepts_nested_attributes_for :introduction_images
+
 
   validates :main_title, presence: true,      length: { maximum: 50 }
   validates :goal_price, presence: true,      length: { maximum: 7 }
   validates :end_date, presence: true
   validates :main_image, presence: true
-  validates :introduction, presence: true,    length: { maximum: 18 }
-  validates :intro_body, presence: true
-  validates :intro_image, presence: true
-  validates :desc_title, presence: true,      length: { maximum: 18 }
-  validates :desc_body, presence: true
-  validates :desc_image, presence: true
-  validates :content_title, presence: true,   length: { maximum: 18 }
-  validates :content_body, presence: true
-  validates :content_image, presence: true
-  validates :feature_title, presence: true,   length: { maximum: 18 }
-  validates :feature_body, presence: true
-  validates :feature_image, presence: true
 
   acts_as_ordered_taggable_on :genre
 

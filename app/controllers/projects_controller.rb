@@ -7,11 +7,18 @@ class ProjectsController < ApplicationController
 
   def show
     @project = Project.includes(:investments).find(params[:id])
+    @project_show = (Array(@project.introductions).push(Array(@project.introduction_bodies)).push(Array(@project.introduction_images))).flatten!
+    @project_show.sort! do |a, b|
+      a[:intro_index] <=> b[:intro_index]
+    end
   end
 
   def new
     @project = Project.new
     @project.investments.build
+    @project.introductions.build
+    @project.introduction_bodies.build
+    @project.introduction_images.build
   end
 
   def create
@@ -20,12 +27,15 @@ class ProjectsController < ApplicationController
       redirect_to root_path, notice: "企画が投稿されました。"
     else
       flash.now[:alert] = "未入力項目があります。"
-      render :new
+      # render :new
+      redirect_to new_planner_project_path, alert: "未入力項目があります。"
     end
   end
 
   private
   def project_params
-    params.require(:project).permit(:main_title, :goal_price, :end_date, :main_image, :introduction, :intro_body, :intro_image, :desc_title, :desc_body, :desc_image, :content_title, :content_body, :content_image, :feature_title, :feature_body, :feature_image, genre_list:[], investments_attributes: [:title, :body, :price, :image, :stock, :delivery_date]).merge(planner_id: current_planner.id)
+    params.require(:project).permit(:main_title, :goal_price, :end_date, :main_image, genre_list:[], investments_attributes: [:title, :body, :price, :image, :stock, :delivery_date], introductions_attributes: [:intro_index, :title], introduction_bodies_attributes: [:intro_index, :body], introduction_images_attributes: [:intro_index, :image]).merge(planner_id: current_planner.id)
   end
 end
+
+

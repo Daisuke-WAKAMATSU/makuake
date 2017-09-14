@@ -44,27 +44,15 @@
         .tag__btn ##{tag}
     .project__left
       .project__detail
-        .project__detail__border
-        .project__detail__block #{@project.introduction}
-        .project__detail__border
-        .project__detail__body  #{simple_format(@project.intro_body)}
-        = image_tag("#{@project.intro_image}", class: "project__detail__image")
-        .project__detail__border
-        .project__detail__block #{@project.desc_title}
-        .project__detail__border
-        .project__detail__body #{simple_format(@project.desc_body)}
-        = image_tag("#{@project.desc_image}", class: "project__detail__image")
-        .project__detail__border
-        .project__detail__block #{@project.content_title}
-        .project__detail__border
-        .project__detail__body #{simple_format(@project.content_body)}
-        = image_tag("#{@project.content_image}", class: "project__detail__image")
-        .project__detail__border
-        .project__detail__block #{@project.feature_title}
-        .project__detail__border
-        .project__detail__body #{simple_format(@project.feature_body)}
-        = image_tag("#{@project.feature_image}", class: "project__detail__image")
-
+        - @project_show.each do |project|
+          - if project.has_attribute?(:title)
+            .project__detail__border
+            .project__detail__block #{project.title}
+            .project__detail__border
+          - elsif project.has_attribute?(:body)
+            .project__detail__body #{simple_format(project.body)}
+          - else
+            = image_tag("#{project.image}", class: "project__detail__image")
       .project__detail__bottom
         .investments__btn#investments__btn 支援するコースを選択する
       / = image_tag("logo1.png", class: "project__detail__bottom-image")

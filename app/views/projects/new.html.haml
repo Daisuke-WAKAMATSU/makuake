@@ -10,96 +10,76 @@
         %p.post__copy まず、下記に企画内容を入力しましょう。
         %p.post__copy 全項目入力必須です。魅力たっぷりのあなたの企画をアピールしましょう。
         .post__form__project-border
-      .post__field
-        .post__field__text 企画タイトル
-        = f.text_field :main_title, class: 'post__field__box form-short', placeholder: '例）50文字以内', maxlength: "50"
-      - if @project.errors.full_messages_for(:main_title).any?
-        .post__error メインタイトルを入力してください。
-      .post__field
-        .post__field__text 目標金額
-        = f.text_field :goal_price, class: 'post__field__box form-short', placeholder: '例）210000', maxlength: "7"
-      - if @project.errors.full_messages_for(:goal_price).any?
-        .post__error 目標金額を入力してください。
-      .post__field
-        .post__field__text 期日
-        = f.text_field :end_date, class: 'post__field__box form-short', placeholder: '例）2017-03-22'
-      - if @project.errors.full_messages_for(:end_date).any?
-        .post__error 期日を入力してください。
-      .post__field
-        .post__field__text メインイメージ
-        .input-file
-          = f.file_field :main_image, class: "input-file" do
-            %span 選択されていません
-      - if @project.errors.full_messages_for(:main_image).any?
-        .post__error__image メインイメージを選択してください。
-      .post__field
-        .post__field__text 紹介用見出し①
-        = f.text_field :introduction, class: 'post__field__box form-short', placeholder: '例）18文字以内', maxlength: "18"
-      - if @project.errors.full_messages_for(:introduction).any?
-        .post__error 見出しを入力してください。
-      .post__field
-        .post__field__text 詳細文①
-        = f.text_area :intro_body, class: 'post__field__box form-long'
-      - if @project.errors.full_messages_for(:intro_body).any?
-        .post__error 詳細文を入力してください。
-      .post__field
-        .post__field__text 画像①
-        .input-file
-          = f.file_field :intro_image, class: "input-file" do
-            %span 選択されていません
-      - if @project.errors.full_messages_for(:intro_image).any?
-        .post__error__image 画像を選択してください。
-      .post__field
-        .post__field__text 紹介用見出し②
-        = f.text_field :desc_title, class: 'post__field__box form-short', placeholder: '例）18文字以内', maxlength: "18"
-      - if @project.errors.full_messages_for(:desc_title).any?
-        .post__error 見出しを入力してください。
-      .post__field
-        .post__field__text 詳細文②
-        = f.text_area  :desc_body, class: 'post__field__box form-long'
-      - if @project.errors.full_messages_for(:desc_body).any?
-        .post__error 詳細文を入力してください。
-      .post__field
-        .post__field__text 画像②
-        .input-file
-          = f.file_field :desc_image, class: "input-file" do
-            %span 選択されていません
-      - if @project.errors.full_messages_for(:desc_image).any?
-        .post__error__image 画像を選択してください。
-      .post__field
-        .post__field__text 紹介用見出し③
-        = f.text_field :content_title, class: 'post__field__box form-short', placeholder: '例）18文字以内', maxlength: "18"
-      - if @project.errors.full_messages_for(:content_title).any?
-        .post__error 見出しを入力してください。
-      .post__field
-        .post__field__text 詳細文③
-        = f.text_area :content_body, class: 'post__field__box form-long'
-      - if @project.errors.full_messages_for(:content_body).any?
-        .post__error 詳細文を入力してください。
-      .post__field
-        .post__field__text 画像③
-        .input-file
-          = f.file_field :content_image, class: "input-file" do
-            %span 選択されていません
-      - if @project.errors.full_messages_for(:content_image).any?
-        .post__error__image 画像を選択してください。
-      .post__field
-        .post__field__text 紹介用見出し④
-        = f.text_field :feature_title, class: 'post__field__box form-short', placeholder: '例）18文字以内', maxlength: "18"
-      - if @project.errors.full_messages_for(:feature_title).any?
-        .post__error 見出しを入力してください。
-      .post__field
-        .post__field__text 詳細文④
-        = f.text_area :feature_body, class: 'post__field__box form-long'
-      - if @project.errors.full_messages_for(:feature_body).any?
-        .post__error 詳細文を入力してください。
-      .post__field
-        .post__field__text 画像④
-        .input-file
-          = f.file_field :feature_image, class: "input-file" do
-            %span 選択されていません
-      - if @project.errors.full_messages_for(:feature_image).any?
-        .post__error__image 画像を選択してください。
+      .newproject__post__area
+        .post__field
+          .post__field__text 企画タイトル
+          = f.text_field :main_title, class: 'post__field__box form-short', placeholder: '例）50文字以内', maxlength: "50"
+        - if @project.errors.full_messages_for(:main_title).any?
+          .post__error メインタイトルを入力してください。
+        .post__field
+          .post__field__text 目標金額
+          = f.text_field :goal_price, class: 'post__field__box form-short', placeholder: '例）210000', maxlength: "7"
+        - if @project.errors.full_messages_for(:goal_price).any?
+          .post__error 目標金額を入力してください。
+        .post__field
+          .post__field__text 期日
+          = f.text_field :end_date, class: 'post__field__box form-short', placeholder: '例）2017-03-22'
+        - if @project.errors.full_messages_for(:end_date).any?
+          .post__error 期日を入力してください。
+        .post__field
+          .post__field__text メインイメージ
+          .input-file
+            = f.file_field :main_image, class: "input-file" do
+              %span 選択されていません
+        - if @project.errors.full_messages_for(:main_image).any?
+          .post__error__image メインイメージを選択してください。
+        = f.fields_for :introductions do |i|
+          .post__field
+            - if request.fullpath == "/planners/1/projects/new"
+              = i.hidden_field :intro_index, value: "1"
+              .post__field__text.data__title.data__total{data: {title: "#{i.index}", total: "1"}} タイトル
+            - else
+              = i.hidden_field :intro_index, value: "#{i.object.intro_index}"
+              .post__field__text.data__title.data__total{data: {title: "#{i.index}", total: "#{i.object.intro_index}"}} タイトル
+            = i.text_field :title, class: 'post__field__box form-short', placeholder: '例）18文字以内', maxlength: "18"
+        = f.fields_for :introduction_bodies do |i|
+          .post__field
+            - if request.fullpath == "/planners/1/projects/new"
+              = i.hidden_field :intro_index, value: "2"
+              .post__field__text.data__body.data__total{data: {body: "#{i.index}", total: "2"}} テキスト
+            - else
+              = i.hidden_field :intro_index, value: "#{i.object.intro_index}"
+              .post__field__text.data__body.data__total{data: {body: "#{i.index}", total: "#{i.object.intro_index}"}} テキスト
+            = i.text_area :body, class: 'post__field__box form-long', placeholder: '例）18文字以内', maxlength: "18"
+        = f.fields_for :introduction_images do |i|
+          .post__field
+            - if request.fullpath == "/planners/1/projects/new"
+              = i.hidden_field :intro_index, value: "3"
+              .post__field__text.data__image.data__total{data: {image: "#{i.index}", total: "3"}} イメージ
+            - else
+              = i.hidden_field :intro_index, value: "#{i.object.intro_index}"
+              .post__field__text.data__image.data__total{data: {image: "#{i.index}", total: "#{i.object.intro_index}"}} イメージ
+            .input-file
+              = i.file_field :image, class: "input-file" do
+                %span 選択されていません
+      .btn__area__newproject
+        .title__btn__area
+          %i.title__plus#title__plus{class: "fa fa-plus-square-o", style:"font-size:22px"}
+            .title__plus-text タイトルを追加する
+          %i.title__minus#title__minus{class: "fa fa-minus-square-o", style:"font-size:22px"}
+            .title__minus-text タイトルを削除する
+        .body__btn__area
+          %i.body__plus#body__plus{class: "fa fa-file-text-o", style:"font-size:22px"}
+            .body__plus-text テキストを追加する
+          %i.body__minus#body__minus{class: "fa fa-file-text-o", style:"font-size:22px"}
+            .body__minus-text テキストを削除する
+        .image__btn__area
+          %i.image__plus#image__plus{class: "fa fa-file-image-o", style:"font-size:22px"}
+            .image__plus-text イメージを追加する
+          %i.image__minus#image__minus{class: "fa fa-file-image-o", style:"font-size:22px"}
+            .image__minus-text イメージを削除する
+      .post__form__project
+        .post__form__project-border
       .tag__form#tag__form
         .tag__input__area
           .tag__input__area-text タグ
@@ -150,7 +130,7 @@
             .post__error 納品予定日を入力してください。
           .post__form__project#border__under{data: {number: "#{i.index}"}}
             .post__form__project-border
-      %i.plus__btn{class: "fa fa-plus-square-o", id: "plus__btn"} 
+      %i.plus__btn{class: "fa fa-plus-square-o", id: "plus__btn"}
         .plus__text リターンを追加する
       %i.minus__btn{class: "fa fa-minus-square-o", id: "minus__btn"}
         .minus__text リターンを削除する
