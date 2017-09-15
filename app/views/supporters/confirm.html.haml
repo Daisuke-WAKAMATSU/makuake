@@ -21,10 +21,10 @@
               .confirmation__dd #{@supporter.investment.price.to_s(:delimited)}円(税込)
             .confirmation__dl
               .confirmation__dt コース内容
-              .confirmation__dd #{simple_format(@supporter.investment.body)} 
+              .confirmation__dd #{simple_format(@supporter.investment.body)}
             .confirmation__dl
               .confirmation__dt お名前
-              .confirmation__dd #{@supporter.name} 
+              .confirmation__dd #{@supporter.name}
               = f.hidden_field :name
             .confirmation__dl
               .confirmation__dt 性別
@@ -56,6 +56,7 @@
       .btn__field
         = f.submit "戻る", name: 'back', class: "back__btn"
         = f.submit "支援する", class: "support__submit next__btn", id: "support__submit"
+        / %script.payjp-button{"data-key" => "#{PAYJP_PUBLIC_KEY}", :src => "https://checkout.pay.jp", :type => "text/javascript", "data-number" => "ddd"}
     .caution__box
       %p ご確認お願いします
       %p このプロジェクトは目標金額の達成有無にかかわらず、サポーターがプロジェクトに支援を申し込んだ時点でプロジェクトの成立（売買契約の成立）となります。※Makuakeは、プロジェクトオーナーのプロジェクトが必ず成功することや、プロジェクトの品質、リターン内容を保証するものではありません。従って、プロジェクト進行中に関するトラブル、返金要求、リターン返品要求はプロジェクトオーナーの責任のもと行われます。

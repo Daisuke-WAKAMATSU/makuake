@@ -182,14 +182,27 @@
 }
 
 
+#payjp_checkout_box input{
+  width: 300px;
+  border: none !important;
+  background-image: none !important;
+  background-color: #4fc1e9 !important;
+  text-align: center !important;
+  display: block !important;
+  text-decoration: none !important;
+  cursor: pointer !important;
+  font-size: 24px !important;
+  border-radius: 4px !important;
+  height: 64px !important;
+  float: right !important;
+  margin-bottom: 60px !important;
+}
 
-
-
-
-
-
-
-
+.copy img {
+    display: none;
+    width: 116px;
+    height: 16px;
+}
 
 
 

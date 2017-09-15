@@ -13,3 +13,4 @@
 /tmp
 /public/uploads/*
 /config/secrets.yml
+/config/initializers/setting.rb
