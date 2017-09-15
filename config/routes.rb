@@ -13,9 +13,11 @@ Rails.application.routes.draw do
 
   resources :projects do
     collection do
-      get 'list'
+      get  'list'
+      post 'purchase'
     end
   end
+
   resources :projects, only: [:show,] do
     resources :investments, only: [:show] do
       resources :supporters, only: [:new, :create] do

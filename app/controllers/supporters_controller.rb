@@ -10,6 +10,8 @@ class SupportersController < ApplicationController
     if params[:back]
       render :new
     elsif @supporter.save
+      Payjp.api_key = PAYJP_SECRET_KEY
+      Payjp::Charge.create(currency: 'jpy', amount: 1000, card: params['payjp-token'])
       redirect_to root_path , notice: "ご支援ありがとうございました。"
     else
       flash.now[:alert] = "支援できませんでした。"
